@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-06T15:42:13.208Z</updated>
+  <updated>2017-08-02T03:06:09.979Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,69 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/08/02/about/"/>
+    <id>http://yoursite.com/2017/08/02/about/</id>
+    <published>2017-08-02T03:07:56.668Z</published>
+    <updated>2017-08-02T03:06:09.979Z</updated>
+    
+    <content type="html"><![CDATA[<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.phoneNo p{
+				display: -webkit-flex;
+				display: flex;
+				/*
+				 内容对齐（justify-content）属性应用在弹性容器上，把弹性项沿着弹性容器的主轴线（main axis）对齐。
+				justify-content 语法如下：
+				justify-content: flex-start | flex-end | center | space-between | space-around
+				*/
+				-webkit-justify-content: center;
+				justify-content: center;
+				/*flex-wrap 属性用于指定弹性盒子的子元素换行方式。。*/
+				-webkit-flex-wrap: wrap;
+				flex-direction: row-reverse;
+				flex-wrap: wrap;
+				/*align-content 属性用于修改 flex-wrap 属性的行为。类似于 align-items, 但它不是设置弹性子元素的对齐，而是设置各个行的对齐。*/
+				-webkit-align-content: center;
+				align-content: center;
+				font-size: 50px;
+				color: #FF0000;
+				text-shadow: 5px 5px 5px #FBC054;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="phoneNo">
+			<p>18811716119</p>
+		</div>
+	</body>
+
+</html>]]></content>
+    
+    <summary type="html">
+    
+      &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;style type=&quot;text/css&quot;&gt;
+			.phoneNo p{
+				display: -webkit-fle
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Android Scroll分析 ——《群英传》第五章</title>
