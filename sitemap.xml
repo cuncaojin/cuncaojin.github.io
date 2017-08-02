@@ -2,16 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/404/index/index.html</loc>
+    <loc>http://yoursite.com/404.html</loc>
     
-    <lastmod>2017-08-02T04:27:43.554Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com//404/index/index.html</loc>
-    
-    <lastmod>2017-08-02T04:22:31.067Z</lastmod>
+    <lastmod>2017-08-02T04:46:30.575Z</lastmod>
     
   </url>
   
@@ -26,6 +19,13 @@
     <loc>http://yoursite.com/2017/08/02/hello-world/</loc>
     
     <lastmod>2017-08-02T02:05:20.934Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/cuncaojin/fiona/index.html</loc>
+    
+    <lastmod>2017-08-01T07:59:44.556Z</lastmod>
     
   </url>
   
