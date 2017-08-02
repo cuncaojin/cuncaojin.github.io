@@ -172,11 +172,9 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                                <a class="fa GitHub" href="https://github.com/cuncaojin" title="GitHub"></a>
                             
-                                <a class="fa GitHub" href="#" title="GitHub"></a>
-                            
-                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                                <a class="fa CSDN" href="http://blog.csdn.net/cuncaojin/article/category/5857877" title="CSDN"></a>
                             
                         </ul>
                     </nav>
@@ -250,11 +248,9 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                                <a class="fa GitHub" target="_blank" href="https://github.com/cuncaojin" title="GitHub"></a>
                             
-                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
-                            
-                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                                <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/cuncaojin/article/category/5857877" title="CSDN"></a>
                             
                         </ul>
             </nav>
@@ -700,117 +696,6 @@ protected void onDraw(Canvas canvas) {
 
 
   
-    <article id="post-MVP" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/08/02/MVP/" class="article-date">
-      <time datetime="2017-08-02T02:21:02.393Z" itemprop="datePublished">2017-08-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/02/MVP/">MVP学习笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><strong>Sorry，引用文章的地址给忘了哪几个了。忘原作者见谅。</strong></p>
-<pre><code>M:Model,关注数据处理
-V:View,关注处理视图的可视化及与用户交互
-P:Presenter,关注业务处理
-</code></pre><p>###在MVP模式里通常包含4个要素：<br>     (1)View:负责绘制UI元素、与用户进行交互(在Android中体现为Activity);<br>     (2)View interface:需要View实现的接口，View通过View interface与Presenter进行交互，降低耦合，方便进行单元测试;<br>     (3)Model:负责存储、检索、操纵数据(有时也实现一个Model interface用来降低耦合);<br>     (4)Presenter:作为View与Model交互的中间纽带，处理与用户交互的负责逻辑。<br><img src="http://img.blog.csdn.net/20150309135723885?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdmVjdG9yX3lp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>###总结：</p>
-<pre><code>V:持有P的引用，项目规格不大，可以不使用P的接口
-P:持有M、V的接口实现对象
-
-**Note:** 
-防止Activity或Fragment声明周期结束后，一般执行耗时操作的Presenter层因为持有对Activity或Fragment的强引用，导致内存泄漏。
-
-**处理方法：**
-1.  解除绑定关系，在V层生命周期的OnDestory()中，调用P层持有的V，将其置空，解除和P层的关联。
-2.  为了弥补在特殊情况下，如系统突然回收内存，导致Activity的onStop、onDestory没有执行便被干掉，造成上一种方式解除绑定代码没有被执行，特还需要使用软引用或弱引用。
-
-
-/**
- * code from Android源码设计模式
- */
-public abstract class BasePresenter&lt;T&gt; {
-    protected Reference&lt;T&gt; mViewRef;
-
-    public void attachView(T view) {
-        mViewRef = new WeakReference&lt;T&gt;(view);
-    }
-
-    protected T getView() {
-        return mViewRef.get();
-    }
-
-    protected void detachView() {
-        if (mViewRef != null) {
-            mViewRef.clear();
-            mViewRef = null;
-        }
-    }
-}
-
-public abstract class MVPBaseActivity&lt;V, T extends BasePresenter&lt;V&gt;&gt; extends AppCompatActivity {
-    BasePresenter mPresenter;
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mPresenter = createPresenter();
-        mPresenter.attachView((V) this);
-    }
-
-    public abstract T createPresenter();
-
-    @Override
-    public void onDestroy() {
-        mPresenter.detachView();
-    }
-}
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-HttpURLConnection重定向" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1006,6 +891,117 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 `
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-MVP" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/08/02/MVP/" class="article-date">
+      <time datetime="2017-08-02T02:21:02.393Z" itemprop="datePublished">2017-08-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/02/MVP/">MVP学习笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>Sorry，引用文章的地址给忘了哪几个了。忘原作者见谅。</strong></p>
+<pre><code>M:Model,关注数据处理
+V:View,关注处理视图的可视化及与用户交互
+P:Presenter,关注业务处理
+</code></pre><p>###在MVP模式里通常包含4个要素：<br>     (1)View:负责绘制UI元素、与用户进行交互(在Android中体现为Activity);<br>     (2)View interface:需要View实现的接口，View通过View interface与Presenter进行交互，降低耦合，方便进行单元测试;<br>     (3)Model:负责存储、检索、操纵数据(有时也实现一个Model interface用来降低耦合);<br>     (4)Presenter:作为View与Model交互的中间纽带，处理与用户交互的负责逻辑。<br><img src="http://img.blog.csdn.net/20150309135723885?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdmVjdG9yX3lp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>###总结：</p>
+<pre><code>V:持有P的引用，项目规格不大，可以不使用P的接口
+P:持有M、V的接口实现对象
+
+**Note:** 
+防止Activity或Fragment声明周期结束后，一般执行耗时操作的Presenter层因为持有对Activity或Fragment的强引用，导致内存泄漏。
+
+**处理方法：**
+1.  解除绑定关系，在V层生命周期的OnDestory()中，调用P层持有的V，将其置空，解除和P层的关联。
+2.  为了弥补在特殊情况下，如系统突然回收内存，导致Activity的onStop、onDestory没有执行便被干掉，造成上一种方式解除绑定代码没有被执行，特还需要使用软引用或弱引用。
+
+
+/**
+ * code from Android源码设计模式
+ */
+public abstract class BasePresenter&lt;T&gt; {
+    protected Reference&lt;T&gt; mViewRef;
+
+    public void attachView(T view) {
+        mViewRef = new WeakReference&lt;T&gt;(view);
+    }
+
+    protected T getView() {
+        return mViewRef.get();
+    }
+
+    protected void detachView() {
+        if (mViewRef != null) {
+            mViewRef.clear();
+            mViewRef = null;
+        }
+    }
+}
+
+public abstract class MVPBaseActivity&lt;V, T extends BasePresenter&lt;V&gt;&gt; extends AppCompatActivity {
+    BasePresenter mPresenter;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mPresenter = createPresenter();
+        mPresenter.attachView((V) this);
+    }
+
+    public abstract T createPresenter();
+
+    @Override
+    public void onDestroy() {
+        mPresenter.detachView();
+    }
+}
 </code></pre>
       
     </div>
@@ -1494,7 +1490,7 @@ dependencies {
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016-2017 cuncaojin
+                2017 cuncaojin
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
