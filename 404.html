@@ -15,17 +15,14 @@
 
 
 
-<meta name="description" content="滑动的7种方法 1.layout（int left，int top ，int right， int right）     * left/top/right/right均为绝对坐标 2.offsetLeftAndRight和offsetTopAndBottom     * 与layout用法相同，是对layout方法的封装  3.LayoutParams     * **LinearLayout.L">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Android Scroll分析 ——《群英传》第五章">
-<meta property="og:url" content="http://yoursite.com/2017/08/02/Android动画的7种实现方式/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="404 Not Found：该页无法显示">
+<meta property="og:url" content="http://yoursite.com/404.html">
 <meta property="og:site_name" content="寸草金的博客">
-<meta property="og:description" content="滑动的7种方法 1.layout（int left，int top ，int right， int right）     * left/top/right/right均为绝对坐标 2.offsetLeftAndRight和offsetTopAndBottom     * 与layout用法相同，是对layout方法的封装  3.LayoutParams     * **LinearLayout.L">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-12-06T15:42:13.208Z">
+<meta property="og:updated_time" content="2017-08-02T03:17:58.098Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android Scroll分析 ——《群英传》第五章">
-<meta name="twitter:description" content="滑动的7种方法 1.layout（int left，int top ，int right， int right）     * left/top/right/right均为绝对坐标 2.offsetLeftAndRight和offsetTopAndBottom     * 与layout用法相同，是对layout方法的封装  3.LayoutParams     * **LinearLayout.L">
+<meta name="twitter:title" content="404 Not Found：该页无法显示">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +54,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Android Scroll分析 ——《群英传》第五章 | 寸草金的博客</title>
+<title>404 Not Found：该页无法显示 | 寸草金的博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -67,7 +64,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: true,
+        isPost: false,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -257,11 +254,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Android动画的7种实现方式" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/08/02/Android动画的7种实现方式/" class="article-date">
-      <time datetime="2017-08-02T02:21:02.456Z" itemprop="datePublished">2017-08-02</time>
+      <a href="/404.html" class="article-date">
+      <time datetime="2017-08-02T03:17:58.098Z" itemprop="datePublished">2017-08-02</time>
 </a>
 
 
@@ -276,7 +273,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Android Scroll分析 ——《群英传》第五章
+      404 Not Found：该页无法显示
     </h1>
   
 
@@ -293,94 +290,36 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong>滑动的7种方法</strong></p>
-<pre><code>1.layout（int left，int top ，int right， int right）
-    * left/top/right/right均为绝对坐标
-2.offsetLeftAndRight和offsetTopAndBottom
-    * 与layout用法相同，是对layout方法的封装 
-3.LayoutParams
-    * **LinearLayout.LayoutParams** params = (LinearLayout.LayoutParams)getLayoutParams();
-    * params.leftMargin = getLeft() + offsetX();
-    * params.topMargin = getRight（）+ offsetY();
-    * setLayoutParams(params);
+              <style>
+    .article-meta { display: none; }
+    #container .article .article-title { padding-right: 0; }
+    .article-header {
+        padding: 0;
+        padding-top: 26px;
+        border-left: none;
+        text-align: center;
+    }
+    .article-header:hover { border-left: none; }
+    .article-title { font-size: 1.6em }
+    .article-entry hr { margin: 0;}
+    .article-meta,
+    #container .article-info-post.article-info { display: none;}
+    #container .article .article-title { padding: 0; }
+</style>
 
-    * **ViewGroup.MarginLayoutParams** params = (ViewGroup.MarginLayoutParams)getLayoutParams();
-    * 同上
-4.ScrollTo和ScrollBy
-    （（View)getParent()).scrollBy(offsetX, offsetY);
-    注意：
-    1）移动的是内容。如果是ViewGroup，则移动的是子View；如果移动的是TextView，则移动的是文字；如果移动的是ImageView，则移动的是drawable
-    2）坐标参考系
-        这个比较特殊，可以理解为移动的是屏幕，而非View。举例：一个绝对坐标为（20,10）的Button，如果对其使用（（View)getParent()).scrollBy(20,10），则这个按钮将被移动到（0,0）。
-5.Scroller
-6.属性动画 
-7.ViewDragHelper
-</code></pre>
+
+          
+        
       
     </div>
     
   </div>
   
     
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/08/02/Android动画的7种实现方式/">Android Scroll分析 ——《群英传》第五章</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">cuncaojin</a></p>
-        <p><span>发布时间:</span>2017-08-02, 10:21:02</p>
-        <p><span>最后更新:</span>2016-12-06, 23:42:13</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/08/02/Android动画的7种实现方式/" title="Android Scroll分析 ——《群英传》第五章">http://yoursite.com/2017/08/02/Android动画的7种实现方式/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/08/02/Android动画的7种实现方式/　　作者: cuncaojin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
 
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/08/02/about/">
-                    
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/08/02/绘图/">
-                    Android 绘图 ——Android群英传 学习笔记
-                </a>
-            </div>
-        
-    </nav>
 
   
 </article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
 
 
 
@@ -398,7 +337,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Android Scroll分析 ——《群英传》第五章　| 寸草金的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"404 Not Found：该页无法显示　| 寸草金的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -411,28 +350,6 @@
 
 
 
-    
-
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2017/08/02/about/" title="上一篇: ">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2017/08/02/绘图/" title="下一篇: Android 绘图 ——Android群英传 学习笔记">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/about/">about</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Android动画的7种实现方式/">Android Scroll分析 ——《群英传》第五章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/绘图/">Android 绘图 ——Android群英传 学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/蚂蚁金服开放平台 RSA2/">蚂蚁金服. 开放平台. 文档中心</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/MVP/">MVP学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/HttpURLConnection重定向/">URL由http到https重定向，URLConnection下载失败</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Android/">收藏</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/开发素材/">开发练习素材，不至于素材</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Kotlin 协程/">Kotlin 协程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Toolbar/">Toolbar</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/即时通讯之环信集成采坑/">即时通讯之环信3.0集成采坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Java基础/">Java基础重温</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/hello-world/">Hello World</a></li></ul>
 
 
 
