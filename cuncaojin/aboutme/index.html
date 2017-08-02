@@ -15,17 +15,19 @@
 
 
 
-<meta name="description" content=".phoneNo p{ 				display: -webkit-flex; 				display: flex; 				/* 				 内容对齐（justify-content）属性应用在弹性容器上，把弹性项沿着弹性容器的主轴线（main axis）对齐。 				justify-content 语法如下： 				justify-content: flex-">
+<meta name="description" content="I❤U Fiona  		 		  		 		 		 		 		 		 		  		 			.flex-container { 				display: -webkit-flex; 				display: flex; 			} 			 			.logo { 				margin: auto; 				border-radius: 50%; 				width">
 <meta property="og:type" content="website">
 <meta property="og:title" content="寸草金的博客">
 <meta property="og:url" content="http://yoursite.com/cuncaojin/aboutme/index.html">
 <meta property="og:site_name" content="寸草金的博客">
-<meta property="og:description" content=".phoneNo p{ 				display: -webkit-flex; 				display: flex; 				/* 				 内容对齐（justify-content）属性应用在弹性容器上，把弹性项沿着弹性容器的主轴线（main axis）对齐。 				justify-content 语法如下： 				justify-content: flex-">
+<meta property="og:description" content="I❤U Fiona  		 		  		 		 		 		 		 		 		  		 			.flex-container { 				display: -webkit-flex; 				display: flex; 			} 			 			.logo { 				margin: auto; 				border-radius: 50%; 				width">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-02T03:06:09.979Z">
+<meta property="og:image" content="http://yoursite.com/cuncaojin/img/cuncaojin.png">
+<meta property="og:updated_time" content="2017-08-02T13:16:22.827Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="寸草金的博客">
-<meta name="twitter:description" content=".phoneNo p{ 				display: -webkit-flex; 				display: flex; 				/* 				 内容对齐（justify-content）属性应用在弹性容器上，把弹性项沿着弹性容器的主轴线（main axis）对齐。 				justify-content 语法如下： 				justify-content: flex-">
+<meta name="twitter:description" content="I❤U Fiona  		 		  		 		 		 		 		 		 		  		 			.flex-container { 				display: -webkit-flex; 				display: flex; 			} 			 			.logo { 				margin: auto; 				border-radius: 50%; 				width">
+<meta name="twitter:image" content="http://yoursite.com/cuncaojin/img/cuncaojin.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -261,7 +263,7 @@
   
     <div class="article-meta">
       <a href="/cuncaojin/aboutme/index.html" class="article-date">
-      <time datetime="2017-08-02T04:35:20.077Z" itemprop="datePublished">2017-08-02</time>
+      <time datetime="2017-08-02T13:16:22.827Z" itemprop="datePublished">2017-08-02</time>
 </a>
 
 
@@ -298,36 +300,91 @@
 <html>
 
 	<head>
-		<meta charset="UTF-8">
-		<title></title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>I❤U Fiona</title>
+
+		<!-- Bootstrap -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="../js/jquery-2.1.0.js"></script>
+		<script src="../js/carousel.js"></script>
+		<link href="../css/animate.css" rel="stylesheet">
+		<link rel="stylesheet" href="../css/magic.min.css">
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="../js/bootstrap.min.js"></script>
+
 		<style type="text/css">
-			.phoneNo p{
+			.flex-container {
 				display: -webkit-flex;
 				display: flex;
-				/*
-				 内容对齐（justify-content）属性应用在弹性容器上，把弹性项沿着弹性容器的主轴线（main axis）对齐。
-				justify-content 语法如下：
-				justify-content: flex-start | flex-end | center | space-between | space-around
-				*/
-				-webkit-justify-content: center;
-				justify-content: center;
-				/*flex-wrap 属性用于指定弹性盒子的子元素换行方式。。*/
-				-webkit-flex-wrap: wrap;
-				flex-direction: row-reverse;
-				flex-wrap: wrap;
-				/*align-content 属性用于修改 flex-wrap 属性的行为。类似于 align-items, 但它不是设置弹性子元素的对齐，而是设置各个行的对齐。*/
-				-webkit-align-content: center;
-				align-content: center;
-				font-size: 50px;
+			}
+			
+			.logo {
+				margin: auto;
+				border-radius: 50%;
+				width: 160px;
+				height: 160px;
+			}
+			
+			.logo:hover {
+				width: 200px;
+				height: 200px;
+				box-shadow: 3px 3px 3px #9D9D9D;
+			}
+			
+			.phoneNo {
+				margin: 16px;
+				font-size: 2em;
+				text-align: center;
+			}
+			
+			.phoneNo:hover {
+				text-shadow: 2px 2px 2px #FFFF00;
 				color: #FF0000;
-				text-shadow: 5px 5px 5px #FBC054;
 			}
 		</style>
+		<script type="text/javascript">
+			var time = 0;
+			var direction = true;
+			var pn = "18811716119";
+			$(function() {
+				runId = setInterval(run, (time * 20) + 200);
+			});
+
+			function run() {
+
+				if(!direction) {
+					// clearInterval(runId);
+					console.log(pn);
+					$("#phoneNumber").text(pn.substring(0, ((--time - 1) % pn.length + 1)));
+				} else {
+					$("#phoneNumber").text(pn.substring(0, (time++ % pn.length + 1)));
+				}
+
+				if((pn == $("#phoneNumber").text()) || ("" == $("#phoneNumber").text())) {
+					direction = !direction;
+					console.log(direction + "---");
+					if(direction) {
+						$("#phoneNumber").removeClass("animated tada");
+					} else {
+						$("#phoneNumber").addClass("animated tada");
+						clearInterval(runId);
+					}
+				}
+			}
+		</script>
 	</head>
 
 	<body>
-		<div class="phoneNo">
-			<p>18811716119</p>
+		<div class="container-fluid">
+			<div class="flex-container">
+				<img class="logo" src="../img/cuncaojin.png">
+			</div>
+			<p id="phoneNumber" class="phoneNo"> 18811716119 </p>
 		</div>
 	</body>
 

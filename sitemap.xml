@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/cuncaojin/fiona/index.html</loc>
+    
+    <lastmod>2017-08-02T13:58:07.352Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/cuncaojin/aboutme/index.html</loc>
+    
+    <lastmod>2017-08-02T13:16:22.827Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/08/02/world/</loc>
     
     <lastmod>2017-08-02T08:10:31.251Z</lastmod>
@@ -16,23 +30,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/cuncaojin/aboutme/index.html</loc>
-    
-    <lastmod>2017-08-02T03:06:09.979Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2017/08/02/hello-world/</loc>
     
     <lastmod>2017-08-02T02:05:20.934Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/cuncaojin/fiona/index.html</loc>
-    
-    <lastmod>2017-08-01T07:59:44.556Z</lastmod>
     
   </url>
   
