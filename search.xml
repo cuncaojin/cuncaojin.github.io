@@ -3,51 +3,6 @@
   
     
     <entry>
-      <title></title>
-      <url>/2017/08/02/about/</url>
-      <content type="html"><![CDATA[<!DOCTYPE html>
-<html>
-
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<style type="text/css">
-			.phoneNo p{
-				display: -webkit-flex;
-				display: flex;
-				/*
-				 内容对齐（justify-content）属性应用在弹性容器上，把弹性项沿着弹性容器的主轴线（main axis）对齐。
-				justify-content 语法如下：
-				justify-content: flex-start | flex-end | center | space-between | space-around
-				*/
-				-webkit-justify-content: center;
-				justify-content: center;
-				/*flex-wrap 属性用于指定弹性盒子的子元素换行方式。。*/
-				-webkit-flex-wrap: wrap;
-				flex-direction: row-reverse;
-				flex-wrap: wrap;
-				/*align-content 属性用于修改 flex-wrap 属性的行为。类似于 align-items, 但它不是设置弹性子元素的对齐，而是设置各个行的对齐。*/
-				-webkit-align-content: center;
-				align-content: center;
-				font-size: 50px;
-				color: #FF0000;
-				text-shadow: 5px 5px 5px #FBC054;
-			}
-		</style>
-	</head>
-
-	<body>
-		<div class="phoneNo">
-			<p>18811716119</p>
-		</div>
-	</body>
-
-</html>]]></content>
-      
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Android Scroll分析 ——《群英传》第五章]]></title>
       <url>/2017/08/02/Android%E5%8A%A8%E7%94%BB%E7%9A%847%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</url>
       <content type="html"><![CDATA[<p><strong>滑动的7种方法</strong></p>
