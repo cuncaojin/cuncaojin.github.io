@@ -2,23 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/index.html</loc>
+    <loc>http://yoursite.com/cuncaojin/aboutme/index.html</loc>
+    
+    <lastmod>2017-08-03T14:01:40.055Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/cuncaojin/fiona/index.html</loc>
+    
+    <lastmod>2017-08-03T14:01:02.848Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
     
     <lastmod>2017-08-03T13:14:01.663Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/fiona/index.html</loc>
+    <loc>http://yoursite.com/index.html</loc>
     
-    <lastmod>2017-08-03T13:13:46.759Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/aboutme/index.html</loc>
-    
-    <lastmod>2017-08-03T13:13:36.021Z</lastmod>
+    <lastmod>2017-08-03T13:14:01.663Z</lastmod>
     
   </url>
   
