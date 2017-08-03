@@ -22,13 +22,13 @@
 <meta property="og:site_name" content="寸草金的博客">
 <meta property="og:description" content="I❤U Fiona  		 		  		 		 		 		 		 		 		 		 			.firstImgClass { 				/*修改所有图片的颜色为黑白 (100% 灰度):*/ 				-webkit-filter: grayscale(100%); 				/* Chrome, Safari, Opera */ 				filter: graysc">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/cuncaojin/apple-touch-icon.png">
-<meta property="og:image" content="http://yoursite.com/cuncaojin/apple-touch-icon.png">
-<meta property="og:updated_time" content="2017-08-02T13:58:07.352Z">
+<meta property="og:image" content="http://yoursite.com/cuncaojin/img/wuhan.jpg">
+<meta property="og:image" content="http://yoursite.com/cuncaojin/img/wuhan.jpg">
+<meta property="og:updated_time" content="2017-08-02T19:28:28.405Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="寸草金的博客">
 <meta name="twitter:description" content="I❤U Fiona  		 		  		 		 		 		 		 		 		 		 			.firstImgClass { 				/*修改所有图片的颜色为黑白 (100% 灰度):*/ 				-webkit-filter: grayscale(100%); 				/* Chrome, Safari, Opera */ 				filter: graysc">
-<meta name="twitter:image" content="http://yoursite.com/cuncaojin/apple-touch-icon.png">
+<meta name="twitter:image" content="http://yoursite.com/cuncaojin/img/wuhan.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -37,7 +37,7 @@
 
 
 
-    <link rel="shortcut icon" href="https://avatars1.githubusercontent.com/u/12715679?v=4&s=460">
+    <link rel="shortcut icon" href="/cuncaojin/img/smalllogo.png">
 
 
 
@@ -81,7 +81,9 @@
 </script>
 
 
-    <script> yiliaConfig.jquery_ui = [false]; </script>
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
 
 
 
@@ -100,7 +102,7 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
-            <img src="https://avatars1.githubusercontent.com/u/12715679?v=4&amp;s=460" class="animated zoomIn">
+            <img src="/cuncaojin/img/wuhan.jpg" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/">cuncaojin</a></h1>
@@ -163,7 +165,7 @@
                         
                             <li><a href="/archives/">所有文章</a></li>
                         
-                            <li><a href="/tags/">标签云</a></li>
+                            <li><a href="/cuncaojin/tags/">标签云</a></li>
                         
                             <li><a href="/cuncaojin/aboutme/">关于我</a></li>
                         
@@ -177,6 +179,8 @@
                                 <a class="fa GitHub" href="https://github.com/cuncaojin" title="GitHub"></a>
                             
                                 <a class="fa CSDN" href="http://blog.csdn.net/cuncaojin/article/category/5857877" title="CSDN"></a>
+                            
+                                <a class="fa 微信" href="/Wechat" title="微信"></a>
                             
                         </ul>
                     </nav>
@@ -225,7 +229,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/" class="profilepic">
-                <img src="https://avatars1.githubusercontent.com/u/12715679?v=4&amp;s=460" class="animated zoomIn">
+                <img src="/cuncaojin/img/wuhan.jpg" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/" title="回到主页">cuncaojin</a></h1>
@@ -238,7 +242,7 @@
                 
                     <li><a href="/archives/">所有文章</a></li>
                 
-                    <li><a href="/tags/">标签云</a></li>
+                    <li><a href="/cuncaojin/tags/">标签云</a></li>
                 
                     <li><a href="/cuncaojin/aboutme/">关于我</a></li>
                 
@@ -254,6 +258,8 @@
                             
                                 <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/cuncaojin/article/category/5857877" title="CSDN"></a>
                             
+                                <a class="fa 微信" target="_blank" href="/Wechat" title="微信"></a>
+                            
                         </ul>
             </nav>
         </header>                
@@ -264,7 +270,7 @@
   
     <div class="article-meta">
       <a href="/cuncaojin/fiona/index.html" class="article-date">
-      <time datetime="2017-08-02T13:58:07.352Z" itemprop="datePublished">2017-08-02</time>
+      <time datetime="2017-08-02T19:28:28.405Z" itemprop="datePublished">2017-08-03</time>
 </a>
 
 
@@ -412,53 +418,14 @@
 			
 			img {
 				float: left;
-				border-radius: 50%;
+				border-radius: 8%;
 				width: 150px;
 				height: 150px
-			}
-			
-			.div1 {
-				position: relative;
-				float: left;
-				left: 120px;
-				width: 200px;
-				height: 100px;
-				border: 1px solid blue;
-				background-color: #FBC054;
-				display: -webkit-flex;
-				display: flex;
-				/*
-				 内容对齐（justify-content）属性应用在弹性容器上，把弹性项沿着弹性容器的主轴线（main axis）对齐。
-				justify-content 语法如下：
-				justify-content: flex-start | flex-end | center | space-between | space-around
-				*/
-				-webkit-justify-content: center;
-				justify-content: center;
-				/*flex-wrap 属性用于指定弹性盒子的子元素换行方式。。*/
-				-webkit-flex-wrap: wrap;
-				flex-direction: row-reverse;
-				flex-wrap: wrap;
-				/*align-content 属性用于修改 flex-wrap 属性的行为。类似于 align-items, 但它不是设置弹性子元素的对齐，而是设置各个行的对齐。*/
-				-webkit-align-content: center;
-				align-content: center;
 			}
 			
 			p {
 				/*子元素上设置了 margin-left: auto; 。 它将剩余的空间放置在元素的左侧*/
 				/*margin-left: auto;*/
-			}
-			
-			.div1 p {
-				font-size: 20px;
-				color: #FF0000;
-			}
-			
-			.div2 {
-				width: 100px;
-				height: 100px;
-				padding: 10px;
-				background-color: #0099E5;
-				border: 1px solid red;
 			}
 		</style>
 		<script type="text/javascript">
@@ -497,14 +464,9 @@
 	</head>
 
 	<body>
-
-		<div class="div1">
-			<p>fiona</p>
-		</div>
-		<div class="div2"></div>
-		<img class="firstImgClass" src="../apple-touch-icon.png" alt="..">
-		<img src="../apple-touch-icon.png">
-		<div style="clear: both;">div clearboth</div>
+		<img class="firstImgClass" src="../img/wuhan.jpg" alt="..">
+		<img src="../img/wuhan.jpg">
+		<div style="clear: both;"></div>
 		<div id="fionaDivId">
 
 		</div>
@@ -582,7 +544,7 @@
                 $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
             }
             else {
-                var backgroundnum = 5;
+                var backgroundnum = 7;
                 var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
@@ -619,6 +581,23 @@
         }
     
 </script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "ILoveYou" + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "I❤U" + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>

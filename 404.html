@@ -34,7 +34,7 @@
 
 
 
-    <link rel="shortcut icon" href="https://avatars1.githubusercontent.com/u/12715679?v=4&s=460">
+    <link rel="shortcut icon" href="/cuncaojin/img/smalllogo.png">
 
 
 
@@ -78,7 +78,9 @@
 </script>
 
 
-    <script> yiliaConfig.jquery_ui = [false]; </script>
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
 
 
 
@@ -97,7 +99,7 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
-            <img src="https://avatars1.githubusercontent.com/u/12715679?v=4&amp;s=460" class="animated zoomIn">
+            <img src="/cuncaojin/img/wuhan.jpg" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/">cuncaojin</a></h1>
@@ -160,7 +162,7 @@
                         
                             <li><a href="/archives/">所有文章</a></li>
                         
-                            <li><a href="/tags/">标签云</a></li>
+                            <li><a href="/cuncaojin/tags/">标签云</a></li>
                         
                             <li><a href="/cuncaojin/aboutme/">关于我</a></li>
                         
@@ -174,6 +176,8 @@
                                 <a class="fa GitHub" href="https://github.com/cuncaojin" title="GitHub"></a>
                             
                                 <a class="fa CSDN" href="http://blog.csdn.net/cuncaojin/article/category/5857877" title="CSDN"></a>
+                            
+                                <a class="fa 微信" href="/Wechat" title="微信"></a>
                             
                         </ul>
                     </nav>
@@ -222,7 +226,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/" class="profilepic">
-                <img src="https://avatars1.githubusercontent.com/u/12715679?v=4&amp;s=460" class="animated zoomIn">
+                <img src="/cuncaojin/img/wuhan.jpg" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/" title="回到主页">cuncaojin</a></h1>
@@ -235,7 +239,7 @@
                 
                     <li><a href="/archives/">所有文章</a></li>
                 
-                    <li><a href="/tags/">标签云</a></li>
+                    <li><a href="/cuncaojin/tags/">标签云</a></li>
                 
                     <li><a href="/cuncaojin/aboutme/">关于我</a></li>
                 
@@ -250,6 +254,8 @@
                                 <a class="fa GitHub" target="_blank" href="https://github.com/cuncaojin" title="GitHub"></a>
                             
                                 <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/cuncaojin/article/category/5857877" title="CSDN"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/Wechat" title="微信"></a>
                             
                         </ul>
             </nav>
@@ -402,7 +408,7 @@
                 $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
             }
             else {
-                var backgroundnum = 5;
+                var backgroundnum = 7;
                 var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
@@ -439,6 +445,23 @@
         }
     
 </script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "ILoveYou" + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "I❤U" + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>

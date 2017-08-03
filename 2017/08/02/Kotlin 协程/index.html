@@ -36,7 +36,7 @@
 
 
 
-    <link rel="shortcut icon" href="https://avatars1.githubusercontent.com/u/12715679?v=4&s=460">
+    <link rel="shortcut icon" href="/cuncaojin/img/smalllogo.png">
 
 
 
@@ -80,7 +80,9 @@
 </script>
 
 
-    <script> yiliaConfig.jquery_ui = [false]; </script>
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
 
 
 
@@ -99,7 +101,7 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
-            <img src="https://avatars1.githubusercontent.com/u/12715679?v=4&amp;s=460" class="animated zoomIn">
+            <img src="/cuncaojin/img/wuhan.jpg" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/">cuncaojin</a></h1>
@@ -162,7 +164,7 @@
                         
                             <li><a href="/archives/">所有文章</a></li>
                         
-                            <li><a href="/tags/">标签云</a></li>
+                            <li><a href="/cuncaojin/tags/">标签云</a></li>
                         
                             <li><a href="/cuncaojin/aboutme/">关于我</a></li>
                         
@@ -176,6 +178,8 @@
                                 <a class="fa GitHub" href="https://github.com/cuncaojin" title="GitHub"></a>
                             
                                 <a class="fa CSDN" href="http://blog.csdn.net/cuncaojin/article/category/5857877" title="CSDN"></a>
+                            
+                                <a class="fa 微信" href="/Wechat" title="微信"></a>
                             
                         </ul>
                     </nav>
@@ -224,7 +228,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/" class="profilepic">
-                <img src="https://avatars1.githubusercontent.com/u/12715679?v=4&amp;s=460" class="animated zoomIn">
+                <img src="/cuncaojin/img/wuhan.jpg" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/" title="回到主页">cuncaojin</a></h1>
@@ -237,7 +241,7 @@
                 
                     <li><a href="/archives/">所有文章</a></li>
                 
-                    <li><a href="/tags/">标签云</a></li>
+                    <li><a href="/cuncaojin/tags/">标签云</a></li>
                 
                     <li><a href="/cuncaojin/aboutme/">关于我</a></li>
                 
@@ -252,6 +256,8 @@
                                 <a class="fa GitHub" target="_blank" href="https://github.com/cuncaojin" title="GitHub"></a>
                             
                                 <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/cuncaojin/article/category/5857877" title="CSDN"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/Wechat" title="微信"></a>
                             
                         </ul>
             </nav>
@@ -358,35 +364,20 @@ public abstract class MVPBaseActivity&lt;V, T extends BasePresenter&lt;V&gt;&gt;
   </div>
   
     
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/08/02/Kotlin 协程/">Kotlin 协程</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">cuncaojin</a></p>
-        <p><span>发布时间:</span>2017-08-02, 10:21:02</p>
-        <p><span>最后更新:</span>2017-03-06, 13:06:26</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/08/02/Kotlin 协程/" title="Kotlin 协程">http://yoursite.com/2017/08/02/Kotlin 协程/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/08/02/Kotlin 协程/　　作者: cuncaojin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
 
 
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/08/02/开发素材/">
-                    开发练习素材，不至于素材
+                <a href="/2017/08/02/Toolbar/">
+                    Toolbar
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/08/02/Toolbar/">
-                    Toolbar
+                <a href="/2017/08/02/即时通讯之环信集成采坑/">
+                    即时通讯之环信3.0集成采坑
                 </a>
             </div>
         
@@ -429,7 +420,7 @@ public abstract class MVPBaseActivity&lt;V, T extends BasePresenter&lt;V&gt;&gt;
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/08/02/开发素材/" title="上一篇: 开发练习素材，不至于素材">
+            <a href="/2017/08/02/Toolbar/" title="上一篇: Toolbar">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -437,13 +428,13 @@ public abstract class MVPBaseActivity&lt;V, T extends BasePresenter&lt;V&gt;&gt;
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/08/02/Toolbar/" title="下一篇: Toolbar">
+            <a href="/2017/08/02/即时通讯之环信集成采坑/" title="下一篇: 即时通讯之环信3.0集成采坑">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/world/">world</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Android动画的7种实现方式/">Android Scroll分析 ——《群英传》第五章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/绘图/">Android 绘图 ——Android群英传 学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/蚂蚁金服开放平台 RSA2/">蚂蚁金服. 开放平台. 文档中心</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/MVP/">MVP学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/HttpURLConnection重定向/">URL由http到https重定向，URLConnection下载失败</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Android/">收藏</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/开发素材/">开发练习素材，不至于素材</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Kotlin 协程/">Kotlin 协程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Toolbar/">Toolbar</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/即时通讯之环信集成采坑/">即时通讯之环信3.0集成采坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Java基础/">Java基础重温</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Android动画的7种实现方式/">Android Scroll分析 ——《群英传》第五章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/绘图/">Android 绘图 ——Android群英传 学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/蚂蚁金服开放平台 RSA2/">蚂蚁金服. 开放平台. 文档中心</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/HttpURLConnection重定向/">URL由http到https重定向，URLConnection下载失败</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/MVP/">MVP学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Android/">收藏</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/开发素材/">开发练习素材，不至于素材</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Toolbar/">Toolbar</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Kotlin 协程/">Kotlin 协程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/即时通讯之环信集成采坑/">即时通讯之环信3.0集成采坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Java基础/">Java基础重温</a></li></ul>
 
 
 
@@ -497,7 +488,7 @@ public abstract class MVPBaseActivity&lt;V, T extends BasePresenter&lt;V&gt;&gt;
                 $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
             }
             else {
-                var backgroundnum = 5;
+                var backgroundnum = 7;
                 var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
@@ -534,6 +525,23 @@ public abstract class MVPBaseActivity&lt;V, T extends BasePresenter&lt;V&gt;&gt;
         }
     
 </script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "ILoveYou" + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "I❤U" + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
