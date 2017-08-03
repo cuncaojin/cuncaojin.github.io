@@ -30,7 +30,7 @@
 
 
 
-    <link rel="shortcut icon" href="/cuncaojin/img/smalllogo.png">
+    <link rel="shortcut icon" href="/img/smalllogo.png">
 
 
 
@@ -69,7 +69,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: 
+        search: true
     }
 </script>
 
@@ -95,7 +95,7 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
-            <img src="/cuncaojin/img/wuhan.jpg" class="animated zoomIn">
+            <img src="/img/wuhan.jpg" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/">cuncaojin</a></h1>
@@ -104,8 +104,55 @@
         
 
         
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
 
 
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
         
 
         <div id="switch-area" class="switch-area">
@@ -118,11 +165,11 @@
                         
                             <li><a href="/archives/">所有文章</a></li>
                         
-                            <li><a href="/cuncaojin/tags/">标签云</a></li>
+                            <li><a href="/tags/">标签云</a></li>
                         
-                            <li><a href="/cuncaojin/aboutme/">关于我</a></li>
+                            <li><a href="/aboutme/">关于我</a></li>
                         
-                            <li><a href="/cuncaojin/fiona/">FIONA</a></li>
+                            <li><a href="/fiona/">FIONA</a></li>
                         
                         </ul>
                     </nav>
@@ -139,6 +186,12 @@
                     </nav>
                 </section>
                 
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
                 
                 
                 
@@ -176,7 +229,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/" class="profilepic">
-                <img src="/cuncaojin/img/wuhan.jpg" class="animated zoomIn">
+                <img src="/img/wuhan.jpg" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/" title="回到主页">cuncaojin</a></h1>
@@ -189,11 +242,11 @@
                 
                     <li><a href="/archives/">所有文章</a></li>
                 
-                    <li><a href="/cuncaojin/tags/">标签云</a></li>
+                    <li><a href="/tags/">标签云</a></li>
                 
-                    <li><a href="/cuncaojin/aboutme/">关于我</a></li>
+                    <li><a href="/aboutme/">关于我</a></li>
                 
-                    <li><a href="/cuncaojin/fiona/">FIONA</a></li>
+                    <li><a href="/fiona/">FIONA</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -317,7 +370,7 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
           <div class="article-meta">
-              <a href="/2017/08/02/HttpURLConnection重定向/" class="archive-article-date">
+              <a href="/2017/08/02/MVP/" class="archive-article-date">
       <time datetime="2017-08-02T02:21:02.393Z" itemprop="datePublished">08-02</time>
 </a>
 
@@ -326,7 +379,7 @@
          
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/02/HttpURLConnection重定向/">URL由http到https重定向，URLConnection下载失败</a>
+      <a class="archive-article-title" href="/2017/08/02/MVP/">MVP学习笔记</a>
     </h1>
   
 
@@ -346,7 +399,7 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
           <div class="article-meta">
-              <a href="/2017/08/02/MVP/" class="archive-article-date">
+              <a href="/2017/08/02/HttpURLConnection重定向/" class="archive-article-date">
       <time datetime="2017-08-02T02:21:02.393Z" itemprop="datePublished">08-02</time>
 </a>
 
@@ -355,7 +408,7 @@
          
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/02/MVP/">MVP学习笔记</a>
+      <a class="archive-article-title" href="/2017/08/02/HttpURLConnection重定向/">URL由http到https重定向，URLConnection下载失败</a>
     </h1>
   
 

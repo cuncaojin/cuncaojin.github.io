@@ -15,20 +15,19 @@
 
 
 
-<meta name="description" content="I❤U Fiona  		 		  		 		 		 		 		 		 		 		 			.firstImgClass { 				/*修改所有图片的颜色为黑白 (100% 灰度):*/ 				-webkit-filter: grayscale(100%); 				/* Chrome, Safari, Opera */ 				filter: graysc">
+<meta name="description" content="I❤U Fiona  		 		  		 		 		 		 		 		 		  		 			.flex-container { 				display: -webkit-flex; 				display: flex; 			} 			 			.logo { 				margin: auto; 				border-radius: 50%; 				width">
 <meta property="og:type" content="website">
 <meta property="og:title" content="寸草金的博客">
-<meta property="og:url" content="http://yoursite.com/cuncaojin/fiona/index.html">
+<meta property="og:url" content="http://yoursite.com/aboutme/index.html">
 <meta property="og:site_name" content="寸草金的博客">
-<meta property="og:description" content="I❤U Fiona  		 		  		 		 		 		 		 		 		 		 			.firstImgClass { 				/*修改所有图片的颜色为黑白 (100% 灰度):*/ 				-webkit-filter: grayscale(100%); 				/* Chrome, Safari, Opera */ 				filter: graysc">
+<meta property="og:description" content="I❤U Fiona  		 		  		 		 		 		 		 		 		  		 			.flex-container { 				display: -webkit-flex; 				display: flex; 			} 			 			.logo { 				margin: auto; 				border-radius: 50%; 				width">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/cuncaojin/img/wuhan.jpg">
-<meta property="og:image" content="http://yoursite.com/cuncaojin/img/wuhan.jpg">
-<meta property="og:updated_time" content="2017-08-02T19:28:28.405Z">
+<meta property="og:image" content="http://yoursite.com/img/biglogo.png">
+<meta property="og:updated_time" content="2017-08-02T19:18:45.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="寸草金的博客">
-<meta name="twitter:description" content="I❤U Fiona  		 		  		 		 		 		 		 		 		 		 			.firstImgClass { 				/*修改所有图片的颜色为黑白 (100% 灰度):*/ 				-webkit-filter: grayscale(100%); 				/* Chrome, Safari, Opera */ 				filter: graysc">
-<meta name="twitter:image" content="http://yoursite.com/cuncaojin/img/wuhan.jpg">
+<meta name="twitter:description" content="I❤U Fiona  		 		  		 		 		 		 		 		 		  		 			.flex-container { 				display: -webkit-flex; 				display: flex; 			} 			 			.logo { 				margin: auto; 				border-radius: 50%; 				width">
+<meta name="twitter:image" content="http://yoursite.com/img/biglogo.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -37,7 +36,7 @@
 
 
 
-    <link rel="shortcut icon" href="/cuncaojin/img/smalllogo.png">
+    <link rel="shortcut icon" href="/img/smalllogo.png">
 
 
 
@@ -76,7 +75,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: 
+        search: true
     }
 </script>
 
@@ -102,7 +101,7 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
-            <img src="/cuncaojin/img/wuhan.jpg" class="animated zoomIn">
+            <img src="/img/wuhan.jpg" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/">cuncaojin</a></h1>
@@ -111,8 +110,55 @@
         
 
         
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
 
 
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
         
 
         <div id="switch-area" class="switch-area">
@@ -125,11 +171,11 @@
                         
                             <li><a href="/archives/">所有文章</a></li>
                         
-                            <li><a href="/cuncaojin/tags/">标签云</a></li>
+                            <li><a href="/tags/">标签云</a></li>
                         
-                            <li><a href="/cuncaojin/aboutme/">关于我</a></li>
+                            <li><a href="/aboutme/">关于我</a></li>
                         
-                            <li><a href="/cuncaojin/fiona/">FIONA</a></li>
+                            <li><a href="/fiona/">FIONA</a></li>
                         
                         </ul>
                     </nav>
@@ -146,6 +192,12 @@
                     </nav>
                 </section>
                 
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
                 
                 
                 
@@ -183,7 +235,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/" class="profilepic">
-                <img src="/cuncaojin/img/wuhan.jpg" class="animated zoomIn">
+                <img src="/img/wuhan.jpg" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/" title="回到主页">cuncaojin</a></h1>
@@ -196,11 +248,11 @@
                 
                     <li><a href="/archives/">所有文章</a></li>
                 
-                    <li><a href="/cuncaojin/tags/">标签云</a></li>
+                    <li><a href="/tags/">标签云</a></li>
                 
-                    <li><a href="/cuncaojin/aboutme/">关于我</a></li>
+                    <li><a href="/aboutme/">关于我</a></li>
                 
-                    <li><a href="/cuncaojin/fiona/">FIONA</a></li>
+                    <li><a href="/fiona/">FIONA</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -223,8 +275,8 @@
       <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/cuncaojin/fiona/index.html" class="article-date">
-      <time datetime="2017-08-02T19:28:28.405Z" itemprop="datePublished">2017-08-03</time>
+      <a href="/aboutme/index.html" class="article-date">
+      <time datetime="2017-08-02T19:18:45.933Z" itemprop="datePublished">2017-08-03</time>
 </a>
 
 
@@ -258,7 +310,7 @@
 
           
         <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 
 	<head>
 		<meta charset="utf-8">
@@ -277,154 +329,76 @@
 		<link rel="stylesheet" href="../css/magic.min.css">
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="../js/bootstrap.min.js"></script>
+
 		<style type="text/css">
-			.firstImgClass {
-				/*修改所有图片的颜色为黑白 (100% 灰度):*/
-				-webkit-filter: grayscale(100%);
-				/* Chrome, Safari, Opera */
-				filter: grayscale(100%);
-				opacity: 0;
+			.flex-container {
+				display: -webkit-flex;
+				display: flex;
+			}
+			
+			.logo {
+				margin: auto;
+				border-radius: 50%;
+				width: 160px;
+				height: 160px;
+			}
+			
+			.logo:hover {
+				width: 200px;
+				height: 200px;
+				box-shadow: 3px 3px 3px #9D9D9D;
+			}
+			
+			.phoneNo {
+				margin: 16px;
+				font-size: 2em;
 				text-align: center;
-				font-size: 26px;
-				-webkit-animation: animations2 1s ease-in-out .5s forwards;
-				-moz-animation: animations2 1s ease-in-out .5s forwards;
-				animation: animations2 1s ease-in-out .5s forwards;
 			}
 			
-			@-webkit-keyframes animations2 {
-				0% {
-					opacity: 0.1;
-					-webkit-transform: scale(1);
-				}
-				40% {
-					opacity: .8;
-				}
-				45% {
-					opacity: .3;
-				}
-				50% {
-					opacity: .8;
-					-webkit-transform: scale(.5);
-				}
-				55% {
-					opacity: .3;
-				}
-				60% {
-					opacity: .8;
-				}
-				100% {
-					opacity: 1;
-					-webkit-transform: scale(.8);
-				}
-			}
-			
-			@-moz-keyframes animations2 {
-				0% {
-					opacity: 0.1;
-					-moz-transform: scale(.8);
-				}
-				40% {
-					opacity: .8;
-				}
-				45% {
-					opacity: .3;
-				}
-				50% {
-					opacity: .8;
-				}
-				55% {
-					opacity: .3;
-				}
-				60% {
-					opacity: .8;
-				}
-				100% {
-					opacity: 1;
-					-moz-transform: scale(.8);
-				}
-			}
-			
-			@keyframes animations2 {
-				0% {
-					opacity: 0.1;
-					transform: scale(0.8);
-				}
-				40% {
-					opacity: .8;
-				}
-				45% {
-					opacity: .3;
-				}
-				50% {
-					opacity: .8;
-				}
-				55% {
-					opacity: .3;
-				}
-				60% {
-					opacity: .8;
-				}
-				100% {
-					opacity: 1;
-					transform: scale(0.8);
-				}
-			}
-			
-			img {
-				float: left;
-				border-radius: 8%;
-				width: 150px;
-				height: 150px
-			}
-			
-			p {
-				/*子元素上设置了 margin-left: auto; 。 它将剩余的空间放置在元素的左侧*/
-				/*margin-left: auto;*/
+			.phoneNo:hover {
+				text-shadow: 2px 2px 2px #FFFF00;
+				color: #FF0000;
 			}
 		</style>
 		<script type="text/javascript">
-			var array = new Array("tada", "pulse", "shake", "infinite", "headShake", "bounceInLeft");
+			var time = 0;
+			var direction = true;
+			var pn = "18811716119";
 			$(function() {
-				$("#fionaDivId").empty();
-				for(var i = 1; i < 10; i++) {
-					var url = "<img class='img-rounded" + i + "' style='float: left; margin: 10px;' src='../img/Fiona/fiona (" + i + ").png'></img>";
-					$("#fionaDivId").append(url);
-					//					$("img.img-rounded "+i).each(function() {
-					//						//						$(this).click(function() {
-					//						//							$(this).addClass("animated shake").one("webkitAnimationEnd mozAnimationEnd oAnimationEnd MSAnimationEnd animationend", function() {
-					//						//								$(this).removeClass("animated shake");
-					//						//							})
-					//
-					//						//						})
-					//						$(this).addClass(array[i%3])
-					//					})
+				runId = setInterval(run, (time * 20) + 200);
+			});
 
-					$(".img-rounded" + i).click(function() {
-						var name = array[Math.floor(Math.random() * array.length)];
-						$(this).addClass("animated " + name).one("webkitAnimationEnd mozAnimationEnd oAnimationEnd MSAnimationEnd animationend", function() {
-							for(var i = 0; i < array.length; i++) {
-								$(this).removeClass(array[i]);
-							}
-						});
-					})
-					//						alert($(".img-rounded" + i).prop("class")+"-"+i);
-					//					$(".img-rounded" + i).click(function() {})
+			function run() {
 
-					//					$(".img-rounded" + i).addClass('magictime pull-left');
+				if(!direction) {
+					// clearInterval(runId);
+					console.log(pn);
+					$("#phoneNumber").text(pn.substring(0, ((--time - 1) % pn.length + 1)));
+				} else {
+					$("#phoneNumber").text(pn.substring(0, (time++ % pn.length + 1)));
 				}
 
-			});
+				if((pn == $("#phoneNumber").text()) || ("" == $("#phoneNumber").text())) {
+					direction = !direction;
+					console.log(direction + "---");
+					if(direction) {
+						$("#phoneNumber").removeClass("animated tada");
+					} else {
+						$("#phoneNumber").addClass("animated tada");
+						clearInterval(runId);
+					}
+				}
+			}
 		</script>
 	</head>
 
 	<body>
-		<img class="firstImgClass" src="../img/wuhan.jpg" alt="..">
-		<img src="../img/wuhan.jpg">
-		<div style="clear: both;"></div>
-		<div id="fionaDivId">
-
+		<div class="container-fluid">
+			<div class="flex-container">
+				<img class="logo" src="../img/biglogo.png">
+			</div>
+			<p id="phoneNumber" class="phoneNo"> 18811716119 </p>
 		</div>
-
 	</body>
 
 </html>
