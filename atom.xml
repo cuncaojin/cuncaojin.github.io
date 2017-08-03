@@ -693,20 +693,6 @@ P:Presenter,关注业务处理
   </entry>
   
   <entry>
-    <title>Toolbar</title>
-    <link href="http://yoursite.com/2017/08/02/Toolbar/"/>
-    <id>http://yoursite.com/2017/08/02/Toolbar/</id>
-    <published>2017-08-02T02:21:02.331Z</published>
-    <updated>2017-03-16T01:44:26.265Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Kotlin 协程</title>
     <link href="http://yoursite.com/2017/08/02/Kotlin%20%E5%8D%8F%E7%A8%8B/"/>
     <id>http://yoursite.com/2017/08/02/Kotlin 协程/</id>
@@ -774,6 +760,20 @@ public abstract class MVPBaseActivity&lt;V, T extends BasePresenter&lt;V&gt;&gt;
     <summary type="html">
     
       &lt;p&gt;参考：&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzIzMTYzOTYzNA==&amp;amp;mid=2247483875&amp;amp;idx=1&amp;amp;sn=b1b565f651ee1221d4bda19ab12009ce&amp;amp;ch
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Toolbar</title>
+    <link href="http://yoursite.com/2017/08/02/Toolbar/"/>
+    <id>http://yoursite.com/2017/08/02/Toolbar/</id>
+    <published>2017-08-02T02:21:02.331Z</published>
+    <updated>2017-03-16T01:44:26.265Z</updated>
+    
+    <summary type="html">
     
     </summary>
     
