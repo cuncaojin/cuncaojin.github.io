@@ -15,17 +15,19 @@
 
 
 
-<meta name="description" content="I❤U Fiona  		 		  		 		 		 		 		 		 		  		 			body{ 				margin-top: 16px; 				margin-bottom: 16px; 			} 		 	  	 		 			春江花月夜 			张若虚  			春江潮水连海平，海上明月共潮生。 			滟滟随波千万里，何处春江无月明！ 			江流宛转绕芳">
+<meta name="description" content="I❤U Fiona  		 		 		  		 		 		 		 		 		 		  		 			body { 				margin-top: 16px; 				margin-bottom: 16px; 				background-color: rgba(255, 148, 92, 0.3); 			} 			 			.profilepic { 				t">
 <meta property="og:type" content="website">
 <meta property="og:title" content="寸草金的博客">
 <meta property="og:url" content="http://yoursite.com/tags/index.html">
 <meta property="og:site_name" content="寸草金的博客">
-<meta property="og:description" content="I❤U Fiona  		 		  		 		 		 		 		 		 		  		 			body{ 				margin-top: 16px; 				margin-bottom: 16px; 			} 		 	  	 		 			春江花月夜 			张若虚  			春江潮水连海平，海上明月共潮生。 			滟滟随波千万里，何处春江无月明！ 			江流宛转绕芳">
+<meta property="og:description" content="I❤U Fiona  		 		 		  		 		 		 		 		 		 		  		 			body { 				margin-top: 16px; 				margin-bottom: 16px; 				background-color: rgba(255, 148, 92, 0.3); 			} 			 			.profilepic { 				t">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-03T13:14:01.663Z">
+<meta property="og:image" content="http://yoursite.com/cuncaojin/img/biglogo.png">
+<meta property="og:updated_time" content="2017-08-06T17:15:48.150Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="寸草金的博客">
-<meta name="twitter:description" content="I❤U Fiona  		 		  		 		 		 		 		 		 		  		 			body{ 				margin-top: 16px; 				margin-bottom: 16px; 			} 		 	  	 		 			春江花月夜 			张若虚  			春江潮水连海平，海上明月共潮生。 			滟滟随波千万里，何处春江无月明！ 			江流宛转绕芳">
+<meta name="twitter:description" content="I❤U Fiona  		 		 		  		 		 		 		 		 		 		  		 			body { 				margin-top: 16px; 				margin-bottom: 16px; 				background-color: rgba(255, 148, 92, 0.3); 			} 			 			.profilepic { 				t">
+<meta name="twitter:image" content="http://yoursite.com/cuncaojin/img/biglogo.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -272,7 +274,7 @@
   
     <div class="article-meta">
       <a href="/tags/index.html" class="article-date">
-      <time datetime="2017-08-03T13:33:42.089Z" itemprop="datePublished">2017-08-03</time>
+      <time datetime="2017-08-06T17:15:48.150Z" itemprop="datePublished">2017-08-07</time>
 </a>
 
 
@@ -373,27 +375,143 @@
 		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 		<title>I❤U Fiona</title>
 
+		<link href="../cuncaojin/css/style.css" rel="stylesheet">
 		<!-- Bootstrap -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="../cuncaojin/css/bootstrap.min.css" rel="stylesheet">
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-		<script src="js/carousel.js"></script>
-		<link href="css/animate.css" rel="stylesheet">
-		<link rel="stylesheet" href="css/magic.min.css">
+		<script src="../cuncaojin/js/jquery-2.1.0.js"></script>
+		<script src="../cuncaojin/js/carousel.js"></script>
+		<link href="../cuncaojin/css/animate.css" rel="stylesheet">
+		<link rel="stylesheet" href="../cuncaojin/css/magic.min.css">
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="js/bootstrap.min.js"></script>
+		<script src="../cuncaojin/js/bootstrap.min.js"></script>
 
 		<style type="text/css">
-			body{
+			body {
 				margin-top: 16px;
 				margin-bottom: 16px;
+				background-color: rgba(255, 148, 92, 0.3);
+			}
+			
+			.profilepic {
+				text-align: center;
+				display: none;
+			}
+			
+			@-webkit-keyframes channgeCircle {
+				from {
+					border: 7px solid #FFFFFF;
+					animation-duration: 2s;
+					-webkit-border: 7px solid #FFFFFF;
+					-webkit-animation-duration: 2s;
+				}
+				to {
+					border: 7px solid #88acdb;
+					animation-duration: 2s;
+					-webkit-border: 7px solid #88acdb;
+					-webkit-animation-duration: 2s;
+				}
+			}
+			
+			keyframes channgeCircle {
+				from {
+					border: 7px solid #FFFFFF;
+					animation-duration: 2s;
+					-webkit-border: 7px solid #FFFFFF;
+					-webkit-animation-duration: 2s;
+				}
+				to {
+					border: 7px solid #88acdb;
+					animation-duration: 2s;
+					-webkit-border: 7px solid #88acdb;
+					-webkit-animation-duration: 2s;
+				}
+			}
+			
+			.profilepic img {
+				animation-name: channgeCircle;
+				-webkit-animation-name: channgeCircle;
+				animation-iteration-count: 1;
+				-webkit-animation-iteration-count: 1;
+				position: relative;
+				width: 180px;
+				width: 180px;
+				border-radius: 50%;
+				/*border: 11px solid #03A4E4;*/
+				border: 7px solid #88acdb;
+				box-shadow: 0px 0px 10px 10px rgba(147, 181, 224, 0.2);
+				/*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+			}
+			
+			#heart {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.heartClass {
+				color: #FF0000;
+				position: absolute;
 			}
 		</style>
+		<script>
+			var directionX = 1; //x正方向
+			var directionY = 2; //y正方向
+			var step = 10;
+			var offset;
+			var pos;
+			$(function() {
+				$("#heart").html("<p class='heartClass'>❤</p>");
+				$("img").each(function() {
+					//					$(this).removeClass();
+					//					$(this).css("class","animated");
+					$(this).css("class", "animated swing");
+				});
+				var skyId = setInterval(skyHeart, 20);
+
+			})
+
+			function skyHeart() {
+				$(".heartClass").css("font-size", Math.random() * 20 + 30)
+				offset = $(".heartClass").offset();
+				if(directionX == 1) {
+					$(".heartClass").css("left", offset.left += step);
+					if(offset.left >= document.documentElement.clientWidth + pageXOffset) {
+						offset.left = document.documentElement.clientWidth + pageXOffset;
+						directionX = -1;
+					}
+				} else {
+					$(".heartClass").css("left", offset.left -= step);
+					if(offset.left < pageXOffset) {
+						offset.left = pageXOffset;
+						directionX = 1;
+					}
+				}
+				if(directionY == 2) {
+					$(".heartClass").css("top", offset.top += step);
+					if(offset.top >= document.documentElement.clientHeight + pageYOffset) {
+						offset.top = document.documentElement.clientHeight + pageYOffset;
+						directionY = -2;
+					}
+				} else {
+					$(".heartClass").css("top", offset.top -= step);
+					if(offset.top < pageYOffset) {
+						offset.top = pageYOffset;
+						directionY = 2;
+					}
+				}
+			}
+		</script>
 	</head>
 
 	<body>
+		<div id="heart">
+
+		</div>
 		<div class="container-fluid">
+			<div class="profilepic">
+				<img src="../cuncaojin/img/biglogo.png" class="animated zoomIn">
+			</div>
 			<h3 class="text-center">春江花月夜</h3>
 			<h4 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-3 text-center">张若虚</h4>
 
