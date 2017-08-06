@@ -15,19 +15,23 @@
 
 
 
-<meta name="description" content="I❤U Fiona  		 		  		 		 		 		 		 		 		  		 			.flex-container { 				display: -webkit-flex; 				display: flex; 			} 			 			.logo { 				margin: auto; 				border-radius: 50%; 				width">
+<meta name="description" content="I❤U Fiona  		 		 		  		 		 		 		 		 		 		 		  		 			.flex-container { 				display: -webkit-flex; 				display: flex; 			} 			 			.logo { 				margin: auto; 				border-radius: 50%;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="寸草金的博客">
 <meta property="og:url" content="http://yoursite.com/cuncaojin/aboutme/index.html">
 <meta property="og:site_name" content="寸草金的博客">
-<meta property="og:description" content="I❤U Fiona  		 		  		 		 		 		 		 		 		  		 			.flex-container { 				display: -webkit-flex; 				display: flex; 			} 			 			.logo { 				margin: auto; 				border-radius: 50%; 				width">
+<meta property="og:description" content="I❤U Fiona  		 		 		  		 		 		 		 		 		 		 		  		 			.flex-container { 				display: -webkit-flex; 				display: flex; 			} 			 			.logo { 				margin: auto; 				border-radius: 50%;">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/cuncaojin/img/finoa03_shenzhen.jpg">
+<meta property="og:image" content="http://yoursite.com/cuncaojin/img/finoa02_wuhan.jpg">
+<meta property="og:image" content="http://yoursite.com/cuncaojin/img/fiona01_huanghelou.jpg">
+<meta property="og:image" content="http://yoursite.com/cuncaojin/img/fiona05_shenzhen.jpg">
 <meta property="og:image" content="http://yoursite.com/cuncaojin/img/biglogo.png">
-<meta property="og:updated_time" content="2017-08-03T14:01:40.055Z">
+<meta property="og:updated_time" content="2017-08-06T14:24:16.873Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="寸草金的博客">
-<meta name="twitter:description" content="I❤U Fiona  		 		  		 		 		 		 		 		 		  		 			.flex-container { 				display: -webkit-flex; 				display: flex; 			} 			 			.logo { 				margin: auto; 				border-radius: 50%; 				width">
-<meta name="twitter:image" content="http://yoursite.com/cuncaojin/img/biglogo.png">
+<meta name="twitter:description" content="I❤U Fiona  		 		 		  		 		 		 		 		 		 		 		  		 			.flex-container { 				display: -webkit-flex; 				display: flex; 			} 			 			.logo { 				margin: auto; 				border-radius: 50%;">
+<meta name="twitter:image" content="http://yoursite.com/cuncaojin/img/finoa03_shenzhen.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -274,7 +278,7 @@
   
     <div class="article-meta">
       <a href="/cuncaojin/aboutme/index.html" class="article-date">
-      <time datetime="2017-08-03T14:01:40.055Z" itemprop="datePublished">2017-08-03</time>
+      <time datetime="2017-08-06T14:24:16.873Z" itemprop="datePublished">2017-08-06</time>
 </a>
 
 
@@ -315,6 +319,7 @@
 		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 		<title>I❤U Fiona</title>
 
+		<link href="css/style.css" rel="stylesheet">
 		<!-- Bootstrap -->
 		<link href="../css/bootstrap.min.css" rel="stylesheet">
 
@@ -323,6 +328,7 @@
 		<script src="../js/carousel.js"></script>
 		<link href="../css/animate.css" rel="stylesheet">
 		<link rel="stylesheet" href="../css/magic.min.css">
+		<link rel="stylesheet" href="../css/square.css">
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="../js/bootstrap.min.js"></script>
 
@@ -355,6 +361,34 @@
 				text-shadow: 2px 2px 2px #FFFF00;
 				color: #FF0000;
 			}
+			
+			html,
+			body {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			.wrap {
+				margin: 0px;
+				padding: 0px;
+				margin-top: 200px;
+			}
+			
+			.wrap img {
+				width: 200px;
+				height: 200px;
+				/**
+				 * bootstrap.min.css导致有空白，解决方案：
+				 * vertical-align: baseline;
+				 */
+				vertical-align: baseline;
+			}
+			
+			.wrap p{
+				color: #FFFFFF;
+				font-size: 24px;
+				text-shadow: 0 0 10px #FF0000;
+			}
 		</style>
 		<script type="text/javascript">
 			var time = 0;
@@ -367,7 +401,6 @@
 			function run() {
 
 				if(!direction) {
-					// clearInterval(runId);
 					console.log(pn);
 					$("#phoneNumber").text(pn.substring(0, ((--time - 1) % pn.length + 1)));
 				} else {
@@ -376,7 +409,6 @@
 
 				if((pn == $("#phoneNumber").text()) || ("" == $("#phoneNumber").text())) {
 					direction = !direction;
-					console.log(direction + "---");
 					if(direction) {
 						$("#phoneNumber").removeClass("animated tada");
 					} else {
@@ -389,12 +421,40 @@
 	</head>
 
 	<body>
-		<div class="container-fluid">
+		<div class="wrap">
+			<div class="box1 box">
+				<img src="../img/finoa03_shenzhen.jpg">
+			</div>
+			<div class="box2 box">
+				<img src="../img/finoa02_wuhan.jpg">
+			</div>
+			<div class="box3 box" style="">
+				<img src="../img/fiona01_huanghelou.jpg">
+			</div>
+			<div class="box4 box"> 
+				<img src="../img/../img/fiona05_shenzhen.jpg">
+			</div>
+			<div class="box5 box">
+				<img src="../img/biglogo.png">
+			</div>
+			<div class="box6 box">
+				<!--<img src="../img/finoa03_shenzhen.jpg" />-->
+				<!--<p style="font-size: 26px;color: #000000;margin:40% 0 0 0;">cuncaojin</p>-->
+				<div style="height: 200px;line-height: 20px;">
+				<!--<img src="../img/biglogo.png" />-->
+					<!--<p style="position:absolute;vertical-align: bottom; margin: 0,0,0;font-size: 26px;color: #000000;">18811716119</p>-->
+					<!--<p style="position:fixed; font-size: 26px;color: #000000;margin:75% 0 0 0;">edfghj/p>-->
+					<p style="margin:78% 0 0 0;">cuncaojin</p>
+					<p style="margin:1% 0 0 0;">18811716119</p>
+				</div>
+			</div>
+		</div>
+		<!--<div class="container-fluid">
 			<div class="flex-container">
-				<img class="logo" src="../img/biglogo.png">
+				<img class="logo" src="../img/biglogo.png" />
 			</div>
 			<p id="phoneNumber" class="phoneNo"> 18811716119 </p>
-		</div>
+		</div>-->
 	</body>
 
 </html>
