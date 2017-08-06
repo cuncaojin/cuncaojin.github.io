@@ -1406,7 +1406,7 @@ body .ui-tooltip {
 }
 .article-entry p {
   margin: 0.85em auto;
-  line-height: 1.7;
+  line-height: none;
 }
 .article-entry em {
   font-style: italic;
