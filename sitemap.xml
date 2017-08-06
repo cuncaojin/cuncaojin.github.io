@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/cuncaojin/aboutme/index.html</loc>
+    
+    <lastmod>2017-08-06T17:52:41.189Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/tags/index.html</loc>
     
     <lastmod>2017-08-06T17:15:48.150Z</lastmod>
@@ -9,21 +16,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/cuncaojin/aboutme/index.html</loc>
-    
-    <lastmod>2017-08-06T17:11:47.085Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/index.html</loc>
+    <loc>http://yoursite.com/cuncaojin/index.html</loc>
     
     <lastmod>2017-08-05T11:50:39.896Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/cuncaojin/index.html</loc>
+    <loc>http://yoursite.com/index.html</loc>
     
     <lastmod>2017-08-05T11:50:39.896Z</lastmod>
     
