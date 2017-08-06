@@ -600,14 +600,6 @@ public class MainActivity extends AppCompatActivity {
     </entry>
     
     <entry>
-      <title><![CDATA[Toolbar]]></title>
-      <url>/2017/08/02/Toolbar/</url>
-      <content type="html"></content>
-      
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Kotlin 协程]]></title>
       <url>/2017/08/02/Kotlin%20%E5%8D%8F%E7%A8%8B/</url>
       <content type="html"><![CDATA[<p>参考：<a href="https://mp.weixin.qq.com/s?__biz=MzIzMTYzOTYzNA==&amp;mid=2247483875&amp;idx=1&amp;sn=b1b565f651ee1221d4bda19ab12009ce&amp;chksm=e8a05ededfd7d7c878c1c483c577ec53bcf42ee4cb0fe5d13f29d12ff62a1e335c4afa616ffa#rd" target="_blank" rel="external">https://mp.weixin.qq.com/s?__biz=MzIzMTYzOTYzNA==&amp;mid=2247483875&amp;idx=1&amp;sn=b1b565f651ee1221d4bda19ab12009ce&amp;chksm=e8a05ededfd7d7c878c1c483c577ec53bcf42ee4cb0fe5d13f29d12ff62a1e335c4afa616ffa#rd</a></p>
@@ -667,6 +659,14 @@ public abstract class MVPBaseActivity&lt;V, T extends BasePresenter&lt;V&gt;&gt;
     }
 }
 </code></pre>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Toolbar]]></title>
+      <url>/2017/08/02/Toolbar/</url>
+      <content type="html"></content>
       
         
     </entry>
