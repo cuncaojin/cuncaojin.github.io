@@ -15,17 +15,13 @@
 
 
 
-<meta name="description" content="参考1：https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.jKJinz&amp;amp;treeId=291&amp;amp;articleId=106103&amp;amp;docType=1 参考2：http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html?">
-<meta property="og:type" content="article">
-<meta property="og:title" content="蚂蚁金服. 开放平台. 文档中心">
-<meta property="og:url" content="http://yoursite.com/2017/08/02/蚂蚁金服开放平台 RSA2/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="寸草金的博客">
+<meta property="og:url" content="http://yoursite.com/archives/2017/09/index.html">
 <meta property="og:site_name" content="寸草金的博客">
-<meta property="og:description" content="参考1：https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.jKJinz&amp;amp;treeId=291&amp;amp;articleId=106103&amp;amp;docType=1 参考2：http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html?">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-02-02T05:50:36.777Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蚂蚁金服. 开放平台. 文档中心">
-<meta name="twitter:description" content="参考1：https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.jKJinz&amp;amp;treeId=291&amp;amp;articleId=106103&amp;amp;docType=1 参考2：http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html?">
+<meta name="twitter:title" content="寸草金的博客">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -55,7 +51,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>蚂蚁金服. 开放平台. 文档中心 | 寸草金的博客</title>
+<title>Archives: 2017/9 | 寸草金的博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -65,8 +61,8 @@
         fancybox: false,
         animate: true,
         isHome: false,
-        isPost: true,
-        isArchive: false,
+        isPost: false,
+        isArchive: true,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -259,137 +255,46 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-蚂蚁金服开放平台 RSA2" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2017/08/02/蚂蚁金服开放平台 RSA2/" class="article-date">
-      <time datetime="2017-08-02T02:21:02.409Z" itemprop="datePublished">2017-08-02</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/09/11/MySQL数据库/" class="archive-article-date">
+      <time datetime="2017-09-10T23:57:54.240Z" itemprop="datePublished">09-11</time>
 </a>
 
 
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      蚂蚁金服. 开放平台. 文档中心
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        </div>
+         
+        <div class="article-info info-on-archive">
           
-        <p>参考1：<a href="https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.jKJinz&amp;treeId=291&amp;articleId=106103&amp;docType=1" target="_blank" rel="external">https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.jKJinz&amp;treeId=291&amp;articleId=106103&amp;docType=1</a></p>
-<p>参考2：<a href="http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html?spm=a219a.7629140.0.0.jtOMMW" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html?spm=a219a.7629140.0.0.jtOMMW</a> （数字签名）</p>
-<pre><code>1.RSA和RSA2区别：
-    详细参见：
-    https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.y7rDdS&amp;treeId=291&amp;articleId=106115&amp;docType=1
-    简单来说，签名主要包含两个过程：摘要和非对称加密，
-    首先对需要签名的数据做摘要（类似于常见的MD5）后得到摘要结果，然后通过签名者的私钥对摘要结果进行非对称加密即可得到签名结果。
 
-    开放平台支持的签名算法
-    开放平台签名算法名称        标准签名算法名称                        备注
-    RSA2                    SHA256WithRSA        （强烈推荐使用），强制要求RSA密钥的长度至少为2048，
-    RSA                        SHA1WithRSA            对RSA密钥的长度不限制，推荐使用2048位以上
-</code></pre>
-      
-    </div>
-    
+          
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
-    
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/08/02/绘图/">
-                    Android 绘图 ——Android群英传 学习笔记
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/08/02/MVP/">
-                    MVP学习笔记
-                </a>
-            </div>
-        
-    </nav>
-
-  
 </article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-
+  
+  
+    </div></section>
+  
 
     
 
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2017/08/02/绘图/" title="上一篇: Android 绘图 ——Android群英传 学习笔记">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2017/08/02/MVP/" title="下一篇: MVP学习笔记">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/11/MySQL数据库/">MySQL数据库</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Android动画的7种实现方式/">Android Scroll分析 ——《群英传》第五章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/绘图/">Android 绘图 ——Android群英传 学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/蚂蚁金服开放平台 RSA2/">蚂蚁金服. 开放平台. 文档中心</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/MVP/">MVP学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/HttpURLConnection重定向/">URL由http到https重定向，URLConnection下载失败</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Android/">收藏</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/开发素材/">开发练习素材，不至于素材</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Kotlin 协程/">Kotlin 协程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Toolbar/">Toolbar</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/即时通讯之环信集成采坑/">即时通讯之环信3.0集成采坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Java基础/">Java基础重温</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
 </div>
       <footer id="footer">
     <div class="outer">

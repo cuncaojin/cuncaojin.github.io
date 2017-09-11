@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="FontMatrics部分参考：http://mikewang.blog.51cto.com/3826268/871765 核心类 1.Canvas 画布 2.Bitmap 纸 3.Paint 笔 4.｛     FontMetrics     PorterDuffXfermode     Matrix(3x3矩阵)      ColorMatrix(4x5矩阵)     ColorFilter">
+<meta name="description" content="#SQL语法###数据库  连接： mysql -uroot -proot 创建： create database databaseName [character set utf8/gbk] ； 使用： use databaseName；  查看： show databases; 查看数据库定义信息： show create database databaseName; 删除： drop dat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android 绘图 ——Android群英传 学习笔记">
-<meta property="og:url" content="http://yoursite.com/2017/08/02/绘图/index.html">
+<meta property="og:title" content="寸草金的博客">
+<meta property="og:url" content="http://yoursite.com/2017/09/11/MySQL数据库/index.html">
 <meta property="og:site_name" content="寸草金的博客">
-<meta property="og:description" content="FontMatrics部分参考：http://mikewang.blog.51cto.com/3826268/871765 核心类 1.Canvas 画布 2.Bitmap 纸 3.Paint 笔 4.｛     FontMetrics     PorterDuffXfermode     Matrix(3x3矩阵)      ColorMatrix(4x5矩阵)     ColorFilter">
+<meta property="og:description" content="#SQL语法###数据库  连接： mysql -uroot -proot 创建： create database databaseName [character set utf8/gbk] ； 使用： use databaseName；  查看： show databases; 查看数据库定义信息： show create database databaseName; 删除： drop dat">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-12-18T16:39:28.885Z">
+<meta property="og:updated_time" content="2017-09-11T02:47:53.351Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android 绘图 ——Android群英传 学习笔记">
-<meta name="twitter:description" content="FontMatrics部分参考：http://mikewang.blog.51cto.com/3826268/871765 核心类 1.Canvas 画布 2.Bitmap 纸 3.Paint 笔 4.｛     FontMetrics     PorterDuffXfermode     Matrix(3x3矩阵)      ColorMatrix(4x5矩阵)     ColorFilter">
+<meta name="twitter:title" content="寸草金的博客">
+<meta name="twitter:description" content="#SQL语法###数据库  连接： mysql -uroot -proot 创建： create database databaseName [character set utf8/gbk] ； 使用： use databaseName；  查看： show databases; 查看数据库定义信息： show create database databaseName; 删除： drop dat">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -55,7 +55,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Android 绘图 ——Android群英传 学习笔记 | 寸草金的博客</title>
+<title>寸草金的博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -259,11 +259,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-绘图" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-MySQL数据库" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/08/02/绘图/" class="article-date">
-      <time datetime="2017-08-02T02:21:02.425Z" itemprop="datePublished">2017-08-02</time>
+      <a href="/2017/09/11/MySQL数据库/" class="article-date">
+      <time datetime="2017-09-10T23:57:54.240Z" itemprop="datePublished">2017-09-11</time>
 </a>
 
 
@@ -272,265 +272,96 @@
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Android 绘图 ——Android群英传 学习笔记
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>FontMatrics部分参考：<a href="http://mikewang.blog.51cto.com/3826268/871765" target="_blank" rel="external">http://mikewang.blog.51cto.com/3826268/871765</a></p>
-<p><strong>核心类</strong></p>
-<pre><code>1.Canvas 画布
-2.Bitmap 纸
-3.Paint 笔
-4.｛
-    FontMetrics
-    PorterDuffXfermode
-    Matrix(3x3矩阵) 
-    ColorMatrix(4x5矩阵)
-    ColorFilter
-    Shader
-    PathEffect
-｝
-5. SurfaceView P155，有固定模版用法
-</code></pre><p><strong>思想</strong></p>
-<pre><code>1.一般初始化Canvas时，要传入一个Bitmap，之后的所有的绘制效果都将呈现在Bitmap上。
-    Bitmap mPaper = Bitmap.createBitmap(bm.getWidth(), bm.getHeight(), Bitmap.Config.ARGB_8888);
-    mCanvas = new Canvas(mPaper);
-    mCanvas.drawBitmap(bm, 0, 0, paint);//将bm用画笔paint画到mPager上
-2.在onDraw(canvas)方法中，只需要将步骤1中的纸mPaper绘制到系统提供的画布canvas上即可。
-    canvas.drawBitmap(mPaper, 0, 0, null);
-3.Paint 
-    具有非常强大的功能：
-    1）PorterDuffXfermode 滤镜功能：
-        mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-        mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_OUT));
-        设置混合模式，具体效果参考文档，或Android群英传P146.
-    2）获取FontMetrics，测量文本尺寸
-        Paint.FontMetrics fm = mPaint.getFontMetrics();
-        FontMetrics属性：｛
-            1. 基准点是baseline
-            2. ascent是baseline之上至字符最高处的距离
-            3. descent是baseline之下至字符最低处的距离
-            4. leading文档说的很含糊，其实是上一行字符的descent到下一行的ascent之间的距离
-            5. top指的是指的是最高字符到baseline的值，即ascent的最大值
-            6. 同上，bottom指的是最下字符到baseline的值，即descent的最大值
+        <hr>
+<h2 id="SQL语法"><a href="#SQL语法" class="headerlink" title="#SQL语法"></a>#SQL语法</h2><p>###数据库</p>
+<ul>
+<li><strong>连接：</strong> mysql -u<strong><em>root</em></strong> -p<strong><em>root</em></strong></li>
+<li><strong>创建：</strong> create database <strong><em>databaseName</em></strong> [character set utf8/gbk] ；</li>
+<li><strong>使用：</strong> use <strong><em>databaseName</em></strong>； </li>
+<li><strong>查看：</strong> show databases;</li>
+<li><strong>查看数据库定义信息：</strong> show create database <strong><em>databaseName</em></strong>;</li>
+<li><strong>删除：</strong> drop database <strong><em>databaseName</em></strong>；</li>
+<li><strong>修改：</strong> alter database <strong><em>databaseName</em></strong> character set <strong><em>utf8 [collate 校对规则]</em></strong>;</li>
+<li><strong>查看当前使用的数据库:</strong> select database();</li>
+</ul>
+<p>###表</p>
+<ul>
+<li><strong>创建：</strong> create table <strong><em>tableName(id int primary key auto_increment,username varchar(40) not null unique,password varchar(40) not null,date date)</em></strong>;</li>
+<li><strong>查看表：</strong> show tables;</li>
+<li><strong>查看某个表结构：</strong> desc tables;</li>
+<li><strong>删除表：</strong> drop table <strong><em>tableName</em></strong>;</li>
+<li><strong>修改表：</strong> <ul>
+<li><strong>添加列：</strong> alter table <strong><em>tableName</em></strong> add <strong><em>colName varchar(40) unique not null</em></strong>;  </li>
+<li><strong>删除列：</strong> alter table <strong><em>tableName</em></strong> drop <strong><em>colName</em></strong>;</li>
+<li><strong>修改列类型、长度和约束：</strong> alter table <strong><em>tableName</em></strong> modify <strong><em>colName int(150)</em></strong>;</li>
+<li><strong>修改列名称：</strong> alter table <strong><em>tableName</em></strong> change <strong><em>oldColName newColName varchar(40) not null unique</em></strong>;</li>
+<li><strong>修改表名：</strong> rename table <strong><em>oldTableName</em></strong> to <strong><em>newTableName</em></strong>;</li>
+<li><strong>修改表的字符集：</strong> alter table <strong><em>tableName</em></strong> character set <strong><em>gbk/utf8</em></strong>;</li>
+</ul>
+</li>
+</ul>
+<p>###记录</p>
+<ul>
+<li><strong>插入：</strong> <ul>
+<li><strong>格式１：</strong> - insert into <strong><em>tableName (colName1,colName2,…)</em></strong> values <strong><em>(value1,value2,…)</em></strong>;<ul>
+<li><strong>格式２：</strong> insert into <strong><em>tableName</em></strong> values <strong><em>(value1,value2,…)</em></strong>;</li>
+</ul>
+</li>
+<li><strong>中文乱码</strong>，修改：找到MySQL的安装路径下的my.ini文件，修改文件中[client]下的字符集default-character-set=gbk,重启mysql,services.msc</li>
+</ul>
+</li>
+<li><strong>修改：</strong> update <strong><em>tableName</em></strong> set <strong><em>colName=value,colName2=value2,… [where 条件]</em></strong>;</li>
+<li><strong>删除：</strong> delete from <strong><em>tableName [where 条件]</em></strong></li>
+<li><strong>查询：</strong>  <strong>S(select)… F(from)…W(where)…G(group by)…H(having)…O(order by);</strong><ul>
+<li>select <strong><em>[</em>/colName1,colName2,… [as nickname]]*</strong> from <strong><em>tableName [where 条件]</em></strong>;<ul>
+<li><strong>条件查询：</strong></li>
+</ul>
+</li>
+<li><blockquote>
+<p>, &lt; , &gt;= , &lt;= , &lt;&gt; ,=</p>
+</blockquote>
+</li>
+<li>like:模糊查询<ul>
+<li>like可以进行模糊查询,在like子句中可以使用<em>或者%作为占位符。</em>只能代表一个字符，而%可以代表任意个字符。</li>
+<li>like ‘李_’        ：名字中必须是两个字，而且是姓李的。</li>
+<li>like ‘李%’        ：名字中姓李的学生，李子后可以是1个或任意个字符。</li>
+<li>like ‘%四’        ：名字中以四结尾的。</li>
+<li>like ‘%王%’    ：只要名称中包含这个字就可以。</li>
+</ul>
+</li>
+<li>in:范围查询  <ul>
+<li>select * from exam where english in (69,75,89);</li>
+</ul>
+</li>
+<li>条件关联:and , or ,not<ul>
+<li><strong>排序查询：</strong> order by 字段名称 asc/desc;</li>
+</ul>
+</li>
+<li>select * from exam where name like ‘李%’ order by chinese desc,english asc;<ul>
+<li><strong>聚合函数：</strong> </li>
+</ul>
+</li>
+<li><strong>sum()</strong> select sum(english + chinese + math) from exam; </li>
+<li><strong>count()</strong> select count(*) from exam;</li>
+<li><strong>max()</strong> select max(math) from exam;</li>
+<li><strong>min()</strong> select min(chinese) from exam;</li>
+<li><strong>avg()</strong> select avg(chinese) from exam;<ul>
+<li><strong>分组查询：</strong> select product,count(*) from orderitem group by product;<ul>
+<li>where的子句后面不能跟着聚合函数。如果现在使用带有聚合函数的条件过滤（分组后条件过滤）需要使用一个关键字having<ul>
+<li>select product,sum(price) from orderitem  group by product having sum(price) &gt; 5000 order by sum(price) asc;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
-            说明：ascent/descent/top/bottom，这几个值均表示距离baseline的距离。举例：ascent的值，即为字符最高处的y坐标减去baseline的y坐标之差。所以，其永远为负值。同理，descent/bottom永远为正值。
-        ｝
-
-        float baseY = - fm.top;
-        mCanvas.drawText(&quot;cuncaojin&quot;, 0, baseY, mPaint);
-
-        ![](http://img1.51cto.com/attachment/201205/204735397.png)
-    3）Style（空心/实心）
-            mPaint.setStyle(Paint.Style.FILL);
-            mPaint.setStyle(Paint.Style.STROKE);
-            mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
-    4）setColorFilter
-        ColorMatrix imageMatrix = new ColorMatrix();
-        //颜色矩阵，可以设置色调、饱和度、亮度
-        imageMatrix.setRotate(0/1/2,hue);//0,1,2——R，G，B 色调
-        imageMatrix.setSaturation(saturation);//饱和度为0时，图像为灰度图像
-        imageMatrix.setScale(lum, lum, lum, 1);//亮度
-        imageMatrix.postConcat(anotherColorMatrix);//将颜色矩阵叠加
-        paint.setColorFilter(new ColorMatrixColorFilter(imageMatrix));
-
-    5）setShader（）：主要作用是作为遮罩层，产生特殊效果
-        Shader（渲染器）类实现类有{
-            a. BitmapShader 位图Shader （相比其他Shader比较特殊）
-                {
-                    用BitmapShader填充时的3种模式：
-                        CLAMP 拉伸
-                        REPEAT 重复
-                        MIRROR 镜像
-                }
-            b. LinearGradient 线性Shader
-            c. RadialGradient 光束Shader
-            d. SweepGradient 梯度Shader
-            e. ComposeShader 混合Shader
-        }
-
-
-    6）setPathEffect 路径效果
-        a. null    
-        b. CornerPathEffect    路径圆滑处理
-        c. DiscretePathEffect    产生杂点
-        d. DashPathEffect    虚线化
-        e. PathDashPathEffect    可设置虚线图形
-        f. ComposePathEffect    可组合以上效果
-
-
-    7）其他属性｛
-        setAntiAlias（true）； 抗锯齿
-        setStrokeJoin(Paint.Join.ROUND); 设置笔连接处圆滑处理
-        setStrokeCap(Paint.Cap.ROUND); 设置笔触圆滑处理
-        setStrokeWidth(50);    设置笔宽
-        setColor（）；    
-        setARGB（）；
-        setAlpah（）；
-        setTextSize（）；
-    ｝    
-4.Canvas
-    1）绘制｛
-        drawPoint
-        drawLine
-        drawRect
-        drawRoundRect
-        drawArc 绘制扇形或弧形（由参数useCenter决定，true扇形，false弧形，设置Paint.Style决定是空心还是实心）
-        drawOval 绘制椭圆
-        drawText 
-        drawPosText（text, new float[]{x1,y1,x2,y2,...xn,yn}, paint） 在指定位置逐个对每个字符绘制    
-        drawPath 绘制路径
-        drawBitmap
-    ｝
-    2）结合Matrix
-        Matrix matrix = new Matrix();
-        matrix{
-            setRotate()
-            setTranslate();    
-            setScale();    
-            setSkew(); 错切变换/剪切变换
-            pre() 先乘
-            post() 后乘
-        }
-        canvas.drawBitmap(mBitmap, matrix ,null);
-        ---------------------------------------------
-        Canvas mCanvas = new Canvas(mBmp);
-        Matrix matrix = new Matrix();
-        float scale = w * 1f / getResources().getDisplayMetrics().widthPixels;
-        matrix.setScale(scale, scale);
-        mCanvas.drawBitmap(bitmap, matrix, mPaint);
-    3）Canvas的其他方法｛
-        save（） 将之前绘制的所有图像进行保存
-        restore() 将save()之后绘制的所有图像与save（）之前的图像进行合并
-        translate（） 
-        rotate（）
-    ｝
-</code></pre><p><strong>Demo:</strong></p>
-<pre><code>自定义一个圆形图，实现方案｛
-    1）使用paint.setXferMode(new PorterXferMode(...))
-        a. 绘制圆
-        b. 对画笔设置PorterDuffXfermode（SRC_IN）则上步绘制的圆作为遮罩层
-        c. （设置缩放比例等）优化绘图效果
-        d. 绘制图片
-    2） 使用paint.setShader(new BitmapShader(...))
-        a. 对画笔设置渲染器为BitmapShader,模式选择拉伸
-            mPaint.setShader(new BitmapShader(mBmp, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
-        b. （设置缩放比例等）优化绘图效果
-        c. 绘制圆
-｝
-</code></pre><p><strong>参考代码如下：</strong></p>
-<pre><code>方案一：
-public CircleView(Context context, AttributeSet attrs) {
-    super(context, attrs);
-    init();
-
-    TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CircleView);
-    int indexCount = typedArray.getIndexCount();
-    for (int i = 0; i &lt; indexCount; i++) {
-        int index = typedArray.getIndex(i);
-        switch (index) {
-            case R.styleable.CircleView_src:
-
-                BitmapDrawable drawable = (BitmapDrawable) typedArray.getDrawable(index);
-                mBitmap = drawable.getBitmap();
-                break;
-        }
-    }
-    typedArray.recycle();
-}
-
-private void init() {
-    mPaint = new Paint();
-    mPaint.setAntiAlias(true);
-    mPaint.setStrokeJoin(Paint.Join.ROUND);
-}
-
-@Override
-protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-    super.onSizeChanged(w, h, oldw, oldh);
-
-    mPaper = Bitmap.createBitmap(w, w, Bitmap.Config.ARGB_8888);
-    mCanvas = new Canvas(mPaper);
-    mPaint.setTextSize(50);
-    mPaint.setStrokeWidth(5);
-    mPaint.setARGB(255, 255, 0, 0);
-    mPaint.setColor(0xff00ff00);
-    mPaint.setTextAlign(Paint.Align.LEFT);
-
-    Paint.FontMetrics fm = mPaint.getFontMetrics();
-    Log.i(&quot;tag&quot;, fm.ascent + &quot;, leading:&quot; + fm.leading + &quot; ,descent:&quot; + fm.descent + &quot;, bottom:&quot; + fm.bottom + &quot;, &quot; + fm.top);
-    float baseY = -fm.ascent;
-    mCanvas.drawText(&quot;寸草金CUNJQjinsdaofihwafehofdmvpBGEOUWmevldnbuehwPOS:lXM&quot;, 0, baseY, mPaint);
-
-    Path path = new Path();
-    path.moveTo(0, 50);
-    path.lineTo(100, 200);
-    mCanvas.drawPath(path, mPaint);
-
-    mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_OUT));
-
-    RectF rect = new RectF(0, 0, w, h);
-    mCanvas.drawRoundRect(rect, 50, 50, mPaint);
-
-    mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-
-    Matrix matrix = new Matrix();
-    matrix.setScale(w * 1f / mBitmap.getWidth(), w * 1f / mBitmap.getWidth());
-    mCanvas.drawBitmap(mBitmap, matrix, mPaint);
-}
-</code></pre><hr>
-<pre><code>方案二：
-private void init(Context context, AttributeSet attrs) {
-    mPaint = new Paint();
-    mPaint.setAntiAlias(true);
-    mPaint.setStrokeJoin(Paint.Join.ROUND);
-    mPaint.setStrokeCap(Paint.Cap.ROUND);
-}
-
-@Override
-protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-    super.onSizeChanged(w, h, oldw, oldh);
-    Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.pic1);
-    mBmp = Bitmap.createBitmap(w, w, Bitmap.Config.ARGB_8888);
-
-    Canvas mCanvas = new Canvas(mBmp);
-    Matrix matrix = new Matrix();
-    float scale = w * 1f / getResources().getDisplayMetrics().widthPixels;
-    matrix.setScale(scale, scale);
-    mCanvas.drawBitmap(bitmap, matrix, mPaint);
-
-    mPaint.setShader(new BitmapShader(mBmp, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
-}
-
-@Override
-protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-    setMeasuredDimension(widthMeasureSpec, widthMeasureSpec);
-}
-
-@Override
-protected void onDraw(Canvas canvas) {
-    super.onDraw(canvas);
-    int r = getWidth() / 2;
-    canvas.drawCircle(r, r, r, mPaint);
-}
-</code></pre>
       
     </div>
     
@@ -541,16 +372,10 @@ protected void onDraw(Canvas canvas) {
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/08/02/Android动画的7种实现方式/">
-                    Android Scroll分析 ——《群英传》第五章
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/08/02/蚂蚁金服开放平台 RSA2/">
-                    蚂蚁金服. 开放平台. 文档中心
+                <a href="/2017/08/02/Android动画的7种实现方式/">
+                    Android Scroll分析 ——《群英传》第五章
                 </a>
             </div>
         
@@ -562,7 +387,7 @@ protected void onDraw(Canvas canvas) {
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL语法"><span class="toc-number">1.</span> <span class="toc-text">#SQL语法</span></a></li></ol>
         
     </div>
     <style>
@@ -593,15 +418,13 @@ protected void onDraw(Canvas canvas) {
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/08/02/Android动画的7种实现方式/" title="上一篇: Android Scroll分析 ——《群英传》第五章">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/08/02/蚂蚁金服开放平台 RSA2/" title="下一篇: 蚂蚁金服. 开放平台. 文档中心">
+            <a href="/2017/08/02/Android动画的7种实现方式/" title="下一篇: Android Scroll分析 ——《群英传》第五章">
                 <i class="fa fa-angle-right"></i>
             </a>
         

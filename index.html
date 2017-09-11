@@ -262,6 +262,134 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-MySQL数据库" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/11/MySQL数据库/" class="article-date">
+      <time datetime="2017-09-10T23:57:54.240Z" itemprop="datePublished">2017-09-11</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h2 id="SQL语法"><a href="#SQL语法" class="headerlink" title="#SQL语法"></a>#SQL语法</h2><p>###数据库</p>
+<ul>
+<li><strong>连接：</strong> mysql -u<strong><em>root</em></strong> -p<strong><em>root</em></strong></li>
+<li><strong>创建：</strong> create database <strong><em>databaseName</em></strong> [character set utf8/gbk] ；</li>
+<li><strong>使用：</strong> use <strong><em>databaseName</em></strong>； </li>
+<li><strong>查看：</strong> show databases;</li>
+<li><strong>查看数据库定义信息：</strong> show create database <strong><em>databaseName</em></strong>;</li>
+<li><strong>删除：</strong> drop database <strong><em>databaseName</em></strong>；</li>
+<li><strong>修改：</strong> alter database <strong><em>databaseName</em></strong> character set <strong><em>utf8 [collate 校对规则]</em></strong>;</li>
+<li><strong>查看当前使用的数据库:</strong> select database();</li>
+</ul>
+<p>###表</p>
+<ul>
+<li><strong>创建：</strong> create table <strong><em>tableName(id int primary key auto_increment,username varchar(40) not null unique,password varchar(40) not null,date date)</em></strong>;</li>
+<li><strong>查看表：</strong> show tables;</li>
+<li><strong>查看某个表结构：</strong> desc tables;</li>
+<li><strong>删除表：</strong> drop table <strong><em>tableName</em></strong>;</li>
+<li><strong>修改表：</strong> <ul>
+<li><strong>添加列：</strong> alter table <strong><em>tableName</em></strong> add <strong><em>colName varchar(40) unique not null</em></strong>;  </li>
+<li><strong>删除列：</strong> alter table <strong><em>tableName</em></strong> drop <strong><em>colName</em></strong>;</li>
+<li><strong>修改列类型、长度和约束：</strong> alter table <strong><em>tableName</em></strong> modify <strong><em>colName int(150)</em></strong>;</li>
+<li><strong>修改列名称：</strong> alter table <strong><em>tableName</em></strong> change <strong><em>oldColName newColName varchar(40) not null unique</em></strong>;</li>
+<li><strong>修改表名：</strong> rename table <strong><em>oldTableName</em></strong> to <strong><em>newTableName</em></strong>;</li>
+<li><strong>修改表的字符集：</strong> alter table <strong><em>tableName</em></strong> character set <strong><em>gbk/utf8</em></strong>;</li>
+</ul>
+</li>
+</ul>
+<p>###记录</p>
+<ul>
+<li><strong>插入：</strong> <ul>
+<li><strong>格式１：</strong> - insert into <strong><em>tableName (colName1,colName2,…)</em></strong> values <strong><em>(value1,value2,…)</em></strong>;<ul>
+<li><strong>格式２：</strong> insert into <strong><em>tableName</em></strong> values <strong><em>(value1,value2,…)</em></strong>;</li>
+</ul>
+</li>
+<li><strong>中文乱码</strong>，修改：找到MySQL的安装路径下的my.ini文件，修改文件中[client]下的字符集default-character-set=gbk,重启mysql,services.msc</li>
+</ul>
+</li>
+<li><strong>修改：</strong> update <strong><em>tableName</em></strong> set <strong><em>colName=value,colName2=value2,… [where 条件]</em></strong>;</li>
+<li><strong>删除：</strong> delete from <strong><em>tableName [where 条件]</em></strong></li>
+<li><strong>查询：</strong>  <strong>S(select)… F(from)…W(where)…G(group by)…H(having)…O(order by);</strong><ul>
+<li>select <strong><em>[</em>/colName1,colName2,… [as nickname]]*</strong> from <strong><em>tableName [where 条件]</em></strong>;<ul>
+<li><strong>条件查询：</strong></li>
+</ul>
+</li>
+<li><blockquote>
+<p>, &lt; , &gt;= , &lt;= , &lt;&gt; ,=</p>
+</blockquote>
+</li>
+<li>like:模糊查询<ul>
+<li>like可以进行模糊查询,在like子句中可以使用<em>或者%作为占位符。</em>只能代表一个字符，而%可以代表任意个字符。</li>
+<li>like ‘李_’        ：名字中必须是两个字，而且是姓李的。</li>
+<li>like ‘李%’        ：名字中姓李的学生，李子后可以是1个或任意个字符。</li>
+<li>like ‘%四’        ：名字中以四结尾的。</li>
+<li>like ‘%王%’    ：只要名称中包含这个字就可以。</li>
+</ul>
+</li>
+<li>in:范围查询  <ul>
+<li>select * from exam where english in (69,75,89);</li>
+</ul>
+</li>
+<li>条件关联:and , or ,not<ul>
+<li><strong>排序查询：</strong> order by 字段名称 asc/desc;</li>
+</ul>
+</li>
+<li>select * from exam where name like ‘李%’ order by chinese desc,english asc;<ul>
+<li><strong>聚合函数：</strong> </li>
+</ul>
+</li>
+<li><strong>sum()</strong> select sum(english + chinese + math) from exam; </li>
+<li><strong>count()</strong> select count(*) from exam;</li>
+<li><strong>max()</strong> select max(math) from exam;</li>
+<li><strong>min()</strong> select min(chinese) from exam;</li>
+<li><strong>avg()</strong> select avg(chinese) from exam;<ul>
+<li><strong>分组查询：</strong> select product,count(*) from orderitem group by product;<ul>
+<li>where的子句后面不能跟着聚合函数。如果现在使用带有聚合函数的条件过滤（分组后条件过滤）需要使用一个关键字having<ul>
+<li>select product,sum(price) from orderitem  group by product having sum(price) &gt; 5000 order by sum(price) asc;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Android动画的7种实现方式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1311,131 +1439,6 @@ public abstract class MVPBaseActivity&lt;V, T extends BasePresenter&lt;V&gt;&gt;
       
           
         
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-即时通讯之环信集成采坑" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/08/02/即时通讯之环信集成采坑/" class="article-date">
-      <time datetime="2017-08-02T02:21:02.315Z" itemprop="datePublished">2017-08-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/02/即时通讯之环信集成采坑/">即时通讯之环信3.0集成采坑</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="集成流程："><a href="#集成流程：" class="headerlink" title="集成流程："></a>集成流程：</h1><h3 id="1、官网下载-SDK-Demo源码"><a href="#1、官网下载-SDK-Demo源码" class="headerlink" title="1、官网下载 *SDK + Demo源码"></a>1、官网下载 <em>*SDK + Demo源码</em></h3><h3 id="2、将Demo中examples下的ChatDemoUI3-0导入Android-Studio，然后再将easeui作为module导入，使easeui作为ChatDemoUI3-0的依赖工程。"><a href="#2、将Demo中examples下的ChatDemoUI3-0导入Android-Studio，然后再将easeui作为module导入，使easeui作为ChatDemoUI3-0的依赖工程。" class="headerlink" title="2、将Demo中examples下的ChatDemoUI3.0导入Android Studio，然后再将easeui作为module导入，使easeui作为ChatDemoUI3.0的依赖工程。"></a>2、将Demo中<strong>examples</strong>下的<strong>ChatDemoUI3.0</strong>导入Android Studio，然后再将<strong>easeui</strong>作为module导入，使<strong>easeui</strong>作为<strong>ChatDemoUI3.0</strong>的依赖工程。</h3><h3 id="重点正式开始"><a href="#重点正式开始" class="headerlink" title="重点正式开始:"></a><strong>重点正式开始:</strong></h3><h3 id="3-在自己的项目中，如步骤2，将easeui作为medule导入并作为依赖项目"><a href="#3-在自己的项目中，如步骤2，将easeui作为medule导入并作为依赖项目" class="headerlink" title="3.在自己的项目中，如步骤2，将easeui作为medule导入并作为依赖项目"></a>3.在自己的项目中，如步骤2，将easeui作为medule导入并作为依赖项目</h3><h3 id="4-此时可能报错如下："><a href="#4-此时可能报错如下：" class="headerlink" title="4.此时可能报错如下："></a>4.此时可能报错如下：</h3><pre><code>警告或错误1： warning: string &apos;delete_target_uninstall_label&apos; has no default translationin
-解决方案：[参考1](https://zhidao.baidu.com/question/1830062383679887660.html)
-
-报错2：  duplicate XXX...
-解决方案：[参考2](http://blog.csdn.net/chenqiuping_ls/article/details/53409297)
-
-报错3：Test工程报错，原因为误删app build.gradle部分文件依赖部分，[参考](http://blog.csdn.net/pkandroid/article/details/61535978)
-
-可能还有其他问题，同样参考[参考2](http://blog.csdn.net/chenqiuping_ls/article/details/53409297)
-</code></pre><h3 id="5-Clean，重新构建，OK"><a href="#5-Clean，重新构建，OK" class="headerlink" title="5.Clean，重新构建，OK"></a>5.Clean，重新构建，OK</h3><hr>
-<h2 id="完整App-build-gradle文件内容如下："><a href="#完整App-build-gradle文件内容如下：" class="headerlink" title="完整App build.gradle文件内容如下："></a>完整App build.gradle文件内容如下：</h2><pre><code>`
-</code></pre><p>apply plugin: ‘com.android.application’</p>
-<pre><code>android {
-    compileSdkVersion 25
-    buildToolsVersion &quot;25.0.2&quot;
-    defaultConfig {
-        applicationId &quot;io.github.cuncaojin.cloudplay&quot;
-        minSdkVersion 14
-        targetSdkVersion 25
-        versionCode 1
-        versionName &quot;1.0&quot;
-        multiDexEnabled true
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;
-        }
-    }
-    //use legacy for android 6.0
-    useLibrary &apos;org.apache.http.legacy&apos;
-    packagingOptions {
-        exclude &apos;META-INF/DEPENDENCIES.txt&apos;
-        exclude &apos;META-INF/LICENSE.txt&apos;
-        exclude &apos;META-INF/NOTICE.txt&apos;
-        exclude &apos;META-INF/NOTICE&apos;
-        exclude &apos;META-INF/LICENSE&apos;
-        exclude &apos;META-INF/DEPENDENCIES&apos;
-        exclude &apos;META-INF/notice.txt&apos;
-        exclude &apos;META-INF/license.txt&apos;
-        exclude &apos;META-INF/dependencies.txt&apos;
-        exclude &apos;META-INF/LGPL2.1&apos;
-    }
-}
-
-dependencies {
-    compile fileTree(include: [&apos;*.jar&apos;], dir: &apos;libs&apos;)
-    androidTestCompile(&apos;com.android.support.test.espresso:espresso-core:2.2.2&apos;, {
-        exclude group: &apos;com.android.support&apos;, module: &apos;support-annotations&apos;
-    })
-    //Optional compile for GCM (Google Cloud Messaging).
-    compile &apos;com.android.support:support-v4:25.3.0&apos;
-    compile &apos;com.android.support:appcompat-v7:25.3.0&apos;
-    compile &apos;com.android.support.constraint:constraint-layout:1.0.2&apos;
-    compile &apos;com.android.support:design:25.3.0&apos;
-    compile &apos;com.android.support:cardview-v7:25.3.0&apos;
-    compile &apos;com.android.support:recyclerview-v7:25.3.0&apos;
-    compile &apos;com.google.code.gson:gson:2.7&apos;
-    compile &apos;com.google.android.gms:play-services-gcm:10.2.1&apos;
-    compile &apos;com.squareup.okhttp:okhttp:2.0.0&apos;
-    testCompile &apos;junit:junit:4.12&apos;
-    // 环信
-    compile project(&apos;:easeui&apos;)
-    compile files(&apos;libs/android-support-multidex.jar&apos;)
-    compile files(&apos;libs/bolts-tasks-1.4.0.jar&apos;)
-    compile files(&apos;libs/umeng-analytics-v5.2.4.jar&apos;)
-    compile files(&apos;libs/parse-android-1.13.0.jar&apos;)
-    compile files(&apos;libs/umeng-update-v2.6.0.1.jar&apos;)
-}
-</code></pre><p>`</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><pre><code>1、http://blog.csdn.net/chenqiuping_ls/article/details/53409297
-2、https://zhidao.baidu.com/question/1830062383679887660.html
-</code></pre>
       
     </div>
     
