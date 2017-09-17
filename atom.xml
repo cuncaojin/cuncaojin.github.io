@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-17T02:02:19.187Z</updated>
+  <updated>2017-09-17T02:12:02.314Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/09/17/XML%EF%BC%88%E5%90%ABXPath%EF%BC%89/"/>
     <id>http://yoursite.com/2017/09/17/XML（含XPath）/</id>
     <published>2017-09-17T01:55:56.303Z</published>
-    <updated>2017-09-17T02:02:19.187Z</updated>
+    <updated>2017-09-17T02:12:02.314Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h2 id="SQL语法"><a href="#SQL语法" class="headerlink" title="#SQL语法"></a>#SQL语法</h2><h3 id="一、Dom4j解析（需要导入Dom4j-jar）："><a href="#一、Dom4j解析（需要导入Dom4j-jar）：" class="headerlink" title="一、Dom4j解析（需要导入Dom4j.jar）："></a>一、Dom4j解析（需要导入Dom4j.jar）：</h3><pre><code>import java.io.FileOutputStream;
@@ -68,6 +68,13 @@ public class Demo {
         }
     }
 }
+
+1、结合Dom4j获取Document对象（XPath解析技术依赖Dom4j解析技术）
+2、导入Dom4j.jar和jaxen-1.1-beta-6.jar
+3、如果想使用XPATH语言，条件：只能使用node节点对象中的两个方法：
+    List selectNodes(String xpathExpression);
+    Node selectSingleNode(String xpathExpression);
+4、xpathExpression的写法，查文档
 </code></pre>]]></content>
     
     <summary type="html">
@@ -865,20 +872,6 @@ public class MainActivity extends AppCompatActivity {
   </entry>
   
   <entry>
-    <title>Toolbar</title>
-    <link href="http://yoursite.com/2017/08/02/Toolbar/"/>
-    <id>http://yoursite.com/2017/08/02/Toolbar/</id>
-    <published>2017-08-02T02:21:02.331Z</published>
-    <updated>2017-03-16T01:44:26.265Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Kotlin 协程</title>
     <link href="http://yoursite.com/2017/08/02/Kotlin%20%E5%8D%8F%E7%A8%8B/"/>
     <id>http://yoursite.com/2017/08/02/Kotlin 协程/</id>
@@ -946,6 +939,20 @@ public abstract class MVPBaseActivity&lt;V, T extends BasePresenter&lt;V&gt;&gt;
     <summary type="html">
     
       &lt;p&gt;参考：&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzIzMTYzOTYzNA==&amp;amp;mid=2247483875&amp;amp;idx=1&amp;amp;sn=b1b565f651ee1221d4bda19ab12009ce&amp;amp;ch
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Toolbar</title>
+    <link href="http://yoursite.com/2017/08/02/Toolbar/"/>
+    <id>http://yoursite.com/2017/08/02/Toolbar/</id>
+    <published>2017-08-02T02:21:02.331Z</published>
+    <updated>2017-03-16T01:44:26.265Z</updated>
+    
+    <summary type="html">
     
     </summary>
     
