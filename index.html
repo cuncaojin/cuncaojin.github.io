@@ -262,6 +262,94 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-XML（含XPath）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/17/XML（含XPath）/" class="article-date">
+      <time datetime="2017-09-17T01:55:56.303Z" itemprop="datePublished">2017-09-17</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h2 id="SQL语法"><a href="#SQL语法" class="headerlink" title="#SQL语法"></a>#SQL语法</h2><h3 id="一、Dom4j解析（需要导入Dom4j-jar）："><a href="#一、Dom4j解析（需要导入Dom4j-jar）：" class="headerlink" title="一、Dom4j解析（需要导入Dom4j.jar）："></a>一、Dom4j解析（需要导入Dom4j.jar）：</h3><pre><code>import java.io.FileOutputStream;
+import java.io.IOException;
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.io.OutputFormat;
+import org.dom4j.io.SAXReader;
+import org.dom4j.io.XMLWriter;
+
+public class Dom4jUtil {
+    private static final String DEFAULT_PATH = &quot;src/com/cuncaojin/xmlFile.xml&quot;;
+
+    private Dom4jUtil() {
+    }
+
+    public static Document getDocument(String filePath) throws DocumentException {
+        SAXReader saxReader = new SAXReader();
+        filePath = filePath == null ? DEFAULT_PATH : filePath;
+        return saxReader.read(filePath);
+    }
+
+    public  void write2XML(Document document, String filePath) throws IOException {
+        OutputFormat format = OutputFormat.createPrettyPrint();
+        format.setEncoding(&quot;UTF-8&quot;);
+        filePath = filePath == null ? DEFAULT_PATH : filePath;
+        XMLWriter writer = new XMLWriter(new FileOutputStream(filePath), format);
+        writer.write(document);
+        writer.close();
+    }
+}
+</code></pre><h3 id="二、XPath解析（依赖Dom4j解析技术，需要导入Dom4j-jar和jaxen-1-1-beta-6-jar包）："><a href="#二、XPath解析（依赖Dom4j解析技术，需要导入Dom4j-jar和jaxen-1-1-beta-6-jar包）：" class="headerlink" title="二、XPath解析（依赖Dom4j解析技术，需要导入Dom4j.jar和jaxen-1.1-beta-6.jar包）："></a>二、XPath解析（依赖Dom4j解析技术，需要导入Dom4j.jar和jaxen-1.1-beta-6.jar包）：</h3><pre><code>import java.util.List;
+import org.dom4j.Document;
+import org.dom4j.Element;
+import org.dom4j.Node;
+import org.dom4j.io.SAXReader;
+public class Demo {
+    public static void main(java.lang.String[] args) throws Exception {
+        String path = &quot;myxml.xml&quot;;
+        Document document = new SAXReader().read(path);
+        List&lt;Element&gt; selectNodes = document.selectNodes(&quot;//addr[@id=&apos;addrs&apos;]&quot;);
+        // List&lt;Element&gt; selectNodes = document.selectNodes(&quot;//addr&quot;);
+        for (Node node : selectNodes) {
+            System.out.println(node.getText());
+        }
+    }
+}
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-MySQL数据库" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1277,115 +1365,6 @@ public class MainActivity extends AppCompatActivity {
 <p><a href="http://www.jianshu.com/p/f6b71cd44696" target="_blank" rel="external">TonnyL大神的《如何用一周时间开发一款Android APP并在Google Play上线》</a></p>
 <p>图：<br><a href="https://dribbble.com/" target="_blank" rel="external">https://dribbble.com/</a></p>
 
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Kotlin 协程" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/08/02/Kotlin 协程/" class="article-date">
-      <time datetime="2017-08-02T02:21:02.331Z" itemprop="datePublished">2017-08-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/02/Kotlin 协程/">Kotlin 协程</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>参考：<a href="https://mp.weixin.qq.com/s?__biz=MzIzMTYzOTYzNA==&amp;mid=2247483875&amp;idx=1&amp;sn=b1b565f651ee1221d4bda19ab12009ce&amp;chksm=e8a05ededfd7d7c878c1c483c577ec53bcf42ee4cb0fe5d13f29d12ff62a1e335c4afa616ffa#rd" target="_blank" rel="external">https://mp.weixin.qq.com/s?__biz=MzIzMTYzOTYzNA==&amp;mid=2247483875&amp;idx=1&amp;sn=b1b565f651ee1221d4bda19ab12009ce&amp;chksm=e8a05ededfd7d7c878c1c483c577ec53bcf42ee4cb0fe5d13f29d12ff62a1e335c4afa616ffa#rd</a></p>
-<p><strong>一句话，有了协程，你的异步程序看起来就像同步代码一样。</strong></p>
-<pre><code>V:View,关注处理视图的可视化及与用户交互
-P:Presenter,关注业务处理
-</code></pre><p>###在MVP模式里通常包含4个要素：<br>     (1)View:负责绘制UI元素、与用户进行交互(在Android中体现为Activity);<br>     (2)View interface:需要View实现的接口，View通过View interface与Presenter进行交互，降低耦合，方便进行单元测试;<br>     (3)Model:负责存储、检索、操纵数据(有时也实现一个Model interface用来降低耦合);<br>     (4)Presenter:作为View与Model交互的中间纽带，处理与用户交互的负责逻辑。<br><img src="http://img.blog.csdn.net/20150309135723885?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdmVjdG9yX3lp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>###总结：</p>
-<pre><code>V:持有P的引用，项目规格不大，可以不使用P的接口
-P:持有M、V的接口实现对象
-
-**Note:** 
-防止Activity或Fragment声明周期结束后，一般执行耗时操作的Presenter层因为持有对Activity或Fragment的强引用，导致内存泄漏。
-
-**处理方法：**
-1.  解除绑定关系，在V层生命周期的OnDestory()中，调用P层持有的V，将其置空，解除和P层的关联。
-2.  为了弥补在特殊情况下，如系统突然回收内存，导致Activity的onStop、onDestory没有执行便被干掉，造成上一种方式解除绑定代码没有被执行，特还需要使用软引用或弱引用。
-
-
-/**
- * code from Android源码设计模式
- */
-public abstract class BasePresenter&lt;T&gt; {
-    protected Reference&lt;T&gt; mViewRef;
-
-    public void attachView(T view) {
-        mViewRef = new WeakReference&lt;T&gt;(view);
-    }
-
-    protected T getView() {
-        return mViewRef.get();
-    }
-
-    protected void detachView() {
-        if (mViewRef != null) {
-            mViewRef.clear();
-            mViewRef = null;
-        }
-    }
-}
-
-public abstract class MVPBaseActivity&lt;V, T extends BasePresenter&lt;V&gt;&gt; extends AppCompatActivity {
-    BasePresenter mPresenter;
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mPresenter = createPresenter();
-        mPresenter.attachView((V) this);
-    }
-
-    public abstract T createPresenter();
-
-    @Override
-    public void onDestroy() {
-        mPresenter.detachView();
-    }
-}
-</code></pre>
       
     </div>
     

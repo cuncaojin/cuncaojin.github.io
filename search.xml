@@ -4,6 +4,60 @@
     
     <entry>
       <title></title>
+      <url>/2017/09/17/XML%EF%BC%88%E5%90%ABXPath%EF%BC%89/</url>
+      <content type="html"><![CDATA[<hr>
+<h2 id="SQL语法"><a href="#SQL语法" class="headerlink" title="#SQL语法"></a>#SQL语法</h2><h3 id="一、Dom4j解析（需要导入Dom4j-jar）："><a href="#一、Dom4j解析（需要导入Dom4j-jar）：" class="headerlink" title="一、Dom4j解析（需要导入Dom4j.jar）："></a>一、Dom4j解析（需要导入Dom4j.jar）：</h3><pre><code>import java.io.FileOutputStream;
+import java.io.IOException;
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.io.OutputFormat;
+import org.dom4j.io.SAXReader;
+import org.dom4j.io.XMLWriter;
+
+public class Dom4jUtil {
+    private static final String DEFAULT_PATH = &quot;src/com/cuncaojin/xmlFile.xml&quot;;
+
+    private Dom4jUtil() {
+    }
+
+    public static Document getDocument(String filePath) throws DocumentException {
+        SAXReader saxReader = new SAXReader();
+        filePath = filePath == null ? DEFAULT_PATH : filePath;
+        return saxReader.read(filePath);
+    }
+
+    public  void write2XML(Document document, String filePath) throws IOException {
+        OutputFormat format = OutputFormat.createPrettyPrint();
+        format.setEncoding(&quot;UTF-8&quot;);
+        filePath = filePath == null ? DEFAULT_PATH : filePath;
+        XMLWriter writer = new XMLWriter(new FileOutputStream(filePath), format);
+        writer.write(document);
+        writer.close();
+    }
+}
+</code></pre><h3 id="二、XPath解析（依赖Dom4j解析技术，需要导入Dom4j-jar和jaxen-1-1-beta-6-jar包）："><a href="#二、XPath解析（依赖Dom4j解析技术，需要导入Dom4j-jar和jaxen-1-1-beta-6-jar包）：" class="headerlink" title="二、XPath解析（依赖Dom4j解析技术，需要导入Dom4j.jar和jaxen-1.1-beta-6.jar包）："></a>二、XPath解析（依赖Dom4j解析技术，需要导入Dom4j.jar和jaxen-1.1-beta-6.jar包）：</h3><pre><code>import java.util.List;
+import org.dom4j.Document;
+import org.dom4j.Element;
+import org.dom4j.Node;
+import org.dom4j.io.SAXReader;
+public class Demo {
+    public static void main(java.lang.String[] args) throws Exception {
+        String path = &quot;myxml.xml&quot;;
+        Document document = new SAXReader().read(path);
+        List&lt;Element&gt; selectNodes = document.selectNodes(&quot;//addr[@id=&apos;addrs&apos;]&quot;);
+        // List&lt;Element&gt; selectNodes = document.selectNodes(&quot;//addr&quot;);
+        for (Node node : selectNodes) {
+            System.out.println(node.getText());
+        }
+    }
+}
+</code></pre>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title></title>
       <url>/2017/09/11/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
       <content type="html"><![CDATA[<hr>
 <h2 id="SQL语法"><a href="#SQL语法" class="headerlink" title="#SQL语法"></a>#SQL语法</h2><p>###数据库</p>
@@ -694,6 +748,14 @@ public class MainActivity extends AppCompatActivity {
     </entry>
     
     <entry>
+      <title><![CDATA[Toolbar]]></title>
+      <url>/2017/08/02/Toolbar/</url>
+      <content type="html"></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Kotlin 协程]]></title>
       <url>/2017/08/02/Kotlin%20%E5%8D%8F%E7%A8%8B/</url>
       <content type="html"><![CDATA[<p>参考：<a href="https://mp.weixin.qq.com/s?__biz=MzIzMTYzOTYzNA==&amp;mid=2247483875&amp;idx=1&amp;sn=b1b565f651ee1221d4bda19ab12009ce&amp;chksm=e8a05ededfd7d7c878c1c483c577ec53bcf42ee4cb0fe5d13f29d12ff62a1e335c4afa616ffa#rd" target="_blank" rel="external">https://mp.weixin.qq.com/s?__biz=MzIzMTYzOTYzNA==&amp;mid=2247483875&amp;idx=1&amp;sn=b1b565f651ee1221d4bda19ab12009ce&amp;chksm=e8a05ededfd7d7c878c1c483c577ec53bcf42ee4cb0fe5d13f29d12ff62a1e335c4afa616ffa#rd</a></p>
@@ -753,14 +815,6 @@ public abstract class MVPBaseActivity&lt;V, T extends BasePresenter&lt;V&gt;&gt;
     }
 }
 </code></pre>]]></content>
-      
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Toolbar]]></title>
-      <url>/2017/08/02/Toolbar/</url>
-      <content type="html"></content>
       
         
     </entry>

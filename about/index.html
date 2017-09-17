@@ -15,19 +15,19 @@
 
 
 
-<meta name="description" content="参考：https://mp.weixin.qq.com/s?__biz=MzIzMTYzOTYzNA==&amp;amp;mid=2247483875&amp;amp;idx=1&amp;amp;sn=b1b565f651ee1221d4bda19ab12009ce&amp;amp;chksm=e8a05ededfd7d7c878c1c483c577ec53bcf42ee4cb0fe5d13f29d12ff62a1e335c4a">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Kotlin 协程">
-<meta property="og:url" content="http://yoursite.com/2017/08/02/Kotlin 协程/index.html">
+<meta name="description" content="I❤U Fiona  		 		 		  		 		 		 		 		 		 		 		 			html, 			body { 				background-color: #333333; 			} 			 			.container { 				position: absolute; 				width: 100%; 				height: 100%;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="寸草金的博客">
+<meta property="og:url" content="http://yoursite.com/about/index.html">
 <meta property="og:site_name" content="寸草金的博客">
-<meta property="og:description" content="参考：https://mp.weixin.qq.com/s?__biz=MzIzMTYzOTYzNA==&amp;amp;mid=2247483875&amp;amp;idx=1&amp;amp;sn=b1b565f651ee1221d4bda19ab12009ce&amp;amp;chksm=e8a05ededfd7d7c878c1c483c577ec53bcf42ee4cb0fe5d13f29d12ff62a1e335c4a">
+<meta property="og:description" content="I❤U Fiona  		 		 		  		 		 		 		 		 		 		 		 			html, 			body { 				background-color: #333333; 			} 			 			.container { 				position: absolute; 				width: 100%; 				height: 100%;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.blog.csdn.net/20150309135723885?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdmVjdG9yX3lp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-03-06T05:06:26.862Z">
+<meta property="og:image" content="http://yoursite.com/cuncaojin/img/biglogo.png">
+<meta property="og:updated_time" content="2017-09-11T03:04:24.700Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kotlin 协程">
-<meta name="twitter:description" content="参考：https://mp.weixin.qq.com/s?__biz=MzIzMTYzOTYzNA==&amp;amp;mid=2247483875&amp;amp;idx=1&amp;amp;sn=b1b565f651ee1221d4bda19ab12009ce&amp;amp;chksm=e8a05ededfd7d7c878c1c483c577ec53bcf42ee4cb0fe5d13f29d12ff62a1e335c4a">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20150309135723885?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdmVjdG9yX3lp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:title" content="寸草金的博客">
+<meta name="twitter:description" content="I❤U Fiona  		 		 		  		 		 		 		 		 		 		 		 			html, 			body { 				background-color: #333333; 			} 			 			.container { 				position: absolute; 				width: 100%; 				height: 100%;">
+<meta name="twitter:image" content="http://yoursite.com/cuncaojin/img/biglogo.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Kotlin 协程 | 寸草金的博客</title>
+<title>寸草金的博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -67,7 +67,7 @@
         fancybox: false,
         animate: true,
         isHome: false,
-        isPost: true,
+        isPost: false,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -261,11 +261,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Kotlin 协程" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/08/02/Kotlin 协程/" class="article-date">
-      <time datetime="2017-08-02T02:21:02.331Z" itemprop="datePublished">2017-08-02</time>
+      <a href="/about/index.html" class="article-date">
+      <time datetime="2017-09-17T02:04:16.596Z" itemprop="datePublished">2017-09-17</time>
 </a>
 
 
@@ -274,84 +274,141 @@
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Kotlin 协程
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>参考：<a href="https://mp.weixin.qq.com/s?__biz=MzIzMTYzOTYzNA==&amp;mid=2247483875&amp;idx=1&amp;sn=b1b565f651ee1221d4bda19ab12009ce&amp;chksm=e8a05ededfd7d7c878c1c483c577ec53bcf42ee4cb0fe5d13f29d12ff62a1e335c4afa616ffa#rd" target="_blank" rel="external">https://mp.weixin.qq.com/s?__biz=MzIzMTYzOTYzNA==&amp;mid=2247483875&amp;idx=1&amp;sn=b1b565f651ee1221d4bda19ab12009ce&amp;chksm=e8a05ededfd7d7c878c1c483c577ec53bcf42ee4cb0fe5d13f29d12ff62a1e335c4afa616ffa#rd</a></p>
-<p><strong>一句话，有了协程，你的异步程序看起来就像同步代码一样。</strong></p>
-<pre><code>V:View,关注处理视图的可视化及与用户交互
-P:Presenter,关注业务处理
-</code></pre><p>###在MVP模式里通常包含4个要素：<br>     (1)View:负责绘制UI元素、与用户进行交互(在Android中体现为Activity);<br>     (2)View interface:需要View实现的接口，View通过View interface与Presenter进行交互，降低耦合，方便进行单元测试;<br>     (3)Model:负责存储、检索、操纵数据(有时也实现一个Model interface用来降低耦合);<br>     (4)Presenter:作为View与Model交互的中间纽带，处理与用户交互的负责逻辑。<br><img src="http://img.blog.csdn.net/20150309135723885?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdmVjdG9yX3lp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>###总结：</p>
-<pre><code>V:持有P的引用，项目规格不大，可以不使用P的接口
-P:持有M、V的接口实现对象
-
-**Note:** 
-防止Activity或Fragment声明周期结束后，一般执行耗时操作的Presenter层因为持有对Activity或Fragment的强引用，导致内存泄漏。
-
-**处理方法：**
-1.  解除绑定关系，在V层生命周期的OnDestory()中，调用P层持有的V，将其置空，解除和P层的关联。
-2.  为了弥补在特殊情况下，如系统突然回收内存，导致Activity的onStop、onDestory没有执行便被干掉，造成上一种方式解除绑定代码没有被执行，特还需要使用软引用或弱引用。
-
-
-/**
- * code from Android源码设计模式
- */
-public abstract class BasePresenter&lt;T&gt; {
-    protected Reference&lt;T&gt; mViewRef;
-
-    public void attachView(T view) {
-        mViewRef = new WeakReference&lt;T&gt;(view);
+              <style>
+    .article-meta { display: none; }
+    #container .article .article-title { padding-right: 0; }
+    .article-header {
+        padding: 0;
+        padding-top: 26px;
+        border-left: none;
+        text-align: center;
     }
+    .article-header:hover { border-left: none; }
+    .article-title { font-size: 1.6em }
+    .article-entry hr { margin: 0;}
+    .article-meta,
+    #container .article-info-post.article-info { display: none;}
+    #container .article .article-title { padding: 0; }
+</style>
 
-    protected T getView() {
-        return mViewRef.get();
-    }
 
-    protected void detachView() {
-        if (mViewRef != null) {
-            mViewRef.clear();
-            mViewRef = null;
-        }
-    }
-}
+          
+        <!DOCTYPE html>
+<html>
 
-public abstract class MVPBaseActivity&lt;V, T extends BasePresenter&lt;V&gt;&gt; extends AppCompatActivity {
-    BasePresenter mPresenter;
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>I❤U Fiona</title>
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mPresenter = createPresenter();
-        mPresenter.attachView((V) this);
-    }
+		<link href="../cuncaojin/css/style.css" rel="stylesheet">
+		<!-- Bootstrap -->
+		<link href="../cuncaojin/css/bootstrap.min.css" rel="stylesheet">
 
-    public abstract T createPresenter();
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="../cuncaojin/js/jquery-2.1.0.js"></script>
+		<script src="../cuncaojin/js/carousel.js"></script>
+		<link href="../cuncaojin/css/animate.css" rel="stylesheet">
+		<link rel="stylesheet" href="../css/magic.min.css">
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="../cuncaojin/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			html,
+			body {
+				background-color: #333333;
+			}
+			
+			.container {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				border-radius: 10px;
+			}
+			
+			.logo {
+				display: inline-block;
+				margin: 2rem 0 0;
+				border-radius: 50%;
+				width: 160px;
+				height: 160px;
+				border: 7px solid #FFFFFF;
+				box-shadow: 0px 0px 20px 2px #fff59d;
+			}
+			
+			.logo:hover {
+				width: 200px;
+				height: 200px;
+				box-shadow: 0px 0px 1px #9D9D9D;
+			}
+			
+			.phoneNo {
+				margin: 2rem auto;
+				width: 15rem;
+				line-height: 1.5em;
+				background-color: #444444;
+				vertical-align: middle;
+				border-radius: 7px;
+				font-size: 21px;
+				text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+				transition: all 0.25s;
+				color: #fc0;
+				text-decoration: none;
+				cursor: auto;
+				font-feature-settings: "kern" 1;
+				font-kerning: normal;
+			}
+			
+			.phoneNo:hover {
+				color: #fd0;
+			}
+		</style>
+		<script type="text/javascript">
+			var time = 0;
+			var direction = true;
+			var pn = "18811716119";
+			$(function() {
+				runId = setInterval(run, (time * 20) + 200);
+			});
 
-    @Override
-    public void onDestroy() {
-        mPresenter.detachView();
-    }
-}
-</code></pre>
+			function run() {
+
+				if(!direction) {
+					// clearInterval(runId);
+					console.log(pn);
+					$("#phoneNumber").text(pn.substring(0, ((--time - 1) % pn.length + 1)));
+				} else {
+					$("#phoneNumber").text(pn.substring(0, (time++ % pn.length + 1)));
+				}
+
+				if((pn == $("#phoneNumber").text()) || ("" == $("#phoneNumber").text())) {
+					direction = !direction;
+					console.log(direction + "---");
+					if(direction) {
+						$("#phoneNumber").removeClass("animated tada");
+					} else {
+						$("#phoneNumber").addClass("animated tada");
+						clearInterval(runId);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div>
+				<img class="logo" src="../cuncaojin/img/biglogo.png">
+			</div>
+
+			<p id="phoneNumber" class="phoneNo">18811716119</p>
+		</div>
+	</body>
+</html>
       
     </div>
     
@@ -360,48 +417,8 @@ public abstract class MVPBaseActivity&lt;V, T extends BasePresenter&lt;V&gt;&gt;
     
 
 
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/08/02/Toolbar/">
-                    Toolbar
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/08/02/即时通讯之环信集成采坑/">
-                    即时通讯之环信3.0集成采坑
-                </a>
-            </div>
-        
-    </nav>
-
   
 </article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
 
 
 
@@ -409,26 +426,6 @@ public abstract class MVPBaseActivity&lt;V, T extends BasePresenter&lt;V&gt;&gt;
 
     
 
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2017/08/02/Toolbar/" title="上一篇: Toolbar">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2017/08/02/即时通讯之环信集成采坑/" title="下一篇: 即时通讯之环信3.0集成采坑">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/17/XML（含XPath）/">XML（含XPath）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/11/MySQL数据库/">MySQL数据库</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Android动画的7种实现方式/">Android Scroll分析 ——《群英传》第五章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/绘图/">Android 绘图 ——Android群英传 学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/蚂蚁金服开放平台 RSA2/">蚂蚁金服. 开放平台. 文档中心</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/MVP/">MVP学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/HttpURLConnection重定向/">URL由http到https重定向，URLConnection下载失败</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Android/">收藏</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/开发素材/">开发练习素材，不至于素材</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Toolbar/">Toolbar</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Kotlin 协程/">Kotlin 协程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/即时通讯之环信集成采坑/">即时通讯之环信3.0集成采坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Java基础/">Java基础重温</a></li></ul>
 
 
 

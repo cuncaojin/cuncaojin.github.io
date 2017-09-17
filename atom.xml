@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-11T02:47:53.351Z</updated>
+  <updated>2017-09-17T02:02:19.187Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,71 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/09/17/XML%EF%BC%88%E5%90%ABXPath%EF%BC%89/"/>
+    <id>http://yoursite.com/2017/09/17/XML（含XPath）/</id>
+    <published>2017-09-17T01:55:56.303Z</published>
+    <updated>2017-09-17T02:02:19.187Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h2 id="SQL语法"><a href="#SQL语法" class="headerlink" title="#SQL语法"></a>#SQL语法</h2><h3 id="一、Dom4j解析（需要导入Dom4j-jar）："><a href="#一、Dom4j解析（需要导入Dom4j-jar）：" class="headerlink" title="一、Dom4j解析（需要导入Dom4j.jar）："></a>一、Dom4j解析（需要导入Dom4j.jar）：</h3><pre><code>import java.io.FileOutputStream;
+import java.io.IOException;
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.io.OutputFormat;
+import org.dom4j.io.SAXReader;
+import org.dom4j.io.XMLWriter;
+
+public class Dom4jUtil {
+    private static final String DEFAULT_PATH = &quot;src/com/cuncaojin/xmlFile.xml&quot;;
+
+    private Dom4jUtil() {
+    }
+
+    public static Document getDocument(String filePath) throws DocumentException {
+        SAXReader saxReader = new SAXReader();
+        filePath = filePath == null ? DEFAULT_PATH : filePath;
+        return saxReader.read(filePath);
+    }
+
+    public  void write2XML(Document document, String filePath) throws IOException {
+        OutputFormat format = OutputFormat.createPrettyPrint();
+        format.setEncoding(&quot;UTF-8&quot;);
+        filePath = filePath == null ? DEFAULT_PATH : filePath;
+        XMLWriter writer = new XMLWriter(new FileOutputStream(filePath), format);
+        writer.write(document);
+        writer.close();
+    }
+}
+</code></pre><h3 id="二、XPath解析（依赖Dom4j解析技术，需要导入Dom4j-jar和jaxen-1-1-beta-6-jar包）："><a href="#二、XPath解析（依赖Dom4j解析技术，需要导入Dom4j-jar和jaxen-1-1-beta-6-jar包）：" class="headerlink" title="二、XPath解析（依赖Dom4j解析技术，需要导入Dom4j.jar和jaxen-1.1-beta-6.jar包）："></a>二、XPath解析（依赖Dom4j解析技术，需要导入Dom4j.jar和jaxen-1.1-beta-6.jar包）：</h3><pre><code>import java.util.List;
+import org.dom4j.Document;
+import org.dom4j.Element;
+import org.dom4j.Node;
+import org.dom4j.io.SAXReader;
+public class Demo {
+    public static void main(java.lang.String[] args) throws Exception {
+        String path = &quot;myxml.xml&quot;;
+        Document document = new SAXReader().read(path);
+        List&lt;Element&gt; selectNodes = document.selectNodes(&quot;//addr[@id=&apos;addrs&apos;]&quot;);
+        // List&lt;Element&gt; selectNodes = document.selectNodes(&quot;//addr&quot;);
+        for (Node node : selectNodes) {
+            System.out.println(node.getText());
+        }
+    }
+}
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h2 id=&quot;SQL语法&quot;&gt;&lt;a href=&quot;#SQL语法&quot; class=&quot;headerlink&quot; title=&quot;#SQL语法&quot;&gt;&lt;/a&gt;#SQL语法&lt;/h2&gt;&lt;h3 id=&quot;一、Dom4j解析（需要导入Dom4j-jar）：&quot;&gt;&lt;a href=&quot;#一、Dom4j解析
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -800,6 +865,20 @@ public class MainActivity extends AppCompatActivity {
   </entry>
   
   <entry>
+    <title>Toolbar</title>
+    <link href="http://yoursite.com/2017/08/02/Toolbar/"/>
+    <id>http://yoursite.com/2017/08/02/Toolbar/</id>
+    <published>2017-08-02T02:21:02.331Z</published>
+    <updated>2017-03-16T01:44:26.265Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Kotlin 协程</title>
     <link href="http://yoursite.com/2017/08/02/Kotlin%20%E5%8D%8F%E7%A8%8B/"/>
     <id>http://yoursite.com/2017/08/02/Kotlin 协程/</id>
@@ -867,20 +946,6 @@ public abstract class MVPBaseActivity&lt;V, T extends BasePresenter&lt;V&gt;&gt;
     <summary type="html">
     
       &lt;p&gt;参考：&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzIzMTYzOTYzNA==&amp;amp;mid=2247483875&amp;amp;idx=1&amp;amp;sn=b1b565f651ee1221d4bda19ab12009ce&amp;amp;ch
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Toolbar</title>
-    <link href="http://yoursite.com/2017/08/02/Toolbar/"/>
-    <id>http://yoursite.com/2017/08/02/Toolbar/</id>
-    <published>2017-08-02T02:21:02.331Z</published>
-    <updated>2017-03-16T01:44:26.265Z</updated>
-    
-    <summary type="html">
     
     </summary>
     
