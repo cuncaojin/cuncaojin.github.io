@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,14 +66,44 @@
 				font-kerning: normal;
 			}
 			
+			.alert{
+				margin: 2rem auto;
+				width: 15rem;
+				line-height: 1.5em;
+				vertical-align: middle;
+				border-radius: 7px;
+				font-size: 24px;
+				text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+				transition: all 0.25s;
+				color: #333333;
+				text-decoration: none;
+				cursor: auto;
+				font-feature-settings: "kern" 1;
+				font-kerning: normal;
+				
+				
+				/*display: none;*/
+				 width: 80%;
+				 height: 60px;
+				 background: #E5E5E5;
+				 left: 10%;
+				 position: fixed;
+			
+			}
+			
 			.phoneNo:hover {
 				color: #fd0;
+			}
+			
+			* {
+				-webkit-user-select: auto;
 			}
 		</style>
 		<script type="text/javascript">
 			var time = 0;
 			var direction = true;
 			var pn = "18811716119";
+
 			$(function() {
 				runId = setInterval(run, (time * 20) + 200);
 			});
@@ -95,11 +126,13 @@
 					} else {
 						$("#phoneNumber").addClass("animated tada");
 						clearInterval(runId);
-					}
+					} 
 				}
 			}
+			
 		</script>
 	</head>
+
 	<body>
 		<div class="container">
 			<div>
@@ -107,6 +140,32 @@
 			</div>
 
 			<p id="phoneNumber" class="phoneNo">18811716119</p>
+			
+			<div id="alert"></div>
 		</div>
+		
+		<script type="text/javascript">
+			function copyArticle(event) {
+				const range = document.createRange();
+				range.selectNode(document.getElementById('phoneNumber'));
+
+				const selection = window.getSelection();
+				if(selection.rangeCount > 0) selection.removeAllRanges();
+				selection.addRange(range);
+				document.execCommand('copy');
+				
+				$("#alert").html("<p class='alert'>手机号码已拷贝</p>");
+				$("#alert").show();
+				setTimeout(function(){
+					$("#alert").hide();
+				},2000)
+				
+
+			}
+
+			document.getElementById('phoneNumber').addEventListener('click', copyArticle, false);
+		 
+		</script>
 	</body>
+
 </html>
