@@ -16,7 +16,7 @@
 		<script src="../cuncaojin/js/jquery-2.1.0.js"></script>
 		<script src="../cuncaojin/js/carousel.js"></script>
 		<link href="../cuncaojin/css/animate.css" rel="stylesheet">
-		<link rel="stylesheet" href="../css/magic.min.css">
+		<link rel="stylesheet" href="../cuncaojin/css/magic.min.css">
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="../cuncaojin/js/bootstrap.min.js"></script>
 		<style type="text/css">
@@ -51,8 +51,8 @@
 			
 			.phoneNo {
 				margin: 2rem auto;
+				padding: 0.1rem 0;
 				width: 15rem;
-				line-height: 1.5em;
 				background-color: #444444;
 				vertical-align: middle;
 				border-radius: 7px;
@@ -66,10 +66,9 @@
 				font-kerning: normal;
 			}
 			
-			.alert{
+			.alert {
 				margin: 2rem auto;
 				width: 15rem;
-				line-height: 1.5em;
 				vertical-align: middle;
 				border-radius: 7px;
 				font-size: 24px;
@@ -80,15 +79,11 @@
 				cursor: auto;
 				font-feature-settings: "kern" 1;
 				font-kerning: normal;
-				
-				
-				/*display: none;*/
-				 width: 80%;
-				 height: 60px;
-				 background: #E5E5E5;
-				 left: 10%;
-				 position: fixed;
-			
+				width: 80%;
+				height: 60px;
+				background: #E5E5E5;
+				left: 10%;
+				position: fixed;
 			}
 			
 			.phoneNo:hover {
@@ -126,25 +121,27 @@
 					} else {
 						$("#phoneNumber").addClass("animated tada");
 						clearInterval(runId);
-					} 
+					}
 				}
 			}
-			
 		</script>
 	</head>
 
 	<body>
 		<div class="container">
-			<div>
+			<div id="photo">
 				<img class="logo" src="../cuncaojin/img/biglogo.png" />
 			</div>
 
 			<p id="phoneNumber" class="phoneNo">18811716119</p>
-			
-			<div id="alert"></div>
+
+			<div id="alert">手机号码已拷贝</div>
 		</div>
-		
+
 		<script type="text/javascript">
+			$("#photo").addClass("animated bounceIn")
+			$("#phoneNumber").addClass("animated rubberBand")
+
 			function copyArticle(event) {
 				const range = document.createRange();
 				range.selectNode(document.getElementById('phoneNumber'));
@@ -153,18 +150,17 @@
 				if(selection.rangeCount > 0) selection.removeAllRanges();
 				selection.addRange(range);
 				document.execCommand('copy');
-				
-				$("#alert").html("<p class='alert'>手机号码已拷贝</p>");
-				$("#alert").show();
-				setTimeout(function(){
-					$("#alert").hide();
-				},2000)
-				
+				// 屏蔽选择
+				selection.removeAllRanges();
 
+				$('#alert').addClass("animated flip").show().html("<p class='alert'>手机号码已拷贝</p>");
+				setTimeout(function() {
+//					$('#alert').removeClass().hide()
+					$("#alert").addClass("zoomOutDown").removeClass("flip");
+				}, 2000);
 			}
 
 			document.getElementById('phoneNumber').addEventListener('click', copyArticle, false);
-		 
 		</script>
 	</body>
 
