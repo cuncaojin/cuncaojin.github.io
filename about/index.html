@@ -143,7 +143,7 @@
 
 			<!--<p id="phoneNumber" class="phoneNo">18811716119</p>-->
 			
-			<a href="tel:18811716119" id="phoneNumber" class="phoneNo">18811716119</a>
+			<a id="phoneNumber" class="phoneNo">18811716119</a>
 
 			<div id="alert" style="display: none;">手机号码已拷贝</div>
 		</div>
@@ -170,8 +170,11 @@
 					$("#alert").addClass("zoomOutDown").removeClass("flip");
 				}, 2000);*/
 			}
-
-//			document.getElementById('phoneNumber').addEventListener('click', copyArticle, false);
+			$("#phoneNumber").click(function(){
+				copyArticle();
+				$(this).prop("href","tel:18811716119");
+			})
+			// document.getElementById('phoneNumber').addEventListener('click', copyArticle, false);
 		</script>
 	</body>
 
