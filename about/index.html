@@ -49,9 +49,16 @@
 				box-shadow: 0px 0px 1px #9D9D9D;
 			}
 			
+			a:link {text-decoration: none;color: #fd0;}		/* 未访问的链接 */
+			a:visited {text-decoration: none;color: #fd0;}	/* 已访问的链接 */
+			a:hover {text-decoration: none;color: #fd0;}	/* 鼠标移动到链接上 */
+			a:active {text-decoration: none;color: #fd0;}	/* 选定的链接 */
+			
 			.phoneNo {
 				margin: 2rem auto;
 				padding: 0.1rem 0;
+				display: inline-block;
+				
 				width: 15rem;
 				background-color: #444444;
 				vertical-align: middle;
@@ -129,18 +136,16 @@
 
 	<body>
 		<div class="container">
-			<div id="photo">
+			<div id="photo" style="margin-top: 1rem;">
 				<!--<img class="logo" src="../cuncaojin/img/big_logo.png" />-->
 				<img class="logo" src="../cuncaojin/img/logo3.jpg" /> 
 			</div>
 
 			<!--<p id="phoneNumber" class="phoneNo">18811716119</p>-->
 			
-			<a id="phoneNumber" href="tel:18811716119" class="phoneNo">18811716119</a>
+			<a href="tel:18811716119" id="phoneNumber" class="phoneNo">18811716119</a>
 
-			<div id="alert">手机号码已拷贝</div>
-			
-			<div><a href="tel:18811716119">18811716119</a></div>
+			<div id="alert" style="display: none;">手机号码已拷贝</div>
 		</div>
 
 		<script type="text/javascript">
@@ -158,14 +163,15 @@
 				// 屏蔽选择
 				selection.removeAllRanges();
 
+				/* 不再添加弹窗及其动画
 				$('#alert').addClass("animated flip").show().html("<p class='alert'>手机号码已拷贝</p>");
 				setTimeout(function() {
-//					$('#alert').removeClass().hide()
+					// $('#alert').removeClass().hide()
 					$("#alert").addClass("zoomOutDown").removeClass("flip");
-				}, 2000);
+				}, 2000);*/
 			}
 
-			document.getElementById('phoneNumber').addEventListener('click', copyArticle, false);
+//			document.getElementById('phoneNumber').addEventListener('click', copyArticle, false);
 		</script>
 	</body>
 
