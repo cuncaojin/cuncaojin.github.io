@@ -1,0 +1,28 @@
+html {
+	overflow: hidden;
+}
+
+body {
+	margin: 0;
+}
+
+#cas {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 2;
+	display: block;
+	margin: auto;
+}
+
+#bgcas {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	/*background-color: #CCC;*/
+	/*background-color: rgba(0, 0, 0, 0);*/
+	display: block;
+	margin: auto;
+}
