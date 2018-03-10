@@ -82,7 +82,7 @@ function reInit() {
 }
 
 // 定位到页面底部
-var t = height - canvas.height;
+var t = height - canvas.height-50;
 canvas.style.top = t + "px";
 bgcanvas.style.top = t + "px";
 
