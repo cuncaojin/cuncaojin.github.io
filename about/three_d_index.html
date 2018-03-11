@@ -32,34 +32,38 @@
 
 		<!--3d标签-->
 		<div class="tagBall">
-			<a class="tag" href="#">
+			<a class="tag" href="result_page.html">
 				<img src="../cuncaojin/img/marry/400x400/400x400_1.jpg" />
 			</a>
-			<a class="tag" href="#">
+			<a class="tag" href="result_page.html">
 				<img src="../cuncaojin/img/marry/400x400/400x400_2.jpg" />
 			</a>
-			<a class="tag" href="#">
+			<a class="tag" href="result_page.html">
+				<img src="../cuncaojin/img/marry/400x400/hotel.png" alt="高德地图" class="hotel"></img>
+			</a> 
+			<a class="tag" href="result_page.html">
 				<img src="../cuncaojin/img/marry/400x400/400x400_3.jpg" />
 			</a>
-			<a class="tag" href="#">
+			<a class="tag" href="result_page.html">
 				<img src="../cuncaojin/img/marry/400x400/400x400_4.jpg" />
 			</a>
-			<a class="tag" href="#">
+			<a class="tag" href="result_page.html">
 				<img src="../cuncaojin/img/marry/400x400/400x400_5.jpg" />
 			</a>
-			<a class="tag" href="#">
+			
+			<a class="tag" href="result_page.html">
 				<img src="../cuncaojin/img/marry/400x400/400x400_6.jpg" />
 			</a>
-			<a class="tag" href="#">
+			<a class="tag" href="result_page.html">
 				<img src="../cuncaojin/img/marry/400x400/400x400_7.jpg" />
 			</a>
-			<a class="tag" href="#">
+			<a class="tag" href="result_page.html">
 				<img src="../cuncaojin/img/marry/400x400/400x400_8.jpg" />
 			</a>
-			<a class="tag" href="#">
+			<a class="tag" href="result_page.html">
 				<img src="../cuncaojin/img/marry/400x400/400x400_9.jpg" />
 			</a>
-			<a class="tag" href="#">
+			<a class="tag" href="result_page.html">
 				<img src="../cuncaojin/img/marry/400x400/400x400_10.jpg" />
 			</a>
 		</div>
@@ -74,7 +78,19 @@
 		<script type="text/javascript" src="../cuncaojin/js/head_phonenum.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/coolClock.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/three_d_ball.js"></script>
-
+		<script type="text/javascript">
+			function getLocalStorage(){
+				if(typeof localStorage=="object"){
+					return localStorage;
+				}else if(typeof globalStorage=="object"){
+					return globalStorage[location.host];
+				}else{
+					throw new Error("Local storage not available.");
+				}
+			}
+			
+			var storage = getLocalStorage();
+		</script>
 	</body>
 
 </html>

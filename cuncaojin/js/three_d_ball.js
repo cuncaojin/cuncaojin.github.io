@@ -1,13 +1,30 @@
-$(function(){
+$(function() {
 	$(".tagBall").css({
-		top:parseInt($("canvas").first().css("top"))-parseInt($(".tagBall").first().css("height"))-50+"px"
+		top: parseInt($("canvas").first().css("top")) - parseInt($(".tagBall").first().css("height")) - 20 + "px"
+	});
+
+	$(".tagBall .tag").click(function() {
+		var src = $(this).children("img").first().prop("src");
+		if(src.indexOf("hotel.png")!=-1) {
+			$(this).prop("href", "gaode_map.html");
+		} else {
+			src = $(this).children("img").first().prop("src").replace("400x400/400x400_", "");
+			console.log(src + "=============")
+			$(this).prop("href", $(this).prop("href") + "?src=" + encodeURI(src))
+		}
+
+		//		location.href="index.html?"
+
+		//		$.get("result_page.html", {
+		//			src: encodeURI(newSrc)
+		//		});
 	});
 });
 
 var tagEle = "querySelectorAll" in document ? document.querySelectorAll(".tag") : getClass("tag"),
 	paper = "querySelectorAll" in document ? document.querySelector(".tagBall") : getClass("tagBall")[0],
-	RADIUS = 100,
-	fallLength = 200,
+	RADIUS = 90,
+	fallLength = 130,
 	tags = [],
 	angleX = Math.PI / 500,
 	angleY = Math.PI / 500,
@@ -54,10 +71,10 @@ function init3D() {
 function animate3D() {
 	rotateX();
 	rotateY();
-//	tags.forEach(function() {
-//		this.move();
-//	});
-	
+	//	tags.forEach(function() {
+	//		this.move();
+	//	});
+
 	for(var i = 0; i < tags.length; i++) {
 		tags[i].move();
 	}
@@ -84,12 +101,12 @@ if("addEventListener" in window) {
 function rotateX() {
 	var cos = Math.cos(angleX);
 	var sin = Math.sin(angleX);
-//	tags.forEach(function() {
-//		var y1 = this.y * cos - this.z * sin;
-//		var z1 = this.z * cos + this.y * sin;
-//		this.y = y1;
-//		this.z = z1;
-//	})
+	//	tags.forEach(function() {
+	//		var y1 = this.y * cos - this.z * sin;
+	//		var z1 = this.z * cos + this.y * sin;
+	//		this.y = y1;
+	//		this.z = z1;
+	//	})
 
 	for(var i = 0; i < tags.length; i++) {
 		var y1 = tags[i].y * cos - tags[i].z * sin;
@@ -102,13 +119,13 @@ function rotateX() {
 function rotateY() {
 	var cos = Math.cos(angleY);
 	var sin = Math.sin(angleY);
-//	tags.forEach(function() {
-//		var x1 = this.x * cos - this.z * sin;
-//		var z1 = this.z * cos + this.x * sin;
-//		this.x = x1;
-//		this.z = z1;
-//	})
-	
+	//	tags.forEach(function() {
+	//		var x1 = this.x * cos - this.z * sin;
+	//		var z1 = this.z * cos + this.x * sin;
+	//		this.x = x1;
+	//		this.z = z1;
+	//	})
+
 	for(var i = 0; i < tags.length; i++) {
 		var x1 = tags[i].x * cos - tags[i].z * sin;
 		var z1 = tags[i].z * cos + tags[i].x * sin;
