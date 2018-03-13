@@ -1,6 +1,6 @@
 $(function() {
 	$(".tagBall").css({
-		top: parseInt($("canvas").first().css("top")) - parseInt($(".tagBall").first().css("height")) - 20 + "px"
+		top: parseInt($("canvas").first().css("top")) - parseInt($(".tagBall").first().css("height"))/2 + "px"
 	});
 
 	$(".tagBall .tag").click(function() {
@@ -25,8 +25,8 @@ $(function() {
 
 var tagEle = "querySelectorAll" in document ? document.querySelectorAll(".tag") : getClass("tag"),
 	paper = "querySelectorAll" in document ? document.querySelector(".tagBall") : getClass("tagBall")[0],
-	RADIUS = 114,
-	fallLength = 500,
+	RADIUS = 120,
+	fallLength = 600,
 	tags = [],
 	angleX = Math.PI / fallLength,
 	angleY = Math.PI / fallLength,
