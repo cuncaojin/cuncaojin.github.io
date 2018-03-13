@@ -9,6 +9,13 @@
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
 		<title>基本地图展示</title>
 		<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css" />
+
+		<link href="../cuncaojin/css/style.css" rel="stylesheet">
+		<link href="../cuncaojin/css/bootstrap.min.css" rel="stylesheet">
+		<script src="../cuncaojin/js/jquery-2.1.0.js"></script>
+		<script src="../cuncaojin/js/carousel.js"></script>
+		<script src="../cuncaojin/js/bootstrap.min.js"></script>
+
 		<style type="text/css">
 			body,
 			html,
@@ -25,12 +32,20 @@
 				color: #690441;
 			}
 			
-			.button-group .button{
-				width: 60px;
-				height: 60px;
-				border-radius: 100%;
+			.button-group .button {
+				width: 100px;
+				height: 40px;
+				border-radius: 3px;
 				font-size: 22px;
-				font-weight: bold
+				font-weight: bold;
+/*				margin: 0 5px 0 0;*/
+				
+				padding: 6px 12px;
+				line-height: 1.42857143;
+				text-align: center;
+				color: #fff;
+				background-color: #5cb85c;
+				border-color: #4cae4c;
 			}
 		</style>
 	</head>
@@ -39,9 +54,9 @@
 		<div id="container" tabindex="0"></div>
 		<div id="tip"></div>
 		<div class="button-group">
-			<input id="setCenter" type="button" class="button" value="小" style="margin-bottom: 10px;" /><br />
-			<input id="setCenter2" type="button" class="button" value="中" style="margin-bottom: 10px;" /><br />
-			<input id="setCenter3" type="button" class="button" value="大" style="margin-bottom: 50px;" /><br />
+			<input id="setCenter" type="button" class="button" value="小" />
+			<input id="setCenter2" type="button" class="button" value="中" />
+			<input id="setCenter3" type="button" class="button" value="大" style="margin-right: 35px;" />
 		</div>
 
 		<script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
@@ -86,7 +101,7 @@
 						iconTheme: 'fresh',
 						iconStyle: myIconStyles[iconIdx],
 						iconLabel: {
-							innerHTML: '<b>'+hotel.charAt(iconIdx)+'</b>',
+							innerHTML: '<b>' + hotel.charAt(iconIdx) + '</b>',
 							style: {
 								color: '#fff',
 								fontSize: '120%',
@@ -97,7 +112,7 @@
 						position: map.getCenter(),
 						label: {
 							content: '<div style="text-align:center;">锦伦<br/>&nbsp;&nbsp;商务酒店&nbsp;&nbsp;</div>',
-							offset: new AMap.Pixel(30, 26), 
+							offset: new AMap.Pixel(30, 26),
 						},
 
 					});
@@ -106,7 +121,7 @@
 						iconIdx = (++iconIdx) % hotel.length;
 						marker.setIconStyle(myIconStyles[iconIdx]);
 						marker.setIconLabel({
-							innerHTML: '<b>'+hotel.charAt(iconIdx)+'</b>'
+							innerHTML: '<b>' + hotel.charAt(iconIdx) + '</b>'
 						});
 					}
 					setInterval(switchIcon, 700);

@@ -5,10 +5,12 @@ $(function() {
 
 	$(".tagBall .tag").click(function() {
 		var src = $(this).children("img").first().prop("src");
-		if(src.indexOf("hotel.png")!=-1) {
+		console.log(src)
+		if(src.indexOf("hotel.png") != -1) {
 			$(this).prop("href", "gaode_map.html");
 		} else {
-			src = $(this).children("img").first().prop("src").replace("400x400/400x400_", "");
+			//	src = $(this).children("embed").first().prop("src").replace("400x400/400x400_", "");
+			src = src.replace("png/","").replace("png","jpg")
 			console.log(src + "=============")
 			$(this).prop("href", $(this).prop("href") + "?src=" + encodeURI(src))
 		}
@@ -23,15 +25,17 @@ $(function() {
 
 var tagEle = "querySelectorAll" in document ? document.querySelectorAll(".tag") : getClass("tag"),
 	paper = "querySelectorAll" in document ? document.querySelector(".tagBall") : getClass("tagBall")[0],
-	RADIUS = 90,
-	fallLength = 130,
+	RADIUS = 114,
+	fallLength = 500,
 	tags = [],
-	angleX = Math.PI / 500,
-	angleY = Math.PI / 500,
+	angleX = Math.PI / fallLength,
+	angleY = Math.PI / fallLength,
 	CX = paper.offsetWidth / 2,
 	CY = paper.offsetHeight / 2,
 	EX = paper.offsetLeft + document.body.scrollLeft + document.documentElement.scrollLeft,
 	EY = paper.offsetTop + document.body.scrollTop + document.documentElement.scrollTop;
+
+//var X = RADIUS *4;
 
 function getClass(className) {
 	var ele = document.getElementsByTagName("*");
@@ -112,6 +116,7 @@ function rotateX() {
 		var y1 = tags[i].y * cos - tags[i].z * sin;
 		var z1 = tags[i].z * cos + tags[i].y * sin;
 		tags[i].y = y1;
+//		console.log(tags[i].y + "---|||  " + tags[i].z + "----   " + z1)
 		tags[i].z = z1;
 	}
 }
@@ -143,12 +148,14 @@ var tag = function(ele, x, y, z) {
 
 tag.prototype = {
 	move: function() {
-		var scale = fallLength / (fallLength - this.z);
+		//		var scale = fallLength / (fallLength - this.z);
+		var scale = Math.abs(this.z + RADIUS) / 2.5 / RADIUS;
 		var alpha = (this.z + RADIUS) / (2 * RADIUS);
 		var left = this.x + CX - this.ele.offsetWidth / 2 + "px";
 		var top = this.y + CY - this.ele.offsetHeight / 2 + "px";
 		var transform = 'translate(' + left + ', ' + top + ') scale(' + scale + ')';
 		this.ele.style.opacity = alpha + 0.5;
+//		console.log("===========" + scale + "==============")
 		this.ele.style.zIndex = parseInt(scale * 100);
 		this.ele.style.transform = transform;
 		this.ele.style.webkitTransform = transform;

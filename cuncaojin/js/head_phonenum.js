@@ -18,7 +18,6 @@ function run() {
 
 	if((pn == $("#phoneNumber").text()) || ("" == $("#phoneNumber").text())) {
 		direction = !direction;
-		console.log(direction + "---");
 		if(direction) {
 			$("#phoneNumber").removeClass("animated tada");
 		} else {
