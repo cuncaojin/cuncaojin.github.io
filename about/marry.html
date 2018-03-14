@@ -56,9 +56,9 @@
 		<!--3d标签-->
 		<div class="tagBall">
 			<!--很神奇，这个地图image如果放到其他image后，则那些图片有时候会不清晰-->
-			<!--<a class="tag" href="gaode_map.html">
+			<a class="tag" href="gaode_map.html" style="font-size: 22px;color: #CECECE;">
 				<img src="../cuncaojin/img/marry/png/map.png" alt="高德地图" />
-			</a>-->
+			</a>
 			<a class="tag" href="result_page.html">
 				<img src="../cuncaojin/img/marry/png/1.png" alt="LOVE" />
 			</a>
@@ -152,6 +152,13 @@
 			//			//动画开始时事件
 			//			backLogo.addEventListener("webkitAnimationStart", function() { 
 			//			}, false);
+
+			// 针对微信内置浏览器返回刷新，造成部分图片模糊处理
+			window.onpageshow = function(event) {
+				if(event.persisted) {
+					window.location.reload();
+				}
+			}
 		</script>
 		<script type="text/javascript">
 			// 存在bug :页面回退，不能重新加载页面 reload/refresh均无效
