@@ -6,7 +6,7 @@ $(function() {
 	$(".tagBall .tag").click(function() {
 		var src = $(this).children("img").first().prop("src");
 		console.log(src)
-		if(src.indexOf("hotel.png") != -1) {
+		if(src.indexOf("map.png") != -1) {
 			$(this).prop("href", "gaode_map.html");
 		} else {
 			//	src = $(this).children("embed").first().prop("src").replace("400x400/400x400_", "");

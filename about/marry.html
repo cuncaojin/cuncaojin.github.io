@@ -26,6 +26,17 @@
 			.audiojs {
 				display: none;
 			}
+			/*#backLogo {
+				position: absolute;
+				left: 50%;
+				margin-left: -80px;
+				border-radius: 50%;
+				width: 160px;
+				height: 560px;
+				border: 7px solid #FFFFFF;
+				box-shadow: 0px 0px 20px 0px #fff59d;
+				transform-origin: center;
+			}*/
 		</style>
 	</head>
 
@@ -34,7 +45,8 @@
 		<div class="container">
 			<div id="photo" style="margin-top: 1rem;">
 				<!--<img class="logo" src="../cuncaojin/img/big_logo.png" />-->
-				<img class="logo" src="../cuncaojin/img/logo3.jpg" />
+				<img id="beforeLogo" class="logo" src="../cuncaojin/img/logo3.jpg" />
+				<!--<img id="backLogo" src="../cuncaojin/img/big_logo.png" />-->
 			</div>
 			<!--<p id="phoneNumber" class="phoneNo">18811716119</p>-->
 			<a id="phoneNumber" class="phoneNo">18811716119</a>
@@ -44,8 +56,8 @@
 		<!--3d标签-->
 		<div class="tagBall">
 			<!--很神奇，这个地图image如果放到其他image后，则那些图片有时候会不清晰-->
-			<a class="tag" href="result_page.html">
-				<img src="../cuncaojin/img/marry/png/hotel.png" alt="高德地图"/>
+			<a class="tag" href="gaode_map.html">
+				<img src="../cuncaojin/img/marry/png/map.png" alt="高德地图" />
 			</a>
 			<a class="tag" href="result_page.html">
 				<img src="../cuncaojin/img/marry/png/1.png" alt="LOVE" />
@@ -99,6 +111,14 @@
 			});
 
 			var audio = document.getElementById('music');
+			var beforeLogo = document.getElementById("beforeLogo");
+			var backLogo = document.getElementById("backLogo");
+
+			beforeLogo.addEventListener("animationstart", function(e) {
+				alert(beforeLogo.style.class)
+			})
+
+			beforeLogo.addEventListener("animationend", function() {})
 
 			//当音乐播放完停止时，自动停止图片旋转
 			audio.addEventListener("ended", function(event) {
@@ -113,8 +133,10 @@
 				if(audio !== null) {
 					if(audio.paused) {
 						audio.play();
-						$("#photo").css("animationPlayState", "running");
-						$("#photo").css("animation", "rotate 6s linear 3s infinite normal");
+						$("#photo").css({
+							animationPlayState: "running",
+							animation: "rotate 8s linear 2s infinite normal"
+						});
 					} else {
 						audio.pause();
 						$("#photo").css({
@@ -123,7 +145,13 @@
 					}
 				}
 			}
-
+			//			//动画结束时事件 
+			//			beforeLogo.addEventListener("webkitAnimationEnd", function() {
+			//			});
+			//			
+			//			//动画开始时事件
+			//			backLogo.addEventListener("webkitAnimationStart", function() { 
+			//			}, false);
 		</script>
 		<script type="text/javascript">
 			// 存在bug :页面回退，不能重新加载页面 reload/refresh均无效

@@ -38,8 +38,7 @@
 				border-radius: 3px;
 				font-size: 22px;
 				font-weight: bold;
-/*				margin: 0 5px 0 0;*/
-				
+				/*				margin: 0 5px 0 0;*/
 				padding: 6px 12px;
 				line-height: 1.42857143;
 				text-align: center;
@@ -54,9 +53,13 @@
 		<div id="container" tabindex="0"></div>
 		<div id="tip"></div>
 		<div class="button-group">
-			<input id="setCenter" type="button" class="button" value="小" />
-			<input id="setCenter2" type="button" class="button" value="中" />
-			<input id="setCenter3" type="button" class="button" value="大" style="margin-right: 35px;" />
+			<br/>
+			<br/>
+			<div>
+				<input id="setCenter" type="button" class="button" value="小" />
+				<input id="setCenter2" type="button" class="button" value="中" />
+				<input id="setCenter3" type="button" class="button" value="大" style="margin-right: 35px;" />
+			</div>
 		</div>
 
 		<script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
@@ -152,7 +155,7 @@
 						buttonOffset: new AMap.Pixel(10, 20), //定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
 						zoomToAccuracy: true, //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
 						buttonPosition: 'RB',
-						buttonOffset:new AMap.Pixel(10, 200)
+						buttonOffset: new AMap.Pixel(10, 200)
 					});
 					map.addControl(geolocation);
 					geolocation.getCurrentPosition();
