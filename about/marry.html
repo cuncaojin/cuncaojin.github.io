@@ -97,7 +97,7 @@
 
 		<audio id="music" style="display:none;" src="../res/sound/咱们结婚吧-齐晨.mp3" preload='none' loop />
 
-		<!--<input type="hidden" id="refreshed" value="no" />-->
+		<input type="hidden" id="refreshed" value="no" />
 		<script type="text/javascript" src="../cuncaojin/js/jquery-2.1.0.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/carousel.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/bootstrap.min.js"></script>
@@ -152,36 +152,29 @@
 			//			//动画开始时事件
 			//			backLogo.addEventListener("webkitAnimationStart", function() { 
 			//			}, false);
-
-			// 针对微信内置浏览器返回刷新，造成部分图片模糊处理
-			window.onpageshow = function(event) {
-				alert(event.persisted)
-				if(event.persisted) {
-					window.location.reload();
-				}
-			}
 		</script>
 		<script type="text/javascript">
 			// 存在bug :页面回退，不能重新加载页面 reload/refresh均无效
-			//			onload = function(){
-			//				if($("#refreshed").prop("value")==="no"){
-			//					$(this).prop("value","yes");
-			//				}else{
-			//					location.reload();
-			////					$(this).prop("value","no");
-			//				}
-			//			}
-			//			
-			//			$(function(){
-			//				$(".tagBall .tag img").css("visibility","hidden");
-			//			})
-			//			
-			//			// 加载图片完成后显示
-			//			$('.tag img').each(function() {
-			//				$(this).load(function() {
-			//					$(this).css("visibility", "visible");
-			//				})
-			//			})
+			onload = function() {
+				alert($("#refreshed").prop("value") === "no")
+				if($("#refreshed").prop("value") === "no") {
+					$(this).prop("value", "yes");
+				} else {//表示点击物理返回键的情况
+					location.reload;
+					//					$(this).prop("value","no");
+				}
+			}
+
+//			$(function() {
+//				$(".tagBall .tag img").css("visibility", "hidden");
+//			})
+//
+//			// 加载图片完成后显示
+//			$('.tag img').each(function() {
+//				$(this).load(function() {
+//					$(this).css("visibility", "visible");
+//				})
+//			})
 		</script>
 	</body>
 
