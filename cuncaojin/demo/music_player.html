@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="zh-cn">
+//  from http://www.cnblogs.com/gaotenglong/p/5703177.html 
+	<head>
+		<meta charset="UTF-8">
+		<title>rotate音乐唱片旋转特效</title>
+		<link rel="stylesheet" href="./newStyle.css">
+		<script type="text/javascript" src="./myjs.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+				font-family: "微软雅黑";
+				font-size: 14px;
+			}
+			
+			body {
+				background-color: black;
+			}
+			
+			.box {
+				width: 340px;
+				height: 600px;
+				position: relative;
+				top: 30px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				margin: 0 auto;
+				border-radius: 10px;
+				background-color: #4372ca;
+				/*opacity: 0.6;*/
+			}
+			
+			.play {
+				width: 280px;
+				height: 280px;
+				border-radius: 50%;
+				overflow: hidden;
+				position: absolute;
+				top: 80px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				margin: 0 auto;
+				box-shadow: 0 0 5px 2px #000;
+			}
+			
+			#xuanzhuan {
+				-webkit-animation: play 10s linear infinite;
+				-moz-animation: play 10s linear infinite;
+				animation: play 10s linear infinite;
+			}
+			
+			@-webkit-keyframes play {
+				0% {
+					-webkit-transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			
+			@-moz-keyframes play {
+				0% {
+					-moz-transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			
+			@keyframes play {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			.big {
+				width: 60px;
+				height: 60px;
+				border-radius: 50%;
+				position: absolute;
+				top: 32%;
+				left: 0px;
+				right: 0px;
+				margin: auto;
+				background-color: black;
+				z-index: 2;
+			}
+			
+			.middle {
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				position: absolute;
+				top: 197px;
+				left: 0px;
+				right: 0px;
+				margin: auto;
+				background-color: white;
+				z-index: 3;
+			}
+			
+			.small {
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				position: absolute;
+				top: 202px;
+				left: 0px;
+				right: 0px;
+				margin: auto;
+				background-color: black;
+				z-index: 4;
+				overflow: hidden;
+				box-shadow: 0 0 3px 3px #000000;
+			}
+			
+			.title {
+				width: 60%;
+				height: 5%;
+				position: absolute;
+				/*border: 1px solid red;*/
+				top: 3%;
+				left: 0px;
+				right: 0px;
+				margin: auto;
+				text-align: center;
+				line-height: 30px;
+				overflow: hidden;
+			}
+			
+			.title p {
+				position: relative;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				margin: auto;
+				text-align: center;
+				-webkit-animation: anim2 8s linear infinite;
+			}
+			
+			@-webkit-keyframes anim2 {
+				0% {
+					left: 200px;
+					opacity: 0.2
+				}
+				25% {
+					left: 100px;
+					opacity: 0.6
+				}
+				50% {
+					left: 0px;
+					opacity: 1
+				}
+				75% {
+					left: -100px;
+					opacity: 0.6
+				}
+				100% {
+					left: -200px;
+					opacity: 0.2
+				}
+			}
+			
+			.content {
+				width: 80%;
+				height: 33%;
+				position: absolute;
+				/*border: 1px solid red;*/
+				top: 65%;
+				left: 0px;
+				right: 0px;
+				margin: auto;
+				text-align: center;
+				line-height: 30px;
+				overflow: hidden;
+			}
+			
+			.content p {
+				position: relative;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				margin: auto;
+				text-align: center;
+				-webkit-animation: anim1 200s linear infinite;
+			}
+			
+			@-webkit-keyframes anim1 {
+				0% {
+					top: 200px;
+					opacity: 0.4
+				}
+				5% {
+					top: 0px;
+					opacity: 1
+				}
+				15% {
+					top: -200px;
+					opacity: 1
+				}
+				20% {
+					top: -400px;
+					opacity: 1
+				}
+				25% {
+					top: -600px;
+					opacity: 1
+				}
+				30% {
+					top: -800px;
+					opacity: 1
+				}
+				35% {
+					top: -1000px;
+					opacity: 1
+				}
+				40% {
+					top: -1200px;
+					opacity: 1
+				}
+				45% {
+					top: -1400px;
+					opacity: 1
+				}
+				50% {
+					top: -1600px;
+					opacity: 1
+				}
+				55% {
+					top: -1800px;
+					opacity: 1
+				}
+				60% {
+					top: -2000px;
+					opacity: 1
+				}
+				65% {
+					top: -2200px;
+					opacity: 1
+				}
+				70% {
+					top: -2400px;
+					opacity: 1
+				}
+				75% {
+					top: -2600px;
+					opacity: 1
+				}
+				80% {
+					top: -2800px;
+					opacity: 1
+				}
+				85% {
+					top: -3000px;
+					opacity: 1
+				}
+				90% {
+					top: -3200px;
+					opacity: 1
+				}
+				95% {
+					top: -3400px;
+					opacity: 0.8
+				}
+				100% {
+					top: -3600px;
+					opacity: 0.4
+				}
+			}
+			
+			#pic1 {
+				display: block;
+			}
+			
+			#icon1 {
+				position: absolute;
+				top: -38px;
+				left: -2px;
+				width: 300px;
+				z-index: 5;
+				cursor: pointer;
+			}
+			
+			#pic2 {
+				display: none;
+			}
+			
+			#icon2 {
+				position: absolute;
+				top: -57px;
+				left: -222px;
+				width: 400px;
+				z-index: 5;
+				cursor: pointer;
+			}
+			
+			myStyle.css Code
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="title">
+				<p>潘玮柏--反转地球</p>
+			</div>
+			<img class="play" id="xuanzhuan" src="../background/bg-4.jpg" alt="旋转特效">
+			<div class="big"></div>
+			<div class="middle"></div>
+			<div class="small">
+				<div id="pic1">
+					<img id="icon1" src="../apple-touch-icon.png" alt="play">
+				</div>
+				<div id="pic2">
+					<img id="icon2" src="../background/backup/bg-4.jpg" alt="play">
+				</div>
+			</div>
+			<audio autoplay="true" loop="loop">
+				<source src="../res/sound/咱们结婚吧-齐晨.mp3" type="audio/mpeg">
+			</audio>
+			<div class="content">
+				<p>反转地球</p>
+				<p>演唱：潘玮柏</p>
+
+				<p>Bow bow bow</p>
+				<p>让我看到你双手</p>
+				<p>对抗地心引力一起反转地球</p>
+				<p>Bow bow bow</p>
+				<p>现在不适合罗嗦</p>
+				<p> 适者生存不然请你离开这节奏</p>
+				<p> Bow bow bow</p>
+				<p> 让我看到你点头</p>
+				<p> 跟着我的音乐一起跳舞准没错</p>
+				<p> Bow bow bow</p>
+				<p> 现在不适合闪躲</p>
+				<p> 正面出击看我怎么反转地球</p>
+				<p> 睁开双眼看穿地球</p>
+				<p> 赤裸的一片天空</p>
+				<p> 我摊开双手接受所有最原始的节奏</p>
+				<p> 有没有感到心情放松</p>
+				<p> 有没有感到细胞跳动</p>
+				<p> 节奏的变化,身体的摆动</p>
+				<p> 让你全身放松</p>
+				<p> 现在起不能罗嗦</p>
+				<p> 踏进我的领域之中</p>
+				<p> 频率太震撼</p>
+				<p> 你的心脏正在此起彼落</p>
+				<p> 跟着我走跟着我做跟我点头摆动双手</p>
+				<p> 世界的一切的转动连结到我的音乐紧跟着我的脚步在走</p>
+				<p> 让世界TURN AROUND DANCE AROUND EVERYBODY HAVE SOME FUN</p>
+				<p> 别想压抑我们定意世界的传统</p>
+				<p> 让世界TURN AROUND DANCE AROUND EVERYBODY HAVE SOME FUN</p>
+				<p> 没有对或错我只想潜入这节奏</p>
+				<p> 让世界TURN AROUND DANCE AROUND EVERYBODY HAVE SOME FUN</p>
+				<p> 音乐没有自由仿佛坠进了黑洞</p>
+				<p> 让世界TURN AROUND DANCE AROUND EVERYBODY HAVE SOME FUN</p>
+				<p> 现在跟着我们创造新世纪的秩序</p>
+				<p> Bow bow bow</p>
+				<p> 让我看到你双手</p>
+				<p> 对抗地心引力一起反转地球</p>
+				<p> Bow bow bow</p>
+				<p> 现在不适合罗嗦</p>
+				<p> 适者生存不然请你离开这节奏</p>
+				<p> Bow bow bow</p>
+				<p> 让我看到你点头</p>
+				<p> 跟着我的音乐一起跳舞准没错</p>
+				<p> Bow bow bow</p>
+				<p> 现在不适合闪躲</p>
+				<p> 正面出击看我怎么反转地球</p>
+
+				<p> 一道音波划破天空</p>
+				<p> 在我的领域不停播送</p>
+				<p> 激发出的热情不能抵挡你竖起的耳朵的诱惑</p>
+				<p> 你停不停你动不动全部在我掌控之中</p>
+				<p> 你知不知道地心引力在这永远拉不住我</p>
+				<p> 当音乐力量合二为一创造出新的世界秩序</p>
+				<p> 不跟随的人闭上你的....SHHH</p>
+				<p> 有别的比那更好的吗</p>
+				<p> 有别的比那更出色吗</p>
+				<p> 有别的比我们向往追求的音乐更独特的吗</p>
+				<p> 让世界TURN AROUND DANCE AROUND EVERYBODY HAVE SOME FUN</p>
+				<p> 别想压抑我们定意世界的传统</p>
+				<p> 让世界TURN AROUND DANCE AROUND EVERYBODY HAVE SOME FUN</p>
+				<p> 没有对或错我只想潜入这节奏</p>
+				<p> 让世界TURN AROUND DANCE AROUND EVERYBODY HAVE SOME FUN</p>
+				<p> 音乐没有自由仿佛坠进了黑洞</p>
+				<p> 让世界TURN AROUND DANCE AROUND EVERYBODY HAVE SOME FUN</p>
+				<p> 现在跟着我们创造新世纪的秩序</p>
+				<p> Bow bow bow</p>
+				<p> 让我看到你双手</p>
+				<p> 对抗地心引力一起反转地球</p>
+				<p> Bow bow bow</p>
+				<p> 现在不适合罗嗦</p>
+				<p> 适者生存不然请你离开这节奏</p>
+				<p> Bow bow bow</p>
+				<p> 让我看到你点头</p>
+				<p> 跟着我的音乐一起跳舞准没错</p>
+				<p> Bow bow bow</p>
+				<p> 现在不适合闪躲</p>
+				<p> 正面出击看我怎么反转地球</p>
+				<p> Bow bow bow</p>
+				<p> 让我看到你双手</p>
+				<p> 对抗地心引力一起反转地球</p>
+				<p> Bow bow bow</p>
+				<p> 现在不适合罗嗦</p>
+				<p> 适者生存不然请你离开这节奏</p>
+				<p> Bow bow bow</p>
+				<p> 让我看到你点头</p>
+				<p> 跟着我的音乐一起跳舞准没错</p>
+				<p> Bow bow bow</p>
+				<p> 现在不适合闪躲</p>
+				<p> 正面出击看我怎么反转地球</p>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			/**
+			 * Created by gao on 2016/7/25.
+			 */
+			window.onload = function() {
+				var icon1 = document.getElementById("icon1");
+				var icon2 = document.getElementById("icon2");
+				var pic1 = document.getElementById("pic1");
+				var pic2 = document.getElementById("pic2");
+				var xuanzhuan = document.getElementById("xuanzhuan");
+				var audio = document.getElementsByTagName("audio")[0];
+				//当音乐播放完停止时，自动停止图片旋转
+				audio.addEventListener("ended", function(event) {
+					//xuanzhuan.setAttribute("id","");
+					xuanzhuan.style.animationPlayState = "paused";
+				}, false);
+				//点击暂停播放时，音乐暂停，图片停止旋转
+				icon1.onclick = function() {
+					audio.pause();
+					pic1.style.display = "none";
+					pic2.style.display = "block";
+					//xuanzhuan.setAttribute("id","");
+					xuanzhuan.style.animationPlayState = "paused";
+				};
+				//点击播放音乐时，音乐开始播放，图片开始旋转
+				icon2.onclick = function() {
+					audio.play();
+					pic1.style.display = "block";
+					pic2.style.display = "none";
+					//xuanzhuan.setAttribute("id","xuanzhuan");
+					xuanzhuan.style.animationPlayState = "running";
+				}
+			};
+		</script>
+	</body>
+
+</html>
