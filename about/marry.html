@@ -155,6 +155,7 @@
 
 			// 针对微信内置浏览器返回刷新，造成部分图片模糊处理
 			window.onpageshow = function(event) {
+				alert(event.persisted)
 				if(event.persisted) {
 					window.location.reload();
 				}
