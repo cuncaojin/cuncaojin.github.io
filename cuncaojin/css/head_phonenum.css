@@ -14,15 +14,32 @@ body {
 
 .logo {
 	display: inline-block;
-	margin: 2rem 0 0;
+	/*margin: 2rem 0 0;*/
 	border-radius: 50%;
 	width: 160px;
 	height: 160px;
 	border: 7px solid #FFFFFF;
 	box-shadow: 0px 0px 20px 2px #fff59d;
+	transform-origin:center;
 }
 
-.hotel{
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+.hotel {
 	display: inline-block;
 	margin: 2rem 0 0;
 	border-radius: 50%;
@@ -42,24 +59,32 @@ a:link {
 	text-decoration: none;
 	color: #fd0;
 }
+
+
 /* 未访问的链接 */
 
 a:visited {
 	text-decoration: none;
 	color: #fd0;
 }
+
+
 /* 已访问的链接 */
 
 a:hover {
 	text-decoration: none;
 	color: #fd0;
 }
+
+
 /* 鼠标移动到链接上 */
 
 a:active {
 	text-decoration: none;
 	color: #fd0;
 }
+
+
 /* 选定的链接 */
 
 .phoneNo {

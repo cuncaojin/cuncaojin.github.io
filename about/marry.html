@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>I❤U Fiona</title>
+
+		<link href="../cuncaojin/css/style.css" rel="stylesheet" />
+		<link href="../cuncaojin/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="../cuncaojin/css/animate.css" rel="stylesheet" />
+		<link href="../cuncaojin/css/magic.min.css" rel="stylesheet" />
+
+		<link href="../cuncaojin/css/head_phonenum.css" rel="stylesheet" />
+		<link href="../cuncaojin/css/three_d_tag.css" rel="stylesheet" type="text/css" />
+		<link href="../cuncaojin/css/coolClock.css" rel="stylesheet" />
+		<style type="text/css">
+			.tagBall .tag img {
+				border-radius: 100%;
+				width: 90px;
+				height: 90px;
+			}
+			
+			.audiojs {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--头像、电话-->
+		<div class="container">
+			<div id="photo" style="margin-top: 1rem;">
+				<!--<img class="logo" src="../cuncaojin/img/big_logo.png" />-->
+				<img class="logo" src="../cuncaojin/img/logo3.jpg" />
+			</div>
+			<!--<p id="phoneNumber" class="phoneNo">18811716119</p>-->
+			<a id="phoneNumber" class="phoneNo">18811716119</a>
+			<div id="alert" style="display: none;">手机号码已拷贝</div>
+		</div>
+
+		<!--3d标签-->
+		<div class="tagBall">
+			<a class="tag" href="result_page.html">
+				<img src="../cuncaojin/img/marry/png/1.png" alt="LOVE" />
+			</a>
+			<a class="tag" href="result_page.html">
+				<img src="../cuncaojin/img/marry/png/2.png" alt="LOVE" />
+			</a>
+			<a class="tag" href="result_page.html">
+				<img src="../cuncaojin/img/marry/400x400/hotel.png" alt="高德地图" class="hotel"></img>
+			</a>
+			<a class="tag" href="result_page.html">
+				<img src="../cuncaojin/img/marry/png/3.png" alt="❤" />
+			</a>
+			<a class="tag" href="result_page.html">
+				<img src="../cuncaojin/img/marry/png/4.png" alt="❤" />
+			</a>
+			<a class="tag" href="result_page.html">
+				<img src="../cuncaojin/img/marry/png/5.png" alt="LOVE" />
+			</a>
+			<a class="tag" href="result_page.html">
+				<img src="../cuncaojin/img/marry/png/6.png" alt="LOVE" />
+			</a>
+			<a class="tag" href="result_page.html">
+				<img src="../cuncaojin/img/marry/png/7.png" alt="❤" />
+			</a>
+			<a class="tag" href="result_page.html">
+				<img src="../cuncaojin/img/marry/png/8.png" alt="❤" />
+			</a>
+			<a class="tag" href="result_page.html">
+				<img src="../cuncaojin/img/marry/png/9.png" alt="❤" />
+			</a>
+			<a class="tag" href="result_page.html">
+				<img src="../cuncaojin/img/marry/png/10.png" alt="LOVE" />
+			</a>
+		</div>
+
+		<!--时钟-->
+		<canvas id="cas">your broswer dont support</canvas>
+		<canvas id="bgcas"></canvas>
+
+		<audio id="music" style="display:none;" src="../res/sound/咱们结婚吧-齐晨.mp3" preload='none' loop />
+
+		<!--<input type="hidden" id="refreshed" value="no" />-->
+		<script type="text/javascript" src="../cuncaojin/js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="../cuncaojin/js/carousel.js"></script>
+		<script type="text/javascript" src="../cuncaojin/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../cuncaojin/js/head_phonenum.js"></script>
+		<script type="text/javascript" src="../cuncaojin/js/coolClock.js"></script>
+		<script type="text/javascript" src="../cuncaojin/js/three_d_ball.js"></script>
+		<script src="../cuncaojin/js/audio.js"></script>
+		<script type="text/javascript">
+			audiojs.events.ready(function() {
+				var as = audiojs.createAll();
+			});
+
+			var audio = document.getElementById('music');
+
+			//当音乐播放完停止时，自动停止图片旋转
+			audio.addEventListener("ended", function(event) {
+				$("#photo").css("animationPlayState", "paused");
+			}, false);
+
+			$("#photo").click(function() {
+				play();
+			})
+
+			function play() {
+				if(audio !== null) {
+					if(audio.paused) {
+						audio.play();
+						$("#photo").css("animationPlayState", "running");
+						$("#photo").css("animation", "rotate 6s linear 3s infinite normal");
+					} else {
+						audio.pause();
+						$("#photo").css({
+							animationPlayState: "paused"
+						});
+					}
+				}
+			}
+
+		</script>
+		<script type="text/javascript">
+			// 存在bug :页面回退，不能重新加载页面 reload/refresh均无效
+			//			onload = function(){
+			//				if($("#refreshed").prop("value")==="no"){
+			//					$(this).prop("value","yes");
+			//				}else{
+			//					location.reload();
+			////					$(this).prop("value","no");
+			//				}
+			//			}
+			//			
+			//			$(function(){
+			//				$(".tagBall .tag img").css("visibility","hidden");
+			//			})
+			//			
+			//			// 加载图片完成后显示
+			//			$('.tag img').each(function() {
+			//				$(this).load(function() {
+			//					$(this).css("visibility", "visible");
+			//				})
+			//			})
+		</script>
+	</body>
+
+</html>
