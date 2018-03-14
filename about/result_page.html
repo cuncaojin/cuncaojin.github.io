@@ -53,9 +53,10 @@
 	</head>
 
 	<body>
+		<img id="loading" src="../cuncaojin/img/loading.gif" style="width: 200px;height: 200px; position: absolute;left: 50%;top: 50%;margin-top: -100px;margin-left: -100px;"/>
 
 		<div id="imgDiv">
-
+			
 		</div>
 		<!--<div id="canvas">
 			<div class="helpDiv">
@@ -111,7 +112,9 @@
 
 				//重点！！！水平垂直居中
 				$("#imgDiv").css("margin-top", (h - parseInt($("#imgDiv").css("height"))) / 2 + "px");
-				$("#imgDiv").css("margin-left", (w - parseInt($("#imgDiv").css("width"))) / 2 + "px")
+				$("#imgDiv").css("margin-left", (w - parseInt($("#imgDiv").css("width"))) / 2 + "px");
+				
+				$("#loading").css("display","none");
 			}
 			// 		loadImage(
 			// 			imageUrl,
