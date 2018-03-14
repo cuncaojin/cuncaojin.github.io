@@ -155,14 +155,18 @@
 		</script>
 		<script type="text/javascript">
 			// 存在bug :页面回退，不能重新加载页面 reload/refresh均无效
-			onload = function() {
-				alert($("#refreshed").prop("value") === "no")
-				if($("#refreshed").prop("value") === "no") {
-					$(this).prop("value", "yes");
-				} else {//表示点击物理返回键的情况
-					location.reload;
-					//					$(this).prop("value","no");
-				}
+//			onload = function() {
+//				alert($("#refreshed").prop("value") === "no")
+//				if($("#refreshed").prop("value") === "no") {
+//					$(this).prop("value", "yes");
+//				} else {//表示点击物理返回键的情况
+//					location.reload;
+//					//					$(this).prop("value","no");
+//				}
+//			}
+			
+			onpageshow = function(e){
+				alert(e.persisted)
 			}
 
 //			$(function() {
