@@ -27,26 +27,28 @@
 		<style type="text/css">
 			/*-------------- page1 ------------------*/
 			
+			.tagBall {
+				text-align: center;
+				vertical-align: middle;
+			}
+			
 			.tagBall img {
+				/*position: absolute;*/
+				display: inline-block;
 				border-radius: 100%;
 				/*
 				 * 3d球采用尺寸：90px
 				 * width: 90px;
 				height: 90px;*/
-				width: 65px;
+				width: 70px;
 				height: auto;
 				margin: 5px 0px;
 			}
 			
 			.map img {
-				width: 80px;
-				height: 80px;
-				box-shadow: 0px 0px 20px 2px #fff59d;
-			}
-			
-			.tagBall {
-				text-align: center;
-				vertical-align: middle;
+				width: 100px;
+				height: 100px;
+				box-shadow: 0px 0px 20px 1px #fff59d;
 			}
 			
 			.audiojs {
@@ -56,11 +58,11 @@
 			.tagText {
 				padding: 0.1rem 0;
 				display: inline-block;
-				width: 80px;
-				height: 80px;
+				width: 100px;
+				height: 100px;
 				text-align: center;
 				vertical-align: center;
-				line-height: 80px;
+				line-height: 100px;
 				border-radius: 100%;
 				padding: 2px 15px;
 				vertical-align: middle;
@@ -69,13 +71,37 @@
 				text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 				box-shadow: 0px 0px 20px 2px #fff59d;
 				/*border-radius: 100px 1px 10px 1px/10px 1px 100px 1px;*/
-				font-size: 21px;
+				font-size: 30px;
 				text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 				transition: all 0.25s;
 				text-decoration: none;
 				cursor: auto;
 				font-feature-settings: "kern" 1;
 				font-kerning: normal;
+			}
+			
+			#think {
+				/*color: #ddd;
+				text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+				font-feature-settings: "kern" 1;
+				font-kerning: normal;*/
+				color: #ddd;
+				font-size: 2.2em;
+				line-height: 1em;
+				margin: 0;
+				text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+				font-feature-settings: "kern" 1;
+				font-kerning: normal;
+				box-sizing: inherit;
+				display: block;
+				-webkit-margin-before: 1em;
+				-webkit-margin-after: 1em;
+				-webkit-margin-start: 0px;
+				-webkit-margin-end: 0px;
+				margin: 100px 16px 0;
+				padding: 0 10px;
+				text-align: center;
+				z-index: -3;
 			}
 			/*--------- page2-----------*/
 			
@@ -159,17 +185,14 @@
 				<a id="phoneNumber" class="phoneNo">18811716119</a>
 				<div id="alert" style="display: none;">手机号码已拷贝</div>
 			</div>
-
+			<div id="think"></div>
 			<!--3d标签-->
-			<div class="tagBall">
-				<a class="tag map" style="font-size: 22px;color: #CECECE;">
+			<div class="tagBall" style="margin-bottom: 16px;">
+				<a class="tag map" style="font-size: 22px;color: #CECECE;margin:0 40px 0 0">
 					<img src="../cuncaojin/img/marry/png/map.png" alt="高德地图" />
 				</a>
-
 				<a class="tag time">
-					<span class="tagText">
-						10秒
-					</span>
+					<span class="tagText">?</span>
 				</a>
 			</div>
 			<!--3d标签-->
@@ -181,7 +204,7 @@
 					<img src="../cuncaojin/img/marry/png/4.png" alt="❤" />
 				</a>
 				<a class="tag img">
-					<img src="../cuncaojin/img/marry/png/1.png" style="width: 100px;height: 100px;" alt="LOVE" />
+					<img src="../cuncaojin/img/marry/png/1.png" alt="LOVE" />
 				</a>
 				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/5.png" alt="LOVE" />
@@ -190,6 +213,9 @@
 					<img src="../cuncaojin/img/marry/png/10.png" alt="LOVE" />
 				</a>
 
+			</div>
+			<!--3d标签-->
+			<div class="tagBall">
 				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/6.png" alt="LOVE" />
 				</a>
@@ -251,19 +277,18 @@
 		<!-- UI组件库 1.0 -->
 		<script type="text/javascript" src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
 		<script type="text/javascript" src="https://webapi.amap.com/js/marker.js"></script>
-		<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
 		<script type="text/javascript" src="../js/show_one_photo.js"></script>
+		<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
 		<script type="text/javascript" src="../js/gaode_map.js"></script>
 		<script type="text/javascript">
 			function checkLocation() {
 				// console.log("location.hash.indexOf-----------------" + location.hash.indexOf("#win"))
 				//hash 属性是一个可读可写的字符串，该字符串是 URL 的锚部分（从 # 号开始的部分）。
 				// alert(location.hash.indexOf("#win"))
-				console.log(location.hash)
+				//				console.log(location.hash)
 				if(location.hash.indexOf("#img") > -1) {
 					$("#page2").show()
 					$("#page1,#page3").hide();
-					console.log(1)
 				} else if(location.hash.indexOf("#map") > -1) {
 					$("#page3").show()
 					$("#page1,#page2").hide();
@@ -271,8 +296,9 @@
 					$(".tagBall").hide();
 					location.hash = "";
 					setTimeout(function() {
+						$("#think").html("").hide();
 						$(".tagBall").show();
-					}, 2 * 1000);
+					}, 60 * 1000);
 				} else {
 					$("#page1").show()
 					$("#page2,#page3").hide();

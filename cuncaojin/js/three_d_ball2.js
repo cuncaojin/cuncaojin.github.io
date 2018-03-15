@@ -1,31 +1,46 @@
 $(function() {
-	$(".tagBall").css({
-		top: parseInt($("canvas").first().css("top")) - parseInt($(".tagBall").first().css("height")) / 2 + "px"
+	var allTagBallHeight = 0;
+	$(".tagBall").each(function() {
+		allTagBallHeight += parseInt($(this).css("height"));
 	});
+
+	$(".tagBall").first().css({
+		marginTop: h - parseInt($("canvas").first().css("height")) - 2 * allTagBallHeight + "px"
+	});
+
+	//	$("canvas").first().css("border","10px solid red");
+	//	$(".tagBall").first().css("border","5px solid blue"); 
 
 	$(".tagBall .tag").click(function() {
 		var src = $(this).children("img").first().prop("src");
-//		alert("void(0) === src"+(void(0) === src))
+		//		alert("void(0) === src"+(void(0) === src))
 		//获得undefined void(0)，保证它没有被重新赋值
-		if(void(0) === src) {
-//			$(".tagBall").hide();
-//			setTimeout(function() {
-//				$(".tagBall").show()
-//			}, 10 * 1000);
+
+		if(void(0) === src) { // 是问号?情况
+			var s = "";
+			var words = "世界充满未知... <br/><b style='line-height:50px'>愿执子之手 与子偕老</b>";
+			var i = 0;
+			var writeId = setInterval(function() {
+				s += words[i++];
+				$("#think").html(s).show();
+				if(i >= words.length) {
+					clearInterval(writeId);
+				}
+			}, 300)
 			return;
 		}
 
 		if(src.indexOf("map.png") != -1) {
 			// $(this).prop("href", "gaode_map.html");
-//			$("#page1,#page2").hide();
-//			$("#page3").show();
+			//			$("#page1,#page2").hide();
+			//			$("#page3").show();
 		} else {
 			//	src = $(this).children("embed").first().prop("src").replace("400x400/400x400_", "");
 			src = src.replace("png/", "").replace("png", "jpg")
-//			console.log(src + "=============")
+			//			console.log(src + "=============")
 			//			$(this).prop("href", $(this).prop("href") + "?src=" + encodeURI(src))
-//			$("#page1,#page3").hide();
-//			$("#page2").show();
+			//			$("#page1,#page3").hide();
+			//			$("#page2").show();
 			showPhoto(src);
 		}
 
@@ -167,7 +182,7 @@ tag.prototype = {
 		var left = this.x + CX - this.ele.offsetWidth / 2 + "px";
 		var top = this.y + CY - this.ele.offsetHeight / 2 + "px";
 		var transform = 'translate(' + left + ', ' + top + ') scale(' + scale + ')';
-		this.ele.style.opacity = alpha + 0.5;
+		this.ele.style.opacity = 1; //alpha + 0.5;
 		//		console.log("===========" + scale + "==============")
 		this.ele.style.zIndex = parseInt(scale * 100);
 		this.ele.style.transform = transform;
