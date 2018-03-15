@@ -1,0 +1,32 @@
+html,body{height:100%;}
+*{
+  padding: 0;margin: 0;
+}
+body{overflow:hidden;}
+body p{
+  padding-top: 30px;
+}
+.main-body{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: #FFD7AA;
+}
+.window{
+    background:#AAD7FF;
+    height:100%;
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    display:none;
+    overflow:auto;
+    z-index:99;
+    text-align: center;
+}
+
+.search-main{
+  width: 100%;
+  height: 100%;
+  background-color: #FFAAD7;
+}

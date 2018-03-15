@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="zh-cn">
-//  from http://www.cnblogs.com/gaotenglong/p/5703177.html 
+	// from http://www.cnblogs.com/gaotenglong/p/5703177.html
+
 	<head>
 		<meta charset="UTF-8">
 		<title>rotate音乐唱片旋转特效</title>
@@ -10,7 +11,7 @@
 			* {
 				margin: 0px;
 				padding: 0px;
-				font-family: "微软雅黑";
+				font-family:"微软雅黑";
 				font-size: 14px;
 			}
 			
@@ -78,6 +79,7 @@
 					transform: rotate(360deg);
 				}
 			}
+			
 			.big {
 				width: 60px;
 				height: 60px;
@@ -313,14 +315,14 @@
 			<div class="middle"></div>
 			<div class="small">
 				<div id="pic1">
-					<img id="icon1" src="../apple-touch-icon.png" alt="play">
+					<img id="icon1" src="../img/marry/png/1.png" alt="play">
 				</div>
 				<div id="pic2">
-					<img id="icon2" src="../background/backup/bg-4.jpg" alt="play">
+					<img id="icon2" src="../img/marry/png/2.png" alt="play">
 				</div>
 			</div>
 			<audio autoplay="true" loop="loop">
-				<source src="../res/sound/咱们结婚吧-齐晨.mp3" type="audio/mpeg">
+				<source src="../../res/sound/咱们结婚吧-齐晨.mp3" audio/mpeg">
 			</audio>
 			<div class="content">
 				<p>反转地球</p>
@@ -420,7 +422,7 @@
 		<script type="text/javascript">
 			/**
 			 * Created by gao on 2016/7/25.
-			 */
+			 */ 
 			window.onload = function() {
 				var icon1 = document.getElementById("icon1");
 				var icon2 = document.getElementById("icon2");
@@ -431,23 +433,23 @@
 				//当音乐播放完停止时，自动停止图片旋转
 				audio.addEventListener("ended", function(event) {
 					//xuanzhuan.setAttribute("id","");
-					xuanzhuan.style.animationPlayState = "paused";
+					xuanzhuan.style.animationPlayState ="paused";
 				}, false);
 				//点击暂停播放时，音乐暂停，图片停止旋转
 				icon1.onclick = function() {
 					audio.pause();
-					pic1.style.display = "none";
-					pic2.style.display = "block";
+					pic1.style.display ="none";
+					pic2.style.display ="block";
 					//xuanzhuan.setAttribute("id","");
-					xuanzhuan.style.animationPlayState = "paused";
+					xuanzhuan.style.animationPlayState ="paused";
 				};
 				//点击播放音乐时，音乐开始播放，图片开始旋转
 				icon2.onclick = function() {
 					audio.play();
-					pic1.style.display = "block";
-					pic2.style.display = "none";
+					pic1.style.display ="block";
+					pic2.style.display ="none";
 					//xuanzhuan.setAttribute("id","xuanzhuan");
-					xuanzhuan.style.animationPlayState = "running";
+					xuanzhuan.style.animationPlayState ="running";
 				}
 			};
 		</script>

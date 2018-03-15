@@ -27,7 +27,7 @@
 	</head>
 
 	<body>
-		<div class="container">
+		<div class="logo_container">
 			<div id="photo" style="margin-top: 1rem;">
 				<!--<img class="logo" src="../cuncaojin/img/big_logo.png" />-->
 				<img class="logo" src="../cuncaojin/img/logo3.jpg" />
@@ -40,6 +40,10 @@
 			<div id="alert" style="display: none;">手机号码已拷贝</div>
 		</div>
 
+		<canvas id="cas">抱歉，您的浏览器不支持canvas</canvas>
+		<canvas id="bgcas"></canvas>
+		
+		<script type="text/javascript" src="../cuncaojin/js/coolClock.js"></script>
 		<script type="text/javascript">
 			$("#photo").addClass("animated bounceIn")
 			$("#phoneNumber").addClass("animated rubberBand")
@@ -68,10 +72,6 @@
 			})
 			// document.getElementById('phoneNumber').addEventListener('click', copyArticle, false);
 		</script>
-
-		<canvas id="cas">抱歉，您的浏览器不支持canvas</canvas>
-		<canvas id="bgcas"></canvas>
-		<script type="text/javascript" src="../cuncaojin/js/coolClock.js"></script>
 	</body>
 
 </html>

@@ -5,6 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">-->
 		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 		<title>I❤U Fiona</title>
 
@@ -16,7 +17,16 @@
 		<link href="../cuncaojin/css/head_phonenum.css" rel="stylesheet" />
 		<link href="../cuncaojin/css/three_d_tag.css" rel="stylesheet" type="text/css" />
 		<link href="../cuncaojin/css/coolClock.css" rel="stylesheet" />
+
+		<!------------------------------------------------->
+
+		<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css" />
+		<!-- 原始地址：//webapi.amap.com/ui/1.0/ui/overlay/SimpleMarker/examples/custom-icon.html -->
+		<!--<base href="//webapi.amap.com/ui/1.0/ui/overlay/SimpleMarker/examples/" />-->
+
 		<style type="text/css">
+			/*-------------- page1 ------------------*/
+			
 			.tagBall .tag img {
 				border-radius: 100%;
 				width: 90px;
@@ -26,160 +36,202 @@
 			.audiojs {
 				display: none;
 			}
-			/*#backLogo {
+			
+			.tagText {
+				margin: 2rem auto;
+				padding: 0.1rem 0;
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				vertical-align: center;
+				line-height: 100px;
+				border-radius: 100%;
+				padding: 2px 15px;
+				vertical-align: middle;
+				/*color: #fff59d;*/
+				color: #fc0;
+				text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+				box-shadow: 0px 0px 20px 2px #fff59d;
+				/*border-radius: 100px 1px 10px 1px/10px 1px 100px 1px;*/
+				font-size: 21px;
+				text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+				transition: all 0.25s;
+				text-decoration: none;
+				cursor: auto;
+				font-feature-settings: "kern" 1;
+				font-kerning: normal;
+			}
+			/*--------- page2-----------*/
+			
+			html,
+			body {
+				background-color: #333333;
+				/*line-height: 100%;
+				display: inline-block;
+				vertical-align: middle;  
+				overflow: hidden;
+				border: 2px solid blue;*/
+			}
+			
+			#canvas {
+				/*border: 1px solid red;*/
+				height: 100%;
+				line-height: 100%;
+				position: relative;
+				width: 100%;
+				vertical-align: middle;
+			}
+			
+			.helpDiv {}
+			
+			#imgDiv {
+				/*display: inline-block;*/
 				position: absolute;
-				left: 50%;
-				margin-left: -80px;
-				border-radius: 50%;
-				width: 160px;
-				height: 560px;
-				border: 7px solid #FFFFFF;
-				box-shadow: 0px 0px 20px 0px #fff59d;
-				transform-origin: center;
-			}*/
+				background-repeat: no-repeat;
+				background-attachment: scroll;
+				background-position: center;
+				overflow-y: scroll;
+				overflow-x: scroll;
+			}
+			/*----------page3------------*/
+			
+			body,
+			html,
+			#container {
+				height: 100%;
+				margin: 0px;
+			}
+			
+			.amap-marker-label {
+				font-size: 13px;
+				border: 1px solid orange;
+				background: #fff;
+				border-radius: 10px 0 0 0;
+				color: #690441;
+			}
+			
+			.button-group .button {
+				width: 100px;
+				height: 40px;
+				border-radius: 3px;
+				font-size: 22px;
+				font-weight: bold;
+				/*				margin: 0 5px 0 0;*/
+				padding: 6px 12px;
+				line-height: 1.42857143;
+				text-align: center;
+				color: #fff;
+				background-color: #5cb85c;
+				border-color: #4cae4c;
+			}
+			/*-------------------------*/
+			
+			#page2,
+			#page3 {
+				display: none;
+			}
 		</style>
 	</head>
 
 	<body>
-		<!--头像、电话-->
-		<div class="container">
-			<div id="photo" style="margin-top: 1rem;">
-				<!--<img class="logo" src="../cuncaojin/img/big_logo.png" />-->
-				<img id="beforeLogo" class="logo" src="../cuncaojin/img/logo3.jpg" />
-				<!--<img id="backLogo" src="../cuncaojin/img/big_logo.png" />-->
+		<div id="page1">
+			<!--头像、电话-->
+			<div class="logo_container">
+				<div id="photo" style="margin-top: 1rem;">
+					<img id="beforeLogo" class="logo" src="../cuncaojin/img/logo3.jpg" />
+				</div>
+				<a id="phoneNumber" class="phoneNo">18811716119</a>
+				<div id="alert" style="display: none;">手机号码已拷贝</div>
 			</div>
-			<!--<p id="phoneNumber" class="phoneNo">18811716119</p>-->
-			<a id="phoneNumber" class="phoneNo">18811716119</a>
-			<div id="alert" style="display: none;">手机号码已拷贝</div>
+
+			<!--3d标签-->
+			<div class="tagBall">
+				<a class="tag" style="font-size: 22px;color: #CECECE;">
+					<img src="../cuncaojin/img/marry/png/map.png" alt="高德地图" />
+				</a>
+				<a class="tag">
+					<span class="tagText">
+						10秒
+					</span>
+				</a>
+				<a class="tag">
+					<img src="../cuncaojin/img/marry/png/1.png" alt="LOVE" />
+				</a>
+				<a class="tag">
+					<img src="../cuncaojin/img/marry/png/2.png" alt="LOVE" />
+				</a>
+				<a class="tag">
+					<img src="../cuncaojin/img/marry/png/3.png" alt="❤" />
+				</a>
+				<a class="tag">
+					<img src="../cuncaojin/img/marry/png/4.png" alt="❤" />
+				</a>
+				<a class="tag">
+					<img src="../cuncaojin/img/marry/png/5.png" alt="LOVE" />
+				</a>
+				<a class="tag">
+					<img src="../cuncaojin/img/marry/png/6.png" alt="LOVE" />
+				</a>
+				<a class="tag">
+					<img src="../cuncaojin/img/marry/png/7.png" alt="❤" />
+				</a>
+				<a class="tag">
+					<img src="../cuncaojin/img/marry/png/8.png" alt="❤" />
+				</a>
+				<a class="tag">
+					<img src="../cuncaojin/img/marry/png/9.png" alt="❤" />
+				</a>
+				<a class="tag">
+					<img src="../cuncaojin/img/marry/png/10.png" alt="LOVE" />
+				</a>
+			</div>
+			<!--时钟-->
+			<canvas id="cas">your broswer dont support</canvas>
+			<canvas id="bgcas"></canvas>
+			<!--music-->
+			<audio id="music" style="display:none;" src="../res/sound/咱们结婚吧-齐晨.mp3" preload='none' loop />
 		</div>
 
-		<!--3d标签-->
-		<div class="tagBall">
-			<!--很神奇，这个地图image如果放到其他image后，则那些图片有时候会不清晰-->
-			<a class="tag" href="gaode_map.html" style="font-size: 22px;color: #CECECE;">
-				<img src="../cuncaojin/img/marry/png/map.png" alt="高德地图" />
-			</a>
-			<a class="tag" href="result_page.html">
-				<img src="../cuncaojin/img/marry/png/1.png" alt="LOVE" />
-			</a>
-			<a class="tag" href="result_page.html">
-				<img src="../cuncaojin/img/marry/png/2.png" alt="LOVE" />
-			</a>
-			<a class="tag" href="result_page.html">
-				<img src="../cuncaojin/img/marry/png/3.png" alt="❤" />
-			</a>
-			<a class="tag" href="result_page.html">
-				<img src="../cuncaojin/img/marry/png/4.png" alt="❤" />
-			</a>
-			<a class="tag" href="result_page.html">
-				<img src="../cuncaojin/img/marry/png/5.png" alt="LOVE" />
-			</a>
-			<a class="tag" href="result_page.html">
-				<img src="../cuncaojin/img/marry/png/6.png" alt="LOVE" />
-			</a>
-			<a class="tag" href="result_page.html">
-				<img src="../cuncaojin/img/marry/png/7.png" alt="❤" />
-			</a>
-			<a class="tag" href="result_page.html">
-				<img src="../cuncaojin/img/marry/png/8.png" alt="❤" />
-			</a>
-			<a class="tag" href="result_page.html">
-				<img src="../cuncaojin/img/marry/png/9.png" alt="❤" />
-			</a>
-			<a class="tag" href="result_page.html">
-				<img src="../cuncaojin/img/marry/png/10.png" alt="LOVE" />
-			</a>
+		<div id="page2">
+			<img id="loading" src="../cuncaojin/img/loading.gif" style="width: 200px;height: 200px; position: absolute;left: 50%;top: 50%;margin-top: -100px;margin-left: -100px;" />
+			<div id="imgDiv"></div>
 		</div>
 
-		<!--时钟-->
-		<canvas id="cas">your broswer dont support</canvas>
-		<canvas id="bgcas"></canvas>
+		<div id="page3">
+			<div id="container" tabindex="0"></div>
+			<div id="tip"></div>
+			<div class="button-group">
+				<input class="amap-marker-label" style="width: 88%; margin:0 0 100px 2;background-color: yellow;border: 1px solid red;" value="婚庆时间地点:2018年05月11日 锦伦商务酒店 请来吃酒" />
+				<br/>
+				<br/>
+				<div>
+					<input id="setCenter" type="button" class="button" value="小" />
+					<input id="setCenter2" type="button" class="button" value="中" />
+					<input id="setCenter3" type="button" class="button" value="大" style="margin-right: 35px;" />
+				</div>
+			</div>
+		</div>
 
-		<audio id="music" style="display:none;" src="../res/sound/咱们结婚吧-齐晨.mp3" preload='none' loop />
-
-		<input type="hidden" id="refreshed" value="no" />
 		<script type="text/javascript" src="../cuncaojin/js/jquery-2.1.0.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/carousel.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/head_phonenum.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/coolClock.js"></script>
-		<script type="text/javascript" src="../cuncaojin/js/three_d_ball.js"></script>
-		<script src="../cuncaojin/js/audio.js"></script>
-		<script type="text/javascript">
-			audiojs.events.ready(function() {
-				var as = audiojs.createAll();
-			});
+		<script type="text/javascript" src="../cuncaojin/js/three_d_ball2.js"></script>
+		<script type="text/javascript" src="../cuncaojin/js/audio.js"></script>
+		<script type="text/javascript" src="../cuncaojin/js/logo_music.js"></script>
 
-			var audio = document.getElementById('music');
-			var beforeLogo = document.getElementById("beforeLogo");
-			var backLogo = document.getElementById("backLogo");
-
-			beforeLogo.addEventListener("animationstart", function(e) {
-				alert(beforeLogo.style.class)
-			})
-
-			beforeLogo.addEventListener("animationend", function() {})
-
-			//当音乐播放完停止时，自动停止图片旋转
-			audio.addEventListener("ended", function(event) {
-				$("#photo").css("animationPlayState", "paused");
-			}, false);
-
-			$("#photo").click(function() {
-				play();
-			})
-
-			function play() {
-				if(audio !== null) {
-					if(audio.paused) {
-						audio.play();
-						$("#photo").css({
-							animationPlayState: "running",
-							animation: "rotate 8s linear 2s infinite normal"
-						});
-					} else {
-						audio.pause();
-						$("#photo").css({
-							animationPlayState: "paused"
-						});
-					}
-				}
-			}
-			//			//动画结束时事件 
-			//			beforeLogo.addEventListener("webkitAnimationEnd", function() {
-			//			});
-			//			
-			//			//动画开始时事件
-			//			backLogo.addEventListener("webkitAnimationStart", function() { 
-			//			}, false);
-		</script>
-		<script type="text/javascript">
-			// 存在bug :页面回退，不能重新加载页面 reload/refresh均无效
-//			onload = function() {
-//				alert($("#refreshed").prop("value") === "no")
-//				if($("#refreshed").prop("value") === "no") {
-//					$(this).prop("value", "yes");
-//				} else {//表示点击物理返回键的情况
-//					location.reload;
-//					//					$(this).prop("value","no");
-//				}
-//			}
-			
-			onpageshow = function(e){
-				alert(e.persisted)
-			}
-
-//			$(function() {
-//				$(".tagBall .tag img").css("visibility", "hidden");
-//			})
-//
-//			// 加载图片完成后显示
-//			$('.tag img').each(function() {
-//				$(this).load(function() {
-//					$(this).css("visibility", "visible");
-//				})
-//			})
-		</script>
+		<!-------------------------------------------------------------->
+		<script type="text/javascript" src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+		<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.4&key=20deae5e3c5335a93608ee183a84f7d1&callback=init"></script>
+		<script type="text/javascript" src="https://webapi.amap.com/demos/js/liteToolbar.js"></script>
+		<!-- UI组件库 1.0 -->
+		<script type="text/javascript" src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+		<script type="text/javascript" src="https://webapi.amap.com/js/marker.js"></script>
+		<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+		<script type="text/javascript" src="../js/show_one_photo.js"></script>
+		<script type="text/javascript" src="../js/gaode_map.js"></script>
 	</body>
 
 </html>

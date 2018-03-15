@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>例子</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<body>
+<!--弹出层写在前面，主页面一闪而过的情况-->
+<!-- 搜索弹出层部分 start -->
+<div class="window">
+  <p>我是弹出层</p>
+  <br />
+  <form>
+    <input id="search" type="text" placeholder="请输入搜索关键字" />
+    <button id="searchBtn">搜索</button>
+  </form>
+  
+</div>
+<!--end of 搜索弹出层部分 -->
+<script>
+    function checkLocation(){
+        //hash 属性是一个可读可写的字符串，该字符串是 URL 的锚部分（从 # 号开始的部分）。
+        if(location.hash.indexOf("#win")>-1){
+            $(".window").show();
+        }else{
+            $(".window").hide();
+        }
+    }
+    checkLocation();
+</script>
+
+<div class="main-body">
+  <p class="btn">点击我show出弹出层</p>
+</div>
+
+<script type="text/javascript">
+
+  /*$("#searchBtn").on("click", function(){
+      alert(11);
+      var keyWord = $("#search").val();
+      location.href = "search.html?keyWord=" + keyWord;
+  });*/
+
+  $(".btn").click(function(){
+      location.hash = "win";
+      $(".window").show();
+      $("#search").focus();
+  });
+  //popstate事件在浏览器操作时触发, 比如点击后退按钮(或者在JavaScript中调用history.back()方法).
+  window.onpopstate = function() {
+      checkLocation();
+      
+  };
+</script>
+</body>
+</html>

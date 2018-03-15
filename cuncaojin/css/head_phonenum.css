@@ -3,7 +3,8 @@ body {
 	background-color: #333333;
 }
 
-.container {
+.logo_container {
+	padding-top: 2rem;
 	position: relative;
 	/*position: absolute;*/
 	width: 100%;
