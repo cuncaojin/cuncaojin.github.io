@@ -57,13 +57,13 @@
 		<div class="tagBall">
 			<!--很神奇，这个地图image如果放到其他image后，则那些图片有时候会不清晰-->
 			<a class="tag" href="gaode_map.html" style="font-size: 22px;color: #CECECE;">
-				<img class="err" src="../cuncaojin/img/marry/png/map.png" alt="高德地图" />
+				<img src="../cuncaojin/img/marry/png/map.png" alt="高德地图" />
 			</a>
 			<a class="tag" href="result_page.html">
-				<img class="err" src="../cuncaojin/img/marry/png/1.png" alt="LOVE" />
+				<img src="../cuncaojin/img/marry/png/1.png" alt="LOVE" />
 			</a>
 			<a class="tag" href="result_page.html">
-				<img class="err" src="../cuncaojin/img/marry/png/2.png" alt="LOVE" />
+				<img src="../cuncaojin/img/marry/png/2.png" alt="LOVE" />
 			</a>
 			<a class="tag" href="result_page.html">
 				<img src="../cuncaojin/img/marry/png/3.png" alt="❤" />
@@ -166,11 +166,7 @@
 //			}
 			
 			onpageshow = function(e){
-//				alert(e.persisted)
-				$(".err").each(function(){
-					$(this).css("src",$(this).css("src")+"?"+new Date().toString());
-					console.log($(this).css("src")+"-------------")
-				});
+				alert(e.persisted)
 			}
 
 //			$(function() {
