@@ -26,8 +26,12 @@
 
 		<style type="text/css">
 			/*-------------- page1 ------------------*/
+			#tagBallId{
+				padding-top: 30px;
+			}
 			
 			.tagBall {
+				position: relative;
 				text-align: center;
 				vertical-align: middle;
 			}
@@ -85,6 +89,7 @@
 				text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 				font-feature-settings: "kern" 1;
 				font-kerning: normal;*/
+				display: none;
 				color: #ddd;
 				font-size: 2.2em;
 				line-height: 1em;
@@ -93,7 +98,7 @@
 				font-feature-settings: "kern" 1;
 				font-kerning: normal;
 				box-sizing: inherit;
-				display: block;
+				/*display: block;*/
 				-webkit-margin-before: 1em;
 				-webkit-margin-after: 1em;
 				-webkit-margin-start: 0px;
@@ -187,7 +192,7 @@
 			</div>
 			<div id="think"></div>
 			<!--3d标签-->
-			<div class="tagBall" style="margin-bottom: 16px;">
+			<div class="tagBall" id="tagBallId">
 				<a class="tag map" style="font-size: 22px;color: #CECECE;margin:0 40px 0 0">
 					<img src="../cuncaojin/img/marry/png/map.png" alt="高德地图" />
 				</a>
@@ -288,7 +293,7 @@
 				//				console.log(location.hash)
 				if(location.hash.indexOf("#img") > -1) {
 					$("#page2").show()
-					$("#page1,#page3").hide(); 
+					$("#page1,#page3").hide();
 				} else if(location.hash.indexOf("#map") > -1) {
 					$("#page3").show()
 					$("#page1,#page2").hide();
