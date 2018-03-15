@@ -163,13 +163,12 @@ tag.prototype = {
 	move: function() {
 		//		var scale = fallLength / (fallLength - this.z);
 		var scale = Math.abs(this.z + RADIUS) / 2.5 / RADIUS;
-		console.log(scale+"--------------------------scale")
 		var alpha = (this.z + RADIUS) / (2 * RADIUS);
 		var left = this.x + CX - this.ele.offsetWidth / 2 + "px";
 		var top = this.y + CY - this.ele.offsetHeight / 2 + "px";
-		var transform = 'translate(' + left + ', ' + top + ') scale(' + String(scale).substring(0,String(scale).length>15?15:String(scale).length) + ')';
+		var transform = 'translate(' + left + ', ' + top + ') scale(' + 1 + ')';
 		this.ele.style.opacity = alpha + 0.5;
-		//		console.log("===========" + scale + "==============") 
+		//		console.log("===========" + scale + "==============")
 		this.ele.style.zIndex = parseInt(scale * 100);
 		this.ele.style.transform = transform;
 		this.ele.style.webkitTransform = transform;
