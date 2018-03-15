@@ -163,9 +163,13 @@ tag.prototype = {
 	move: function() {
 		//		var scale = fallLength / (fallLength - this.z);
 		var scale = Math.abs(this.z + RADIUS) / 2.5 / RADIUS;
+		// yg:50个级别缩放
+		scale = Math.floor(scale*1000)/1000;
+		
 		var alpha = (this.z + RADIUS) / (2 * RADIUS);
 		var left = this.x + CX - this.ele.offsetWidth / 2 + "px";
 		var top = this.y + CY - this.ele.offsetHeight / 2 + "px";
+		var transform = 'translate(' + left + ', ' + top + ') scale(' + scale + ')';
 		this.ele.style.opacity = alpha + 0.5;
 		//		console.log("===========" + scale + "==============")
 		this.ele.style.zIndex = parseInt(scale * 100);

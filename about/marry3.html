@@ -15,7 +15,7 @@
 		<link href="../cuncaojin/css/magic.min.css" rel="stylesheet" />
 
 		<link href="../cuncaojin/css/head_phonenum.css" rel="stylesheet" />
-		<!--<link href="../cuncaojin/css/three_d_tag.css" rel="stylesheet" type="text/css" />-->
+		<link href="../cuncaojin/css/three_d_tag.css" rel="stylesheet" type="text/css" />
 		<link href="../cuncaojin/css/coolClock.css" rel="stylesheet" />
 
 		<!------------------------------------------------->
@@ -27,26 +27,10 @@
 		<style type="text/css">
 			/*-------------- page1 ------------------*/
 			
-			.tagBall img {
+			.tagBall .tag img {
 				border-radius: 100%;
-				/*
-				 * 3d球采用尺寸：90px
-				 * width: 90px;
-				height: 90px;*/
-				width: 65px;
-				height: auto;
-				margin: 5px 0px;
-			}
-			
-			.map img {
-				width: 80px;
-				height: 80px;
-				box-shadow: 0px 0px 20px 2px #fff59d;
-			}
-			
-			.tagBall {
-				text-align: center;
-				vertical-align: middle;
+				width: 90px;
+				height: 90px;
 			}
 			
 			.audiojs {
@@ -54,13 +38,14 @@
 			}
 			
 			.tagText {
+				margin: 2rem auto;
 				padding: 0.1rem 0;
 				display: inline-block;
-				width: 80px;
-				height: 80px;
+				width: 100px;
+				height: 100px;
 				text-align: center;
 				vertical-align: center;
-				line-height: 80px;
+				line-height: 100px;
 				border-radius: 100%;
 				padding: 2px 15px;
 				vertical-align: middle;
@@ -165,36 +150,28 @@
 				<a class="tag map" style="font-size: 22px;color: #CECECE;">
 					<img src="../cuncaojin/img/marry/png/map.png" alt="高德地图" />
 				</a>
-
 				<a class="tag time">
 					<span class="tagText">
 						10秒
 					</span>
 				</a>
-			</div>
-			<!--3d标签-->
-			<div class="tagBall">
+				<a class="tag img">
+					<img src="../cuncaojin/img/marry/png/1.png" alt="LOVE" />
+				</a>
 				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/2.png" alt="LOVE" />
+				</a>
+				<a class="tag img">
+					<img src="../cuncaojin/img/marry/png/3.png" alt="❤" />
 				</a>
 				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/4.png" alt="❤" />
 				</a>
 				<a class="tag img">
-					<img src="../cuncaojin/img/marry/png/1.png" style="width: 100px;height: 100px;" alt="LOVE" />
-				</a>
-				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/5.png" alt="LOVE" />
 				</a>
 				<a class="tag img">
-					<img src="../cuncaojin/img/marry/png/10.png" alt="LOVE" />
-				</a>
-
-				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/6.png" alt="LOVE" />
-				</a>
-				<a class="tag img">
-					<img src="../cuncaojin/img/marry/png/3.png" alt="❤" />
 				</a>
 				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/7.png" alt="❤" />
@@ -205,9 +182,10 @@
 				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/9.png" alt="❤" />
 				</a>
-
+				<a class="tag img">
+					<img src="../cuncaojin/img/marry/png/10.png" alt="LOVE" />
+				</a>
 			</div>
-
 			<!--时钟-->
 			<canvas id="cas">your broswer dont support</canvas>
 			<canvas id="bgcas"></canvas>
@@ -240,7 +218,7 @@
 		<script type="text/javascript" src="../cuncaojin/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/head_phonenum.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/coolClock.js"></script>
-		<script type="text/javascript" src="../cuncaojin/js/three_d_ball2.js"></script>
+		<script type="text/javascript" src="../cuncaojin/js/three_d_ball3.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/audio.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/logo_music.js"></script>
 
@@ -272,8 +250,8 @@
 					location.hash = "";
 					setTimeout(function() {
 						$(".tagBall").show();
-					}, 2 * 1000);
-				} else {
+					}, 2* 1000);
+				}else{
 					$("#page1").show()
 					$("#page2,#page3").hide();
 				}
