@@ -4,9 +4,13 @@ $(function() {
 		allTagBallHeight += parseInt($(this).css("height"));
 	});
 
-	$(".tagBall").first().css({
-		marginTop: h - parseInt($("canvas").first().css("height")) - 2 * allTagBallHeight + "px"
-	});
+	$("canvas").first().resize(function() {
+		console.log("resize.... timeclock")
+		$(".tagBall").first().css({
+			marginTop: h - parseInt($("canvas").first().css("height")) - $(this).height() + "px"
+		});
+		console.log();
+	}); 
 
 	//	$("canvas").first().css("border","10px solid red");
 	//	$(".tagBall").first().css("border","5px solid blue"); 
@@ -15,7 +19,7 @@ $(function() {
 		var src = $(this).children("img").first().prop("src");
 		//		alert("void(0) === src"+(void(0) === src))
 		//获得undefined void(0)，保证它没有被重新赋值
-
+ 
 		if(void(0) === src) { // 是问号?情况
 			var s = "";
 			var words = "世界充满未知... <br/><b style='line-height:50px'>愿执子之手 与子偕老</b>";
