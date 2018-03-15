@@ -18,7 +18,7 @@ $(function() {
 
 		if(void(0) === src) { // 是问号?情况
 			var s = "";
-			var words = "世界充满未知... <br/><b style='line-height:50px'>愿执子之手 与子偕老</b>";
+			var words = "未来充满未知... <br/><b style='line-height:50px'>愿执子之手 与子偕老</b>";
 			var i = 0;
 			var writeId = setInterval(function() {
 				s += words[i++];
