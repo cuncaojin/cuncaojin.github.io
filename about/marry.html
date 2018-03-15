@@ -147,42 +147,42 @@
 
 			<!--3d标签-->
 			<div class="tagBall">
-				<a class="tag" style="font-size: 22px;color: #CECECE;">
+				<a class="tag map" style="font-size: 22px;color: #CECECE;">
 					<img src="../cuncaojin/img/marry/png/map.png" alt="高德地图" />
 				</a>
-				<a class="tag">
+				<a class="tag time">
 					<span class="tagText">
 						10秒
 					</span>
 				</a>
-				<a class="tag">
+				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/1.png" alt="LOVE" />
 				</a>
-				<a class="tag">
+				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/2.png" alt="LOVE" />
 				</a>
-				<a class="tag">
+				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/3.png" alt="❤" />
 				</a>
-				<a class="tag">
+				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/4.png" alt="❤" />
 				</a>
-				<a class="tag">
+				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/5.png" alt="LOVE" />
 				</a>
-				<a class="tag">
+				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/6.png" alt="LOVE" />
 				</a>
-				<a class="tag">
+				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/7.png" alt="❤" />
 				</a>
-				<a class="tag">
+				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/8.png" alt="❤" />
 				</a>
-				<a class="tag">
+				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/9.png" alt="❤" />
 				</a>
-				<a class="tag">
+				<a class="tag img">
 					<img src="../cuncaojin/img/marry/png/10.png" alt="LOVE" />
 				</a>
 			</div>
@@ -232,6 +232,46 @@
 		<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
 		<script type="text/javascript" src="../js/show_one_photo.js"></script>
 		<script type="text/javascript" src="../js/gaode_map.js"></script>
+		<script type="text/javascript">
+			function checkLocation() {
+				// console.log("location.hash.indexOf-----------------" + location.hash.indexOf("#win"))
+				//hash 属性是一个可读可写的字符串，该字符串是 URL 的锚部分（从 # 号开始的部分）。
+				// alert(location.hash.indexOf("#win"))
+				console.log(location.hash)
+				if(location.hash.indexOf("#img") > -1) {
+					$("#page2").show()
+					$("#page1,#page3").hide();
+					console.log(1)
+				} else if(location.hash.indexOf("#map") > -1) {
+					$("#page3").show()
+					$("#page1,#page2").hide();
+				} else if(location.hash.indexOf("#time") > -1) {
+					$(".tagBall").hide();
+					location.hash = "";
+					setTimeout(function() {
+						$(".tagBall").show();
+					}, 2* 1000);
+				}else{
+					$("#page1").show()
+					$("#page2,#page3").hide();
+				}
+			}
+			checkLocation();
+
+			$(".tagBall .img").click(function() {
+				location.hash = "img";
+			});
+			$(".tagBall .map").click(function() {
+				location.hash = "map";
+			});
+			$(".tagBall .time").click(function() {
+				location.hash = "time";
+			});
+			//popstate事件在浏览器操作时触发, 比如点击后退按钮(或者在JavaScript中调用history.back()方法).
+			window.onpopstate = function() {
+				checkLocation();
+			};
+		</script>
 	</body>
 
 </html>
