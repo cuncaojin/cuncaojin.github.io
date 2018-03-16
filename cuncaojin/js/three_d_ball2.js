@@ -16,7 +16,7 @@ $(function() {
 		//		alert("void(0) === src"+(void(0) === src))
 		//获得undefined void(0)，保证它没有被重新赋值
 
-		if(void(0) === src) { // 是问号?情况
+		if(void(0) === src) { // 是问号按钮情况
 			var s = "";
 			var words = "未来充满未知... <br/><b style='line-height:50px'>愿执子之手 与子偕老</b>";
 			var i = 0;
@@ -36,12 +36,15 @@ $(function() {
 			//			$("#page3").show();
 		} else {
 			//	src = $(this).children("embed").first().prop("src").replace("400x400/400x400_", "");
-			src = src.replace("png/", "").replace("png", "jpg")
+//			src = src.replace("png/", "").replace("png", "jpg")
 			//			console.log(src + "=============")
 			//			$(this).prop("href", $(this).prop("href") + "?src=" + encodeURI(src))
 			//			$("#page1,#page3").hide();
 			//			$("#page2").show();
-			showPhoto(src);
+			
+//			// 展示单张图片
+//			showPhoto(src);
+//			showPhotos();
 		}
 
 		//		location.href="index.html?"
