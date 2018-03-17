@@ -376,12 +376,16 @@
 					slideShadows: false,
 				},
 				autoplay: {
-					delay: 5000,
-					stopOnLastSlide: true
+					delay: 500,
+					stopOnLastSlide: true,
+					 //注意此参数，默认为true，
+					 // true:停止自动播放后不会再自动播放，
+					 // false：触摸停止播放后，离开还能自动播放
+					disableOnInteraction : false,   
 				},
 				observer: true,
 				observeParents: true,
-				loop: true,
+//				loop: true,
 			});
 
 			//	------------------ 页面监测 -----------------------
