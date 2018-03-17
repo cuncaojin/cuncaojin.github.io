@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>We</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+		<title>Swiper demo</title>
+		<!-- Link Swiper's CSS -->
+		<link rel="stylesheet" href="../dist/css/swiper.min.css">
+
+		<!-- Demo styles -->
+		<style>
+			html,
+			body {
+				position: relative;
+				height: 100%;
+			}
+			body {
+				background: #000;
+				font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+				font-size: 14px;
+				color: #000;
+				margin: 0;
+				padding: 0;
+			}
+			.swiper-container {
+				width: 100%;
+				height: 100%;
+			}
+			.swiper-slide {
+				overflow: hidden;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="swiper-zoom-container">
+						<img src="../img/marry/10.jpg" />
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="swiper-zoom-container">
+						<img src="../../background/lion.jpg" />
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="swiper-zoom-container">
+						<img src="../img/marry/1.jpg" />
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="swiper-zoom-container">
+						<img src="../img/marry/2.jpg" />
+					</div>
+				</div>
+			</div>
+
+			<!-- If we need pagination -->
+			<div class="swiper-pagination"></div>
+
+			<!-- If we need navigation buttons -->
+			<div class="swiper-button-prev">
+					<img src="../img/marry/png/9.png" style="width: 60px;height: 60px;border-radius: 100%;"/>
+			</div>
+			<div class="swiper-button-next">
+				<img src="../img/marry/png/10.png" style="width: 60px;height: 60px;border-radius: 100%;"/>
+			</div>
+
+			<!-- If we need scrollbar -->
+			<!--<div class="swiper-scrollbar"></div>-->
+		</div>
+
+		<!-- Swiper JS -->
+		<script src="../dist/js/swiper.min.js"></script>
+
+		<!-- Initialize Swiper -->
+		<script>
+			var swiper = new Swiper('.swiper-container', {
+				//				zoom: true,
+				//				pagination: '.swiper-pagination',
+				//				paginationClickable: true,
+				//				paginationBulletRender: function(swiper, index, className) {
+				//					return '<span class="' + className + '">' + (index + 1) + '</span>';
+				//				},
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				spaceBetween: 30,
+				// effect: 'slide',
+				flipEffect: {
+					rotate: 230,
+					slideShadows: false,
+				},
+				autoplay: {
+					delay: 1000,
+					//					delay: 5000,
+					stopOnLastSlide: true
+				},
+
+				//				scrollbar: {
+				//					el: '.swiper-scrollbar',
+				//					draggable: true,
+				//				},
+			});
+		</script>
+	</body>
+
+</html>
