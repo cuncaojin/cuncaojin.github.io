@@ -7,17 +7,21 @@ function writeWords() {
 
 	writeId = setInterval(function() {
 		s += words[i++];
-
 		$("#think").html(s).show();
 		if(i >= words.length) {
 			clearInterval(writeId);
 			// 播放音乐 logo_music.js
 			noPlay2Play();
+			setTimeout(function() {
+				$(".thinkBtn").html("<span style='color:red;'>❤</span>");
+				$("#think").html("").hide("fast", function() {
+					$(".tagBall").show();
+				});
+			}, 53 * 1000);
 		}
 	}, 300);
 	//	console.log(writeId+".........dddd")
 }
-
 $(function() {
 	//	var allTagBallHeight = 0;
 	//	$(".tagBall").each(function() {
