@@ -337,11 +337,16 @@
 		<script type="text/javascript" src="../cuncaojin/js/jquery-2.1.0.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/carousel.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/bootstrap.min.js"></script>
+		
 		<script type="text/javascript" src="../cuncaojin/js/head_phonenum.js"></script>
+		
 		<script type="text/javascript" src="../cuncaojin/js/coolClock.js"></script>
-		<script type="text/javascript" src="../cuncaojin/js/three_d_ball2.js"></script>
+		
 		<script type="text/javascript" src="../cuncaojin/js/audio.min.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/logo_music.js"></script>
+		
+		<script type="text/javascript" src="../cuncaojin/js/three_d_ball2.js"></script>
+
 		<script type="text/javascript" src="../cuncaojin/dist/js/swiper.min.js"></script>
 		<!--<script src="../cuncaojin/js/swiper.esm.bundle.js" type="text/javascript"></script>
 		<script src="../cuncaojin/js/swiper.esm.js" type="text/javascript" charset="utf-8"></script>-->
@@ -376,12 +381,12 @@
 					slideShadows: false,
 				},
 				autoplay: {
-					delay: 5000,
+					delay: 3000,
 					stopOnLastSlide: true,
-					 //注意此参数，默认为true，
-					 // true:停止自动播放后不会再自动播放，
-					 // false：触摸停止播放后，离开还能自动播放
-					disableOnInteraction : false,   
+					//注意此参数，默认为true，
+					// true:停止自动播放后不会再自动播放，
+					// false：触摸停止播放后，离开还能自动播放
+					disableOnInteraction: false,
 				},
 				//返回其他页面后再回来不卡顿
 				observer: true,
@@ -399,7 +404,7 @@
 				if(location.hash.indexOf("#img") > -1) {
 					$("#page2").show();
 					//可见时继续自动播放
-					if(!swiper.autoplay.running){
+					if(!swiper.autoplay.running) {
 						swiper.autoplay.start();
 					}
 					$("#page1,#page3").hide();
@@ -417,10 +422,10 @@
 				} else {
 					$("#page1").show()
 					$("#page2,#page3").hide();
-					
+
 					//不可见时停止自动播放
-					if(swiper.autoplay.running){
-						swiper.autoplay.stop(); 
+					if(swiper.autoplay.running) {
+						swiper.autoplay.stop();
 					}
 				}
 			}
@@ -441,6 +446,7 @@
 			window.onpopstate = function() {
 				checkLocation();
 			};
+
 		</script>
 	</body>
 
