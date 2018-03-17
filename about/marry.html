@@ -337,14 +337,14 @@
 		<script type="text/javascript" src="../cuncaojin/js/jquery-2.1.0.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/carousel.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/bootstrap.min.js"></script>
-		
+
 		<script type="text/javascript" src="../cuncaojin/js/head_phonenum.js"></script>
-		
+
 		<script type="text/javascript" src="../cuncaojin/js/coolClock.js"></script>
-		
+
 		<script type="text/javascript" src="../cuncaojin/js/audio.min.js"></script>
 		<script type="text/javascript" src="../cuncaojin/js/logo_music.js"></script>
-		
+
 		<script type="text/javascript" src="../cuncaojin/js/three_d_ball2.js"></script>
 
 		<script type="text/javascript" src="../cuncaojin/dist/js/swiper.min.js"></script>
@@ -399,33 +399,63 @@
 			function checkLocation() {
 				// console.log("location.hash.indexOf-----------------" + location.hash.indexOf("#win"))
 				//hash 属性是一个可读可写的字符串，该字符串是 URL 的锚部分（从 # 号开始的部分）。
-				// console.log(location.hash)
+				//				console.log(location.hash)
 
 				if(location.hash.indexOf("#img") > -1) {
-					$("#page2").show();
-					//可见时继续自动播放
-					if(!swiper.autoplay.running) {
-						swiper.autoplay.start();
-					}
-					$("#page1,#page3").hide();
-					return;
-				} else if(location.hash.indexOf("#map") > -1) {
-					$("#page3").show()
-					$("#page1,#page2").hide();
-				} else if(location.hash.indexOf("#time") > -1) {
-					$(".tagBall").hide();
-					location.hash = "";
-					setTimeout(function() {
-						$("#think").html("").hide();
-						$(".tagBall").show();
-					}, 60 * 1000);
-				} else {
-					$("#page1").show()
-					$("#page2,#page3").hide();
+					$("#page2").show("fast", function() {
+						$("#page1,page3").each(function() {
+							if($(this).is(":visible")) {
+								$(this).hide();
+							}
+						});
 
+						//可见时继续自动播放
+						if(!swiper.autoplay.running) {
+							swiper.autoplay.start();
+						}
+					});
+				} else if(location.hash.indexOf("#map") > -1) {
+					$("#page3").show("fast", function() {
+						$("#page1,#page2").each(function() {
+							if($(this).is(":visible")) {
+								$(this).hide();
+							}
+						});
+					})
+				} else if(location.hash.indexOf("#time") > -1) {
+					$(".tagBall").hide("fast", function() {
+						//写文字
+						writeWords();
+						setTimeout(function() {
+							$("#think").html("").hide("fast", function() {
+								$(".tagBall").show();
+							});
+						}, 60 * 1000);
+					});
+				} else {
 					//不可见时停止自动播放
 					if(swiper.autoplay.running) {
 						swiper.autoplay.stop();
+					}
+
+					if(!$("#page1").is(":visible")) {
+						$("#page1").show();
+					}
+
+					if($("#page2").is(":visible")) {
+						$("#page2").hide();
+					}
+
+					if($("#page3").is(":visible")) {
+						$("#page3").hide();
+					}
+
+					if($("#think").is(":visible")) {
+						//						console.log("..........." + writeId)
+						clearInterval(writeId);
+						$("#think").html("").hide("fast", function() {
+							$(".tagBall").show();
+						});
 					}
 				}
 			}
@@ -438,15 +468,14 @@
 			$(".tagBall .map").click(function() {
 				location.hash = "map";
 			});
+
 			$(".tagBall .time").click(function() {
 				location.hash = "time";
-
 			});
 			//popstate事件在浏览器操作时触发, 比如点击后退按钮(或者在JavaScript中调用history.back()方法).
 			window.onpopstate = function() {
 				checkLocation();
 			};
-
 		</script>
 	</body>
 
