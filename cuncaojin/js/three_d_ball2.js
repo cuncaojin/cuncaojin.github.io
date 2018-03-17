@@ -26,7 +26,7 @@ $(function() {
 				if(i >= words.length) {
 					clearInterval(writeId);
 					// 播放音乐 logo_music.js
-					play();
+					noPlay2Play();
 				}
 			}, 300)
 			return;

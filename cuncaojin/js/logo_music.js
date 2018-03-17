@@ -37,3 +37,15 @@ function play() {
 		}
 	}
 }
+
+function noPlay2Play(){
+	if(audio !== null) {
+		if(audio.paused) {
+			audio.play();
+			$("#photo").css({
+				animationPlayState: "running",
+				animation: "rotate 8s linear 2s infinite normal"
+			});
+		} 
+	}
+}
