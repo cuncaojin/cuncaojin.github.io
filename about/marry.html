@@ -202,7 +202,7 @@
 			<!--头像、电话-->
 			<div class="logo_container">
 				<div id="photo" style="margin-top: 1rem;">
-					<img id="beforeLogo" class="logo" src="../cuncaojin/img/logo3.jpg" />
+					<img id="beforeLogo" class="logo" src="../cuncaojin/img/replace_holder.jpg" />
 				</div>
 				<a id="phoneNumber" class="phoneNo">18811716119</a>
 				<div id="alert" style="display: none;">手机号码已拷贝</div>
@@ -211,10 +211,10 @@
 			<!--3d标签-->
 			<div class="tagBall" id="tagBallId">
 				<a class="tag map" style="font-size: 22px;color: #CECECE;">
-					<img src="../cuncaojin/img/marry/png/map.png" alt="高德地图" />
+					<img id="tagMapId" src="../cuncaojin/img/replace_holder.jpg" />
 				</a>
 				<a class="tag img">
-					<img src="../cuncaojin/img/marry/png/1.png" alt="LOVE" />
+					<img id="tagImgId" src="../cuncaojin/img/replace_holder.jpg"/>
 				</a>
 				<a class="tag time">
 					<span class="thinkBtn">?</span>
@@ -352,6 +352,13 @@
 		<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
 		<script type="text/javascript" src="../js/gaode_map.js"></script>
 		<script type="text/javascript">
+			// -------------------- 图片延迟加载 ---------------
+			$(function() {
+				$("#beforeLogo").prop("src", "../cuncaojin/img/logo3.jpg");
+				$("#tagImgId").prop("src", "../cuncaojin/img/marry/png/1.png");
+				$("#tagMapId").prop("src", "../cuncaojin/img/marry/png/map.png");
+			})
+
 			//	------------------ 轮播图 -----------------------
 			var swiper = new Swiper('.swiper-container', {
 				// Disable preloading of all images
