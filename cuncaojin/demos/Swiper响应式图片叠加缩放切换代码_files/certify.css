@@ -1,0 +1,75 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body{
+	margin:0;}
+#certify {
+	position: relative;
+	width: 1123px;/*判断宽度设置响应式效果*/
+	margin: 60px auto
+}
+
+#certify .swiper-container {
+	padding-bottom: 60px;
+}
+
+#certify  .swiper-slide {
+	width: 641px;
+	height: 347px;
+	background: #fff;
+    border:1px solid #c2c2c2;
+}
+#certify  .swiper-slide img{
+	width: 637px;
+	height: 343px;
+	display:block;
+	border:2px solid #fff;
+}
+
+#certify .swiper-pagination {
+	width: 100%;
+	bottom: 20px;
+}
+
+#certify .swiper-pagination-bullets .swiper-pagination-bullet {
+	margin: 0 5px;
+	border: 3px solid #fff;
+	background-color: #d5d5d5;
+	width: 10px;
+	height: 10px;
+	opacity: 1;
+}
+
+#certify .swiper-pagination-bullets .swiper-pagination-bullet-active {
+	border: 3px solid #00aadc;
+	background-color: #fff;
+}
+
+#certify .swiper-button-prev {
+	left: 140px;
+	width: 60px;
+	height: 111px;
+	top:133px;
+	background: url(../images/lunbo_17.png) no-repeat;
+
+	background-size: 100%;
+}
+
+#certify .swiper-button-prev:hover {
+	/*background-position: 0 -46px;*/
+	/*background-size: 100%*/
+}
+
+#certify .swiper-button-next {
+	right: 140px;
+	width: 60px;
+	height: 111px;
+	top:133px;
+	background: url("../images/lunbo_20.png") no-repeat;
+
+	background-size: 100%;
+}
+
+#certify .swiper-button-next:hover {
+	/*background-position: 0 -139px;*/
+	/*background-size: 100%*/
+}

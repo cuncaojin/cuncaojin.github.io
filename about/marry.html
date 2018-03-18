@@ -4,8 +4,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!--<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 		<title>I❤U Fiona</title>
 
@@ -257,34 +256,42 @@
 		<!-- Swiper -->
 		<div id="page2" class="swiper-container">
 			<div class="swiper-wrapper">
+
+				<!-- Lazy image -->
 				<div class="swiper-slide">
 					<div class="swiper-zoom-container">
-						<img src="../cuncaojin/img/marry/7.jpg" />
+						<img data-src="../cuncaojin/img/marry/7.jpg" class="swiper-lazy">
+						<div class="swiper-lazy-preloader"></div>
 					</div>
 				</div>
 				<div class="swiper-slide">
 					<div class="swiper-zoom-container">
-						<img src="../cuncaojin/img/marry/2.jpg" />
+						<img data-src="../cuncaojin/img/marry/2.jpg" class="swiper-lazy">
+						<div class="swiper-lazy-preloader"></div>
 					</div>
 				</div>
 				<div class="swiper-slide">
 					<div class="swiper-zoom-container">
-						<img src="../cuncaojin/img/marry/5.jpg" />
+						<img data-src="../cuncaojin/img/marry/5.jpg" class="swiper-lazy">
+						<div class="swiper-lazy-preloader"></div>
 					</div>
 				</div>
 				<div class="swiper-slide">
 					<div class="swiper-zoom-container">
-						<img src="../cuncaojin/img/marry/6.jpg" />
+						<img data-src="../cuncaojin/img/marry/6.jpg" class="swiper-lazy">
+						<div class="swiper-lazy-preloader"></div>
 					</div>
 				</div>
 				<div class="swiper-slide">
 					<div class="swiper-zoom-container">
-						<img src="../cuncaojin/img/marry/1.jpg" />
+						<img data-src="../cuncaojin/img/marry/1.jpg" class="swiper-lazy">
+						<div class="swiper-lazy-preloader"></div>
 					</div>
 				</div>
 				<div class="swiper-slide">
 					<div class="swiper-zoom-container">
-						<img src="../cuncaojin/img/marry/4.jpg" />
+						<img data-src="../cuncaojin/img/marry/4.jpg" class="swiper-lazy">
+						<div class="swiper-lazy-preloader"></div>
 					</div>
 				</div>
 			</div>
@@ -347,6 +354,10 @@
 		<script type="text/javascript">
 			//	------------------ 轮播图 -----------------------
 			var swiper = new Swiper('.swiper-container', {
+				// Disable preloading of all images
+				preloadImages: false,
+				// Enable lazy loading
+				lazy: true,
 				zoom: true,
 				pagination: '.swiper-pagination',
 				paginationClickable: true,

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!-- saved from url=(0132)http://www.17sucai.com/preview/701365/2017-11-22/%E6%A8%AA%E5%90%91%E5%BE%AA%E7%8E%AF%E7%84%A6%E7%82%B9%E5%9B%BE%E7%89%871/demo.html -->
+<html lang="en"><style type="text/css" id="night-mode-pro-style"></style><link type="text/css" rel="stylesheet" id="night-mode-pro-link"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Swiper的切换</title>
+    <link rel="stylesheet" href="./swiper.min.css">
+    <link rel="stylesheet" href="./certify.css">
+    <script src="./swiper.min.js.下载"></script><style type="text/css" abt="234"></style>
+
+<script>//console.log('a')
+</script><script>doAdblock();
+function doAdblock(){
+    (function() {
+        function A() {}
+        A.prototype = {
+            rules: {
+                'pps_pps': {
+                    'find': /^http:\/\/www\.iqiyi\.com\/player\/cupid\/common\/pps_flvplay_s\.swf/,
+                    'replace': 'http://swf.adtchrome.com/pps_20140420.swf'
+                },
+                '17173_in':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/PreloaderFile(Customer)?\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173_in_20150522.swf"
+                },
+                '17173_out':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/PreloaderFileFirstpage\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173_out_20150522.swf"
+                },
+                '17173_live':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/Player_stream(_firstpage)?\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173_stream_20150522.swf"
+                },
+                '17173_live_out':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/Player_stream_(custom)?Out\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173.out.Live.swf"
+                }
+            },
+            _done: null,
+            get done() {
+                if(!this._done) {
+                    this._done = new Array();
+                }
+                return this._done;
+            },
+            addAnimations: function() {
+                var style = document.createElement('style');
+                style.type = 'text/css';
+                style.innerHTML = 'object,embed{\
+                    -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;\
+                    -ms-animation-duration:.001s;-ms-animation-name:playerInserted;\
+                    -o-animation-duration:.001s;-o-animation-name:playerInserted;\
+                    animation-duration:.001s;animation-name:playerInserted;}\
+                    @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                    @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                    @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                    @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}';
+                    document.getElementsByTagName('head')[0].appendChild(style);
+                },
+                animationsHandler: function(e) {
+                    if(e.animationName === 'playerInserted') {
+                        this.replace(e.target);
+                    }
+                },
+                replace: function(elem) {
+                    if (/http:\/\/v.youku.com\/v_show\/.*/.test(window.location.href)){
+                        var tag = document.getElementById("playerBox").getAttribute("player")
+                        if (tag == "adt"){
+                            console.log("adt adv")
+                            return;
+                        }
+                    }
+                    if(this.done.indexOf(elem) != -1) return;
+                    this.done.push(elem);
+                    var player = elem.data || elem.src;
+                    if(!player) return;
+                    var i, find, replace = false;
+                    for(i in this.rules) {
+                        find = this.rules[i]['find'];
+                        if(find.test(player)) {
+                            replace = this.rules[i]['replace'];
+                            if('function' === typeof this.rules[i]['preHandle']) {
+                                this.rules[i]['preHandle'].bind(this, elem, find, replace, player)();
+                            }else{
+                                this.reallyReplace.bind(this, elem, find, replace)();
+                            }
+                            break;
+                        }
+                    }
+                },
+                reallyReplace: function(elem, find, replace) {
+                    elem.data && (elem.data = elem.data.replace(find, replace)) || elem.src && ((elem.src = elem.src.replace(find, replace)) && (elem.style.display = 'block'));
+                    var b = elem.querySelector("param[name='movie']");
+                    this.reloadPlugin(elem);
+                },
+                reloadPlugin: function(elem) {
+                    var nextSibling = elem.nextSibling;
+                    var parentNode = elem.parentNode;
+                    parentNode.removeChild(elem);
+                    var newElem = elem.cloneNode(true);
+                    this.done.push(newElem);
+                    if(nextSibling) {
+                        parentNode.insertBefore(newElem, nextSibling);
+                    } else {
+                        parentNode.appendChild(newElem);
+                    }
+                },
+                init: function() {
+                    var handler = this.animationsHandler.bind(this);
+                    document.body.addEventListener('webkitAnimationStart', handler, false);
+                    document.body.addEventListener('msAnimationStart', handler, false);
+                    document.body.addEventListener('oAnimationStart', handler, false);
+                    document.body.addEventListener('animationstart', handler, false);
+                    this.addAnimations();
+                }
+            };
+            new A().init();
+        })();
+    }
+// 20140730
+(function cnbeta() {
+    if (document.URL.indexOf('cnbeta.com') >= 0) {
+        var elms = document.body.querySelectorAll("p>embed");
+        Array.prototype.forEach.call(elms, function(elm) {
+            elm.style.marginLeft = "0px";
+        });
+    }
+})();
+//baidu
+if(document.URL.indexOf('www.baidu.com') >= 0){
+    if(document && document.getElementsByTagName && document.getElementById && document.body){
+        var aa = function(){
+            var all = document.body.querySelectorAll("#content_left div,#content_left table");
+            for(var i = 0; i < all.length; i++){
+                if(/display:\s?(table|block)\s!important/.test(all[i].getAttribute("style"))){all[i].style.display= "none";all[i].style.visibility='hidden';}
+            }
+            all = document.body.querySelectorAll('.result.c-container[id="1"]');
+            //if(all.length == 1) return;
+            for(var i = 0; i < all.length; i++){
+                if(all[i].innerHTML && all[i].innerHTML.indexOf('广告')>-1){
+                    all[i].style.display= "none";all[i].style.visibility='hidden';
+                }
+            }
+        }
+        aa();
+        document.getElementById('wrapper_wrapper').addEventListener('DOMSubtreeModified',aa)
+    };
+}
+// 20140922
+(function kill_360() {
+    if (document.URL.indexOf('so.com') >= 0) {
+        document.getElementById("e_idea_pp").style.display = none;
+    }
+})();
+if (document.URL.indexOf("tv.sohu.com") >= 0){
+    if (document.cookie.indexOf("fee_status=true")==-1){document.cookie='fee_status=true'};
+}
+if (document.URL.indexOf("56.com") >= 0){
+    if (document.cookie.indexOf("fee_status=true")==-1){document.cookie='fee_status=true'};
+}
+if (document.URL.indexOf("iqiyi.com") >= 0){
+    if (document.cookie.indexOf("player_forcedType=h5_VOD")==-1){
+        document.cookie='player_forcedType=h5_VOD'
+        if(localStorage.reloadTime && Date.now() - parseInt(localStorage.reloadTime)<60000){
+            console.log('no reload')
+        }else{
+            location.reload()
+            localStorage.reloadTime = Date.now();
+        }
+    }
+}
+</script><style type="text/css">object,embed{                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;                -o-animation-duration:.001s;-o-animation-name:playerInserted;                animation-duration:.001s;animation-name:playerInserted;}                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}</style></head>
+<body>
+    <div id="certify">
+       <div class="swiper-container swiper-container-horizontal">
+           <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-4902px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" style="transform: translateX(9660.28px) scale(-0.599378); z-index: 919; opacity: 0; transition-duration: 0ms;"><img src="./1.jpg"></div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" style="transform: translateX(7562.27px) scale(-0.399378); z-index: 929; opacity: 0; transition-duration: 0ms;"><img src="./2.jpg"></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="2" style="transform: translateX(5718.66px) scale(-0.199378); z-index: 939; opacity: 0; transition-duration: 0ms;"><img src="./3.jpg"></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="3" style="transform: translateX(4140.84px) scale(-0.000934579); z-index: 949; opacity: 0; transition-duration: 0ms;"><img src="./4.jpg"></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="4" style="transform: translateX(2794.64px) scale(0.200622); z-index: 959; opacity: 0; transition-duration: 0ms;"><img src="./5.jpg"></div>
+           <div class="swiper-slide" data-swiper-slide-index="0" style="transform: translateX(1714.23px) scale(0.400622); z-index: 969; opacity: 1; transition-duration: 0ms;"><img src="./1.jpg"></div>
+           <div class="swiper-slide" data-swiper-slide-index="1" style="transform: translateX(888.225px) scale(0.600622); z-index: 979; opacity: 1; transition-duration: 0ms;"><img src="./2.jpg"></div>
+           <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="2" style="transform: translateX(444.112px) scale(0.800312); z-index: 989; opacity: 1; transition-duration: 0ms;"><img src="./3.jpg"></div>
+           <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="3" style="transform: translateX(-1.38353px) scale(0.999378); z-index: 999; opacity: 1; transition-duration: 0ms;"><img src="./4.jpg"></div>
+           <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="4" style="transform: translateX(-319.386px) scale(0.799378); z-index: 989; opacity: 1; transition-duration: 0ms;"><img src="./5.jpg"></div>
+           <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" style="transform: translateX(-892.577px) scale(0.599378); z-index: 979; opacity: 1; transition-duration: 0ms;"><img src="./1.jpg"></div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" style="transform: translateX(-1724.64px) scale(0.398442); z-index: 969; opacity: 0; transition-duration: 0ms;"><img src="./2.jpg"></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="2" style="transform: translateX(-2802.16px) scale(0.199378); z-index: 959; opacity: 0; transition-duration: 0ms;"><img src="./3.jpg"></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="3" style="transform: translateX(-4138.55px) scale(-0.000622084); z-index: 949; opacity: 0; transition-duration: 0ms;"><img src="./4.jpg"></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="4" style="transform: translateX(-5729.34px) scale(-0.200622); z-index: 939; opacity: 0; transition-duration: 0ms;"><img src="./5.jpg"></div></div>
+       </div>
+       <div class="swiper-pagination"></div>
+       <div class="swiper-button-prev"></div>
+       <div class="swiper-button-next"></div>
+   </div>
+
+   <script>
+    certifySwiper = new Swiper('#certify .swiper-container', {
+       watchSlidesProgress: true,
+       slidesPerView: 'auto',
+       centeredSlides: true,
+       loop: true,
+       loopedSlides: 5,
+       autoplay: true,
+       navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
+
+      on: {
+          progress: function(progress) {
+             for (i = 0; i < this.slides.length; i++) {
+                var slide = this.slides.eq(i);
+                var slideProgress = this.slides[i].progress;
+
+                if (Math.abs(slideProgress) > 1) {
+                   modify = (Math.abs(slideProgress) - 1) * 0.4 + 1;
+               }
+               translate = slideProgress * modify * 318 + 'px';
+               scale = 1 - Math.abs(slideProgress) / 5;
+               zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
+               slide.transform('translateX(' + translate + ') scale(' + scale + ')');
+               slide.css('zIndex', zIndex);
+               slide.css('opacity', 1);
+               if (Math.abs(slideProgress) > 3) {
+                   slide.css('opacity', 0);
+               }
+           }
+       },
+       setTransition: function(transition) {
+         for (var i = 0; i < this.slides.length; i++) {
+            var slide = this.slides.eq(i)
+            slide.transition(transition);
+        }
+
+    }
+}
+
+})
+</script>
+
+</body></html>
