@@ -1,19 +1,42 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!doctype html>
+<html lang="en">
 
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>杨岗</title>
+		<meta charset="UTF-8">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>求职Java</title>
+
+		<script src="../cuncaojin/js/jquery-2.1.0.js"></script>
+		<!--<link rel="stylesheet" type="text/css" href="../cuncaojin/css/head_phonenum.css" />-->
+		<script type="text/javascript" src="../cuncaojin/js/head_phonenum.js"></script>
+
 		<link rel="stylesheet" href="https://stackedit.io/style.css" />
 		<script type="text/javascript">
-			onload = function() {
-				sessionStorage.setItem("back", "true")
-			}
+			$(function() {
+				sessionStorage.setItem("back", "true");
+
+				$("#call").click(function() {
+					$(this).prop("href", "tel:18811716119");
+				})
+			})
 		</script>
+
+		<style type="text/css">
+			#phonePic {
+				height: 45px;
+				position: fixed;
+				right: 30px;
+				bottom: 80px;
+			}
+		</style>
 	</head>
 
 	<body class="stackedit">
+		<a id="call"><img id="phonePic" src="../img/phone.png" /></a>
+
 		<div class="stackedit__html">
 			<h1 id="center求职center"><center>求职</center></h1>
 			<h3 id="竞聘岗位">竞聘岗位</h3>
