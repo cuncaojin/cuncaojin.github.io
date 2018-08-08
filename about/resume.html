@@ -52,22 +52,20 @@
 联系电话：18811716119
 </code></pre>
 			<h3 id="求职表白">求职表白</h3>
-			<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// Give me a chance , learn &amp; work together! Or I'll miss you.</span>
-<span class="token keyword">try</span><span class="token punctuation">{</span>
-	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-		<span class="token keyword">if</span><span class="token punctuation">(</span>chance<span class="token punctuation">)</span><span class="token punctuation">{</span>
-			System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Learn and Work together"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-			<span class="token keyword">break</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span>
+<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// give me a chance, let's learn and work together! </span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token comment">// the chance function's result is whether now I can have a chance</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">chance</span><span class="token punctuation">(</span>studyDay<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"learn and work together"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">break</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+		<span class="token comment">// alone study days count add 1. no happy</span>
+		studyDay<span class="token operator">++</span><span class="token punctuation">;</span>
 	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>Exception e<span class="token punctuation">)</span><span class="token punctuation">{</span>
-	Log<span class="token punctuation">.</span><span class="token function">e</span><span class="token punctuation">(</span><span class="token string">"miss"</span><span class="token punctuation">,</span><span class="token string">"I'll miss you"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">MyException</span><span class="token punctuation">(</span>"I accept”<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token keyword">finally</span><span class="token punctuation">{</span>
-	System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Thank you"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
+
 </code></pre>
-		</div>
-	</body>
+</div>
+</body>
 
 </html>
