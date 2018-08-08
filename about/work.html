@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>I❤U Fiona</title>
+
+		<link href="../cuncaojin/css/style.css" rel="stylesheet">
+		<!-- Bootstrap -->
+		<link href="../cuncaojin/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="../cuncaojin/js/jquery-2.1.0.js"></script>
+		<script src="../cuncaojin/js/carousel.js"></script>
+		<link href="../cuncaojin/css/animate.css" rel="stylesheet">
+		<link rel="stylesheet" href="../cuncaojin/css/magic.min.css">
+
+		<link href="../cuncaojin/css/coolClock.css" rel="stylesheet" />
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="../cuncaojin/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../cuncaojin/css/head_phonenum.css" />
+		<script type="text/javascript" src="../cuncaojin/js/head_phonenum.js"></script>
+
+		<style type="text/css">
+			.resume {
+				height: 300px;
+				width: 90%;
+				background-color: white;
+				padding: 0px;
+				text-align: center;
+			}
+			
+			iframe::-webkit-scrollbar {
+				width: 0px;
+				height: 0px;
+			}
+		</style>
+
+		<script type="text/javascript">
+			function goToResumePage() {
+				location.href = "求职.html";
+				back = true;
+			}
+
+			onload = function() {
+				if(sessionStorage.getItem("back") != "true") {
+					// 初始值
+					sessionStorage.setItem("time", "1000");
+					window.setTimeout("goToResumePage()", 2000)
+				} else {
+					sessionStorage.removeItem('back');
+					sessionStorage.setItem("time", parseInt(sessionStorage.getItem("time")) + 3000 + "");
+					window.setTimeout("goToResumePage()", sessionStorage.getItem("time"))
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="logo_container">
+			<div id="photo" style="margin-top: 1rem;">
+				<!--<img class="logo" src="../cuncaojin/img/big_logo.png" />-->
+				<img class="logo" src="../cuncaojin/img/logo2.jpg" />
+			</div>
+
+			<!--<p id="phoneNumber" class="phoneNo">18811716119</p>-->
+
+			<a id="phoneNumber" class="phoneNo">18811716119</a>
+
+			<!--<div>
+				<iframe src="求职.html" class="resume"/>
+			</div>-->
+
+			<div id="alert" style="display: none;">手机号码已拷贝</div>
+		</div>
+
+		<canvas id="cas">抱歉，您的浏览器不支持canvas</canvas>
+		<canvas id="bgcas"></canvas>
+
+		<script type="text/javascript" src="../cuncaojin/js/coolClock.js"></script>
+		<script type="text/javascript">
+			$("#photo").addClass("animated bounceIn")
+			$("#phoneNumber").addClass("animated rubberBand")
+
+			function copyArticle(event) {
+				const range = document.createRange();
+				range.selectNode(document.getElementById('phoneNumber'));
+
+				const selection = window.getSelection();
+				if(selection.rangeCount > 0) selection.removeAllRanges();
+				selection.addRange(range);
+				document.execCommand('copy');
+				// 屏蔽选择
+				selection.removeAllRanges();
+
+				/* 不再添加弹窗及其动画
+				$('#alert').addClass("animated flip").show().html("<p class='alert'>手机号码已拷贝</p>");
+				setTimeout(function() {
+					// $('#alert').removeClass().hide()
+					$("#alert").addClass("zoomOutDown").removeClass("flip");
+				}, 2000);*/
+			}
+			$("#phoneNumber").click(function() {
+				copyArticle();
+				$(this).prop("href", "tel:18811716119");
+			})
+			// document.getElementById('phoneNumber').addEventListener('click', copyArticle, false);
+		</script>
+	</body>
+
+</html>
