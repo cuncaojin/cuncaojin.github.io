@@ -1,0 +1,73 @@
+﻿<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>求职Java</title>
+
+		<script src="../cuncaojin/js/jquery-2.1.0.js"></script>
+		<!--<link rel="stylesheet" type="text/css" href="../cuncaojin/css/head_phonenum.css" />-->
+		<script type="text/javascript" src="../cuncaojin/js/head_phonenum.js"></script>
+
+		<link rel="stylesheet" href="https://stackedit.io/style.css" />
+		<script type="text/javascript">
+			$(function() {
+				sessionStorage.setItem("back", "true");
+
+				$("#call").click(function() {
+					$(this).prop("href", "tel:18811716119");
+				})
+			})
+		</script>
+
+		<style type="text/css">
+			#phonePic {
+				height: 45px;
+				position: fixed;
+				right: 30px;
+				bottom: 80px;
+			}
+		</style>
+	</head>
+
+	<body class="stackedit">
+		<a id="call"><img id="phonePic" src="../img/phone.png" /></a>
+
+		<div class="stackedit__html">
+			<h1 id="center求职center"><center>求职</center></h1>
+			<h3 id="竞聘岗位">竞聘岗位</h3>
+			<pre><code>Java工程师
+</code></pre>
+			<h3 id="基本信息">基本信息</h3>
+			<pre><code>姓名：杨岗  
+性别：男
+学历：本科
+毕业院校：河南理工大学
+英语水平：四级
+电子邮箱：cuncaojin@163.com 
+联系电话：18811716119
+</code></pre>
+			<h3 id="求职表白">求职表白</h3>
+			<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// Give me a chance , learn &amp; work together! Or I'll miss you.</span>
+<span class="token keyword">try</span><span class="token punctuation">{</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>chance<span class="token punctuation">)</span><span class="token punctuation">{</span>
+			System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Learn and Work together"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">break</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>Exception e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	Log<span class="token punctuation">.</span><span class="token function">e</span><span class="token punctuation">(</span><span class="token string">"miss"</span><span class="token punctuation">,</span><span class="token string">"I'll miss you"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">MyException</span><span class="token punctuation">(</span>"I accept”<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token keyword">finally</span><span class="token punctuation">{</span>
+	System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Thank you"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+		</div>
+	</body>
+
+</html>
