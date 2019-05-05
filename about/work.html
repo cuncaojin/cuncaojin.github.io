@@ -50,7 +50,7 @@
 				if(sessionStorage.getItem("back") != "true") {
 					// 初始值
 					sessionStorage.setItem("time", "1000");
-					window.setTimeout("goToResumePage()", 3000)
+					window.setTimeout("goToResumePage()", 2500)
 				} else {
 					sessionStorage.removeItem('back');
 					sessionStorage.setItem("time", parseInt(sessionStorage.getItem("time")) + 5000 + "");
